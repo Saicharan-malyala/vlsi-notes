@@ -1,7 +1,7 @@
 # VLSI Notes
 
 [![GitHub Repo](https://img.shields.io/badge/GitHub-Saicharan%2Fvlsi--notes-24292e?style=for-the-badge&logo=github)](https://github.com/Saicharan-malyala/vlsi-notes)
-[![Docs Status](https://img.shields.io/badge/Docs-Online-4caf50?style=for-the-badge&logo=readthedocs)](<!-- Live URL will be added after deployment -->)
+[![Docs Status](https://img.shields.io/badge/Docs-Online-4caf50?style=for-the-badge&logo=readthedocs)](https://saicharan-malyala.github.io/vlsi-notes/)
 [![License: CC BY‑SA 4.0](https://img.shields.io/badge/License-CC%20BY--SA%204.0-lightgrey?style=for-the-badge)](https://creativecommons.org/licenses/by-sa/4.0/)
 [![Build Status](https://img.shields.io/github/actions/workflow/status/Saicharan-malyala/vlsi-notes/deploy.yml?branch=main&style=for-the-badge&logo=github-actions)](https://github.com/Saicharan-malyala/vlsi-notes/actions)
 
