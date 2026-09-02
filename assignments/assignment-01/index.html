@@ -1,0 +1,2031 @@
+
+<!doctype html>
+<html lang="en" class="no-js">
+  <head>
+    
+      <meta charset="utf-8">
+      <meta name="viewport" content="width=device-width,initial-scale=1">
+      
+        <meta name="description" content="Comprehensive, structured technical notes, lab manuals, assignments, and interview preparation for PGCP-VLSI.">
+      
+      
+        <meta name="author" content="Sai Chand">
+      
+      
+        <link rel="canonical" href="https://saichand.github.io/vlsi-notes/assignments/assignment-01/">
+      
+      
+        <link rel="prev" href="../">
+      
+      
+        <link rel="next" href="../assignment-02/">
+      
+      
+        
+      
+      
+      <link rel="icon" href="../../assets/images/favicon.png">
+      <meta name="generator" content="mkdocs-1.6.1, mkdocs-material-9.7.7">
+    
+    
+      
+        <title>Assignment 01 - Basics & Permissions - VLSI & Embedded Systems Notes</title>
+      
+    
+    
+      <link rel="stylesheet" href="../../assets/stylesheets/main.ec1eaa64.min.css">
+      
+        
+        <link rel="stylesheet" href="../../assets/stylesheets/palette.ab4e12ef.min.css">
+      
+      
+
+
+    
+    
+      
+    
+    
+      
+        
+        
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto:300,300i,400,400i,700,700i%7CRoboto+Mono:400,400i,700,700i&display=fallback">
+        <style>:root{--md-text-font:"Roboto";--md-code-font:"Roboto Mono"}</style>
+      
+    
+    
+      <link rel="stylesheet" href="../../assets/css/custom.css">
+    
+    <script>__md_scope=new URL("../..",location),__md_hash=e=>[...e].reduce(((e,_)=>(e<<5)-e+_.charCodeAt(0)),0),__md_get=(e,_=localStorage,t=__md_scope)=>JSON.parse(_.getItem(t.pathname+"."+e)),__md_set=(e,_,t=localStorage,a=__md_scope)=>{try{t.setItem(a.pathname+"."+e,JSON.stringify(_))}catch(e){}}</script>
+    
+      
+
+    
+    
+  </head>
+  
+  
+    
+    
+      
+    
+    
+    
+    
+    <body dir="ltr" data-md-color-scheme="default" data-md-color-primary="indigo" data-md-color-accent="cyan">
+  
+    
+    <input class="md-toggle" data-md-toggle="drawer" type="checkbox" id="__drawer" autocomplete="off">
+    <input class="md-toggle" data-md-toggle="search" type="checkbox" id="__search" autocomplete="off">
+    <label class="md-overlay" for="__drawer"></label>
+    <div data-md-component="skip">
+      
+        
+        <a href="#assignment-01-linux-basics-directory-operations-permissions" class="md-skip">
+          Skip to content
+        </a>
+      
+    </div>
+    <div data-md-component="announce">
+      
+    </div>
+    
+    
+      
+
+<header class="md-header" data-md-component="header">
+  <nav class="md-header__inner md-grid" aria-label="Header">
+    <a href="../.." title="VLSI &amp; Embedded Systems Notes" class="md-header__button md-logo" aria-label="VLSI & Embedded Systems Notes" data-md-component="logo">
+      
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a3 3 0 0 0 3-3 3 3 0 0 0-3-3 3 3 0 0 0-3 3 3 3 0 0 0 3 3m0 3.54C9.64 9.35 6.5 8 3 8v11c3.5 0 6.64 1.35 9 3.54 2.36-2.19 5.5-3.54 9-3.54V8c-3.5 0-6.64 1.35-9 3.54"/></svg>
+
+    </a>
+    <label class="md-header__button md-icon" for="__drawer">
+      
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M3 6h18v2H3zm0 5h18v2H3zm0 5h18v2H3z"/></svg>
+    </label>
+    <div class="md-header__title" data-md-component="header-title">
+      <div class="md-header__ellipsis">
+        <div class="md-header__topic">
+          <span class="md-ellipsis">
+            VLSI & Embedded Systems Notes
+          </span>
+        </div>
+        <div class="md-header__topic" data-md-component="header-topic">
+          <span class="md-ellipsis">
+            
+              Assignment 01 - Basics & Permissions
+            
+          </span>
+        </div>
+      </div>
+    </div>
+    
+      
+        <form class="md-header__option" data-md-component="palette">
+  
+    
+    
+    
+    <input class="md-option" data-md-color-media="" data-md-color-scheme="default" data-md-color-primary="indigo" data-md-color-accent="cyan"  aria-label="Switch to dark mode"  type="radio" name="__palette" id="__palette_0">
+    
+      <label class="md-header__button md-icon" title="Switch to dark mode" for="__palette_1" hidden>
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a4 4 0 0 0-4 4 4 4 0 0 0 4 4 4 4 0 0 0 4-4 4 4 0 0 0-4-4m0 10a6 6 0 0 1-6-6 6 6 0 0 1 6-6 6 6 0 0 1 6 6 6 6 0 0 1-6 6m8-9.31V4h-4.69L12 .69 8.69 4H4v4.69L.69 12 4 15.31V20h4.69L12 23.31 15.31 20H20v-4.69L23.31 12z"/></svg>
+      </label>
+    
+  
+    
+    
+    
+    <input class="md-option" data-md-color-media="" data-md-color-scheme="slate" data-md-color-primary="indigo" data-md-color-accent="cyan"  aria-label="Switch to light mode"  type="radio" name="__palette" id="__palette_1">
+    
+      <label class="md-header__button md-icon" title="Switch to light mode" for="__palette_0" hidden>
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 18c-.89 0-1.74-.2-2.5-.55C11.56 16.5 13 14.42 13 12s-1.44-4.5-3.5-5.45C10.26 6.2 11.11 6 12 6a6 6 0 0 1 6 6 6 6 0 0 1-6 6m8-9.31V4h-4.69L12 .69 8.69 4H4v4.69L.69 12 4 15.31V20h4.69L12 23.31 15.31 20H20v-4.69L23.31 12z"/></svg>
+      </label>
+    
+  
+</form>
+      
+    
+    
+      <script>var palette=__md_get("__palette");if(palette&&palette.color){if("(prefers-color-scheme)"===palette.color.media){var media=matchMedia("(prefers-color-scheme: light)"),input=document.querySelector(media.matches?"[data-md-color-media='(prefers-color-scheme: light)']":"[data-md-color-media='(prefers-color-scheme: dark)']");palette.color.media=input.getAttribute("data-md-color-media"),palette.color.scheme=input.getAttribute("data-md-color-scheme"),palette.color.primary=input.getAttribute("data-md-color-primary"),palette.color.accent=input.getAttribute("data-md-color-accent")}for(var[key,value]of Object.entries(palette.color))document.body.setAttribute("data-md-color-"+key,value)}</script>
+    
+    
+    
+      
+      
+        <label class="md-header__button md-icon" for="__search">
+          
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.52 6.52 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5"/></svg>
+        </label>
+        <div class="md-search" data-md-component="search" role="dialog">
+  <label class="md-search__overlay" for="__search"></label>
+  <div class="md-search__inner" role="search">
+    <form class="md-search__form" name="search">
+      <input type="text" class="md-search__input" name="query" aria-label="Search" placeholder="Search" autocapitalize="off" autocorrect="off" autocomplete="off" spellcheck="false" data-md-component="search-query" required>
+      <label class="md-search__icon md-icon" for="__search">
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.52 6.52 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5"/></svg>
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11z"/></svg>
+      </label>
+      <nav class="md-search__options" aria-label="Search">
+        
+          <a href="javascript:void(0)" class="md-search__icon md-icon" title="Share" aria-label="Share" data-clipboard data-clipboard-text="" data-md-component="search-share" tabindex="-1">
+            
+            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M18 16.08c-.76 0-1.44.3-1.96.77L8.91 12.7c.05-.23.09-.46.09-.7s-.04-.47-.09-.7l7.05-4.11c.54.5 1.25.81 2.04.81a3 3 0 0 0 3-3 3 3 0 0 0-3-3 3 3 0 0 0-3 3c0 .24.04.47.09.7L8.04 9.81C7.5 9.31 6.79 9 6 9a3 3 0 0 0-3 3 3 3 0 0 0 3 3c.79 0 1.5-.31 2.04-.81l7.12 4.15c-.05.21-.08.43-.08.66 0 1.61 1.31 2.91 2.92 2.91s2.92-1.3 2.92-2.91A2.92 2.92 0 0 0 18 16.08"/></svg>
+          </a>
+        
+        <button type="reset" class="md-search__icon md-icon" title="Clear" aria-label="Clear" tabindex="-1">
+          
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M19 6.41 17.59 5 12 10.59 6.41 5 5 6.41 10.59 12 5 17.59 6.41 19 12 13.41 17.59 19 19 17.59 13.41 12z"/></svg>
+        </button>
+      </nav>
+      
+        <div class="md-search__suggest" data-md-component="search-suggest"></div>
+      
+    </form>
+    <div class="md-search__output">
+      <div class="md-search__scrollwrap" tabindex="0" data-md-scrollfix>
+        <div class="md-search-result" data-md-component="search-result">
+          <div class="md-search-result__meta">
+            Initializing search
+          </div>
+          <ol class="md-search-result__list" role="presentation"></ol>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+      
+    
+    
+      <div class="md-header__source">
+        <a href="https://github.com/saichand/vlsi-notes" title="Go to repository" class="md-source" data-md-component="source">
+  <div class="md-source__icon md-icon">
+    
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512"><!--! Font Awesome Free 7.1.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2025 Fonticons, Inc.--><path d="M173.9 397.4c0 2-2.3 3.6-5.2 3.6-3.3.3-5.6-1.3-5.6-3.6 0-2 2.3-3.6 5.2-3.6 3-.3 5.6 1.3 5.6 3.6m-31.1-4.5c-.7 2 1.3 4.3 4.3 4.9 2.6 1 5.6 0 6.2-2s-1.3-4.3-4.3-5.2c-2.6-.7-5.5.3-6.2 2.3m44.2-1.7c-2.9.7-4.9 2.6-4.6 4.9.3 2 2.9 3.3 5.9 2.6 2.9-.7 4.9-2.6 4.6-4.6-.3-1.9-3-3.2-5.9-2.9M252.8 8C114.1 8 8 113.3 8 252c0 110.9 69.8 205.8 169.5 239.2 12.8 2.3 17.3-5.6 17.3-12.1 0-6.2-.3-40.4-.3-61.4 0 0-70 15-84.7-29.8 0 0-11.4-29.1-27.8-36.6 0 0-22.9-15.7 1.6-15.4 0 0 24.9 2 38.6 25.8 21.9 38.6 58.6 27.5 72.9 20.9 2.3-16 8.8-27.1 16-33.7-55.9-6.2-112.3-14.3-112.3-110.5 0-27.5 7.6-41.3 23.6-58.9-2.6-6.5-11.1-33.3 2.6-67.9 20.9-6.5 69 27 69 27 20-5.6 41.5-8.5 62.8-8.5s42.8 2.9 62.8 8.5c0 0 48.1-33.6 69-27 13.7 34.7 5.2 61.4 2.6 67.9 16 17.7 25.8 31.5 25.8 58.9 0 96.5-58.9 104.2-114.8 110.5 9.2 7.9 17 22.9 17 46.4 0 33.7-.3 75.4-.3 83.6 0 6.5 4.6 14.4 17.3 12.1C436.2 457.8 504 362.9 504 252 504 113.3 391.5 8 252.8 8M105.2 352.9c-1.3 1-1 3.3.7 5.2 1.6 1.6 3.9 2.3 5.2 1 1.3-1 1-3.3-.7-5.2-1.6-1.6-3.9-2.3-5.2-1m-10.8-8.1c-.7 1.3.3 2.9 2.3 3.9 1.6 1 3.6.7 4.3-.7.7-1.3-.3-2.9-2.3-3.9-2-.6-3.6-.3-4.3.7m32.4 35.6c-1.6 1.3-1 4.3 1.3 6.2 2.3 2.3 5.2 2.6 6.5 1 1.3-1.3.7-4.3-1.3-6.2-2.2-2.3-5.2-2.6-6.5-1m-11.4-14.7c-1.6 1-1.6 3.6 0 5.9s4.3 3.3 5.6 2.3c1.6-1.3 1.6-3.9 0-6.2-1.4-2.3-4-3.3-5.6-2"/></svg>
+  </div>
+  <div class="md-source__repository">
+    saichand/vlsi-notes
+  </div>
+</a>
+      </div>
+    
+  </nav>
+  
+</header>
+    
+    <div class="md-container" data-md-component="container">
+      
+      
+        
+          
+            
+<nav class="md-tabs" aria-label="Tabs" data-md-component="tabs">
+  <div class="md-grid">
+    <ul class="md-tabs__list">
+      
+        
+  
+  
+  
+  
+    <li class="md-tabs__item">
+      <a href="../.." class="md-tabs__link">
+        
+  
+  
+    
+  
+  Home
+
+      </a>
+    </li>
+  
+
+      
+        
+  
+  
+  
+  
+    
+    
+      <li class="md-tabs__item">
+        <a href="../../modules/linux-shell-scripting/index.md" class="md-tabs__link">
+          
+  
+  
+  Linux & Shell Scripting
+
+        </a>
+      </li>
+    
+  
+
+      
+        
+  
+  
+  
+    
+  
+  
+    
+    
+      <li class="md-tabs__item md-tabs__item--active">
+        <a href="../" class="md-tabs__link">
+          
+  
+  
+  Assignments & Self-Testing
+
+        </a>
+      </li>
+    
+  
+
+      
+        
+  
+  
+  
+  
+    
+    
+      <li class="md-tabs__item">
+        <a href="../../modules/digital-design/index.md" class="md-tabs__link">
+          
+  
+  
+  Curriculum Modules
+
+        </a>
+      </li>
+    
+  
+
+      
+    </ul>
+  </div>
+</nav>
+          
+        
+      
+      <main class="md-main" data-md-component="main">
+        <div class="md-main__inner md-grid">
+          
+            
+              
+              <div class="md-sidebar md-sidebar--primary" data-md-component="sidebar" data-md-type="navigation" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+
+  
+
+
+<nav class="md-nav md-nav--primary md-nav--lifted" aria-label="Navigation" data-md-level="0">
+  <label class="md-nav__title" for="__drawer">
+    <a href="../.." title="VLSI &amp; Embedded Systems Notes" class="md-nav__button md-logo" aria-label="VLSI & Embedded Systems Notes" data-md-component="logo">
+      
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a3 3 0 0 0 3-3 3 3 0 0 0-3-3 3 3 0 0 0-3 3 3 3 0 0 0 3 3m0 3.54C9.64 9.35 6.5 8 3 8v11c3.5 0 6.64 1.35 9 3.54 2.36-2.19 5.5-3.54 9-3.54V8c-3.5 0-6.64 1.35-9 3.54"/></svg>
+
+    </a>
+    VLSI & Embedded Systems Notes
+  </label>
+  
+    <div class="md-nav__source">
+      <a href="https://github.com/saichand/vlsi-notes" title="Go to repository" class="md-source" data-md-component="source">
+  <div class="md-source__icon md-icon">
+    
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512"><!--! Font Awesome Free 7.1.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2025 Fonticons, Inc.--><path d="M173.9 397.4c0 2-2.3 3.6-5.2 3.6-3.3.3-5.6-1.3-5.6-3.6 0-2 2.3-3.6 5.2-3.6 3-.3 5.6 1.3 5.6 3.6m-31.1-4.5c-.7 2 1.3 4.3 4.3 4.9 2.6 1 5.6 0 6.2-2s-1.3-4.3-4.3-5.2c-2.6-.7-5.5.3-6.2 2.3m44.2-1.7c-2.9.7-4.9 2.6-4.6 4.9.3 2 2.9 3.3 5.9 2.6 2.9-.7 4.9-2.6 4.6-4.6-.3-1.9-3-3.2-5.9-2.9M252.8 8C114.1 8 8 113.3 8 252c0 110.9 69.8 205.8 169.5 239.2 12.8 2.3 17.3-5.6 17.3-12.1 0-6.2-.3-40.4-.3-61.4 0 0-70 15-84.7-29.8 0 0-11.4-29.1-27.8-36.6 0 0-22.9-15.7 1.6-15.4 0 0 24.9 2 38.6 25.8 21.9 38.6 58.6 27.5 72.9 20.9 2.3-16 8.8-27.1 16-33.7-55.9-6.2-112.3-14.3-112.3-110.5 0-27.5 7.6-41.3 23.6-58.9-2.6-6.5-11.1-33.3 2.6-67.9 20.9-6.5 69 27 69 27 20-5.6 41.5-8.5 62.8-8.5s42.8 2.9 62.8 8.5c0 0 48.1-33.6 69-27 13.7 34.7 5.2 61.4 2.6 67.9 16 17.7 25.8 31.5 25.8 58.9 0 96.5-58.9 104.2-114.8 110.5 9.2 7.9 17 22.9 17 46.4 0 33.7-.3 75.4-.3 83.6 0 6.5 4.6 14.4 17.3 12.1C436.2 457.8 504 362.9 504 252 504 113.3 391.5 8 252.8 8M105.2 352.9c-1.3 1-1 3.3.7 5.2 1.6 1.6 3.9 2.3 5.2 1 1.3-1 1-3.3-.7-5.2-1.6-1.6-3.9-2.3-5.2-1m-10.8-8.1c-.7 1.3.3 2.9 2.3 3.9 1.6 1 3.6.7 4.3-.7.7-1.3-.3-2.9-2.3-3.9-2-.6-3.6-.3-4.3.7m32.4 35.6c-1.6 1.3-1 4.3 1.3 6.2 2.3 2.3 5.2 2.6 6.5 1 1.3-1.3.7-4.3-1.3-6.2-2.2-2.3-5.2-2.6-6.5-1m-11.4-14.7c-1.6 1-1.6 3.6 0 5.9s4.3 3.3 5.6 2.3c1.6-1.3 1.6-3.9 0-6.2-1.4-2.3-4-3.3-5.6-2"/></svg>
+  </div>
+  <div class="md-source__repository">
+    saichand/vlsi-notes
+  </div>
+</a>
+    </div>
+  
+  <ul class="md-nav__list" data-md-scrollfix>
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../.." class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Home
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+    
+    
+      
+      
+        
+      
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+          
+        
+        <input class="md-nav__toggle md-toggle md-toggle--indeterminate" type="checkbox" id="__nav_2" >
+        
+          
+          <label class="md-nav__link" for="__nav_2" id="__nav_2_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Linux & Shell Scripting
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_2_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_2">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    Linux & Shell Scripting
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../modules/linux-shell-scripting/index.md" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Overview
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../modules/linux-shell-scripting/01-ubuntu-installation-virtualbox.md" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    01. Ubuntu Installation & VirtualBox
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../modules/linux-shell-scripting/02-architecture-startup-shutdown.md" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    02. Architecture & Boot Sequence
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../modules/linux-shell-scripting/03-filesystem-hierarchy-inodes.md" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    03. Filesystem Hierarchy & Inodes
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../modules/linux-shell-scripting/04-core-commands.md" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    04. Core Commands & File Management
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../modules/linux-shell-scripting/05-permissions-acls.md" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    05. Permissions, Ownership & ACLs
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../modules/linux-shell-scripting/06-text-processing.md" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    06. Text Processing & RegEx
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../modules/linux-shell-scripting/07-processes-scheduling.md" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    07. Processes, Signals & Crontab
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../modules/linux-shell-scripting/08-networking-diagnostics.md" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    08. Networking & Remote Access
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../modules/linux-shell-scripting/09-shell-scripting.md" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    09. Bash Shell Scripting
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+    
+  
+  
+  
+    
+    
+    
+    
+      
+        
+        
+      
+      
+        
+      
+    
+    
+    <li class="md-nav__item md-nav__item--active md-nav__item--section md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_3" checked>
+        
+          
+          <label class="md-nav__link" for="__nav_3" id="__nav_3_label" tabindex="">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Assignments & Self-Testing
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_3_label" aria-expanded="true">
+          <label class="md-nav__title" for="__nav_3">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    Assignments & Self-Testing
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Hub Overview
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+    
+  
+  
+  
+    <li class="md-nav__item md-nav__item--active">
+      
+      <input class="md-nav__toggle md-toggle" type="checkbox" id="__toc">
+      
+      
+        
+      
+      
+        <label class="md-nav__link md-nav__link--active" for="__toc">
+          
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Assignment 01 - Basics & Permissions
+  
+
+    
+  </span>
+  
+  
+
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <a href="./" class="md-nav__link md-nav__link--active">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Assignment 01 - Basics & Permissions
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+      
+        
+
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#question-1-which-command-is-used-to-display-both-the-numeric-user-id-uid-primary-group-id-gid-and-all-supplementary-groups-of-the-currently-logged-in-user" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Question 1: Which command is used to display both the numeric User ID (UID), primary Group ID (GID), and all supplementary groups of the currently logged-in user?
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#question-2-which-command-and-option-creates-a-3-level-nested-directory-structure-mydirsubdir1subdir2-in-a-single-command-without-failing-if-parent-directories-do-not-exist" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Question 2: Which command and option creates a 3-level nested directory structure 'mydir/Subdir1/Subdir2' in a single command without failing if parent directories do not exist?
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#question-3-to-modify-the-permissions-of-a-file-ctest-such-that-the-user-has-read-write-and-execute-rwx-the-group-has-read-and-execute-r-x-and-others-have-no-permissions-which-command-is-correct" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Question 3: To modify the permissions of a file 'ctest' such that the User has Read, Write, and Execute (rwx), the Group has Read and Execute (r-x), and Others have No permissions (---), which command is correct?
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#question-4-which-command-changes-both-the-owner-user-to-saichand-and-the-owning-group-to-vlsidevs-for-the-file-topv-in-a-single-command" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Question 4: Which command changes both the owner user to 'saichand' and the owning group to 'vlsidevs' for the file 'top.v' in a single command?
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#question-5-what-is-the-difference-between-running-cd-and-cd-in-a-bash-terminal" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Question 5: What is the difference between running 'cd ~' and 'cd -' in a Bash terminal?
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#question-6-which-command-lists-all-files-including-hidden-files-sorted-with-the-most-recently-modified-files-at-the-bottom-of-the-terminal-output" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Question 6: Which command lists all files including hidden files, sorted with the most recently modified files at the bottom of the terminal output?
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#question-7-how-do-you-view-section-1-of-the-man-page-for-the-passwd-user-command-rather-than-section-5-for-the-etcpasswd-file-format" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Question 7: How do you view section 1 of the man page for the 'passwd' user command rather than section 5 for the '/etc/passwd' file format?
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#question-8-which-command-creates-an-empty-file-named-simulationlog-if-it-does-not-exist-or-updates-its-accessmodification-timestamps-if-it-already-exists" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Question 8: Which command creates an empty file named 'simulation.log' if it does not exist, or updates its access/modification timestamps if it already exists?
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#question-9-when-moving-a-directory-mydir-into-a-new-directory-mydir1-using-mv-mydir-mydir1-what-happens-if-mydir1-already-exists-as-a-directory" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Question 9: When moving a directory 'mydir' into a new directory 'mydir1' using 'mv mydir mydir1', what happens if 'mydir1' already exists as a directory?
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#question-10-which-symbolic-command-grants-execute-permission-to-the-user-removes-write-permission-from-group-and-assigns-read-only-permission-to-others-for-file-scriptsh" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Question 10: Which symbolic command grants execute permission to the User, removes write permission from Group, and assigns read-only permission to Others for file 'script.sh'?
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#question-11-which-command-removes-a-non-empty-directory-old_build-and-all-of-its-contents-without-prompting-for-confirmation" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Question 11: Which command removes a non-empty directory 'old_build' and all of its contents without prompting for confirmation?
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#question-12-what-is-the-result-of-executing-chmod-644-designv-on-an-rtl-source-file" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Question 12: What is the result of executing 'chmod 644 design.v' on an RTL source file?
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#question-13-which-command-displays-the-manual-page-summary-description-for-a-keyword-equivalent-to-man-k" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Question 13: Which command displays the manual page summary description for a keyword, equivalent to 'man -k'?
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#question-14-if-a-user-attempts-to-execute-a-shell-script-testsh-with-permissions-rw-r-r-what-error-is-returned-by-the-shell" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Question 14: If a user attempts to execute a shell script 'test.sh' with permissions '-rw-r--r--', what error is returned by the shell?
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#question-15-which-command-creates-a-hard-link-named-link_topv-pointing-to-topv" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Question 15: Which command creates a hard link named 'link_top.v' pointing to 'top.v'?
+      
+    </span>
+  </a>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../assignment-02/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Assignment 02 - Text Filters & Search
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../assignment-03/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Assignment 03 - Users, ACLs & Crontab
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../assignment-04/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Assignment 04 - Networking & Env
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../assignment-05/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Assignment 05 - Shell Scripting Labs
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../assignment-06/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Assignment 06 - 100 Linux MCQs
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+    
+    
+      
+      
+        
+      
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+          
+        
+        <input class="md-nav__toggle md-toggle md-toggle--indeterminate" type="checkbox" id="__nav_4" >
+        
+          
+          <label class="md-nav__link" for="__nav_4" id="__nav_4_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Curriculum Modules
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_4_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_4">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    Curriculum Modules
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../modules/digital-design/index.md" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Digital Design
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../modules/programming-c-cpp/index.md" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    C & C++ Programming
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../modules/verilog-hdl/index.md" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Verilog HDL
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../modules/hdl-simulation-synthesis/index.md" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    HDL Simulation & Synthesis
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../modules/cmos-vlsi-devices/index.md" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    CMOS VLSI Devices
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../modules/asic-backend-physical-design/index.md" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    ASIC Physical Design
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../modules/systemverilog/index.md" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    SystemVerilog
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../modules/uvm-verification/index.md" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    UVM Verification
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+  </ul>
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+            
+              
+              <div class="md-sidebar md-sidebar--secondary" data-md-component="sidebar" data-md-type="toc" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#question-1-which-command-is-used-to-display-both-the-numeric-user-id-uid-primary-group-id-gid-and-all-supplementary-groups-of-the-currently-logged-in-user" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Question 1: Which command is used to display both the numeric User ID (UID), primary Group ID (GID), and all supplementary groups of the currently logged-in user?
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#question-2-which-command-and-option-creates-a-3-level-nested-directory-structure-mydirsubdir1subdir2-in-a-single-command-without-failing-if-parent-directories-do-not-exist" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Question 2: Which command and option creates a 3-level nested directory structure 'mydir/Subdir1/Subdir2' in a single command without failing if parent directories do not exist?
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#question-3-to-modify-the-permissions-of-a-file-ctest-such-that-the-user-has-read-write-and-execute-rwx-the-group-has-read-and-execute-r-x-and-others-have-no-permissions-which-command-is-correct" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Question 3: To modify the permissions of a file 'ctest' such that the User has Read, Write, and Execute (rwx), the Group has Read and Execute (r-x), and Others have No permissions (---), which command is correct?
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#question-4-which-command-changes-both-the-owner-user-to-saichand-and-the-owning-group-to-vlsidevs-for-the-file-topv-in-a-single-command" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Question 4: Which command changes both the owner user to 'saichand' and the owning group to 'vlsidevs' for the file 'top.v' in a single command?
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#question-5-what-is-the-difference-between-running-cd-and-cd-in-a-bash-terminal" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Question 5: What is the difference between running 'cd ~' and 'cd -' in a Bash terminal?
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#question-6-which-command-lists-all-files-including-hidden-files-sorted-with-the-most-recently-modified-files-at-the-bottom-of-the-terminal-output" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Question 6: Which command lists all files including hidden files, sorted with the most recently modified files at the bottom of the terminal output?
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#question-7-how-do-you-view-section-1-of-the-man-page-for-the-passwd-user-command-rather-than-section-5-for-the-etcpasswd-file-format" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Question 7: How do you view section 1 of the man page for the 'passwd' user command rather than section 5 for the '/etc/passwd' file format?
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#question-8-which-command-creates-an-empty-file-named-simulationlog-if-it-does-not-exist-or-updates-its-accessmodification-timestamps-if-it-already-exists" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Question 8: Which command creates an empty file named 'simulation.log' if it does not exist, or updates its access/modification timestamps if it already exists?
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#question-9-when-moving-a-directory-mydir-into-a-new-directory-mydir1-using-mv-mydir-mydir1-what-happens-if-mydir1-already-exists-as-a-directory" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Question 9: When moving a directory 'mydir' into a new directory 'mydir1' using 'mv mydir mydir1', what happens if 'mydir1' already exists as a directory?
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#question-10-which-symbolic-command-grants-execute-permission-to-the-user-removes-write-permission-from-group-and-assigns-read-only-permission-to-others-for-file-scriptsh" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Question 10: Which symbolic command grants execute permission to the User, removes write permission from Group, and assigns read-only permission to Others for file 'script.sh'?
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#question-11-which-command-removes-a-non-empty-directory-old_build-and-all-of-its-contents-without-prompting-for-confirmation" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Question 11: Which command removes a non-empty directory 'old_build' and all of its contents without prompting for confirmation?
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#question-12-what-is-the-result-of-executing-chmod-644-designv-on-an-rtl-source-file" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Question 12: What is the result of executing 'chmod 644 design.v' on an RTL source file?
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#question-13-which-command-displays-the-manual-page-summary-description-for-a-keyword-equivalent-to-man-k" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Question 13: Which command displays the manual page summary description for a keyword, equivalent to 'man -k'?
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#question-14-if-a-user-attempts-to-execute-a-shell-script-testsh-with-permissions-rw-r-r-what-error-is-returned-by-the-shell" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Question 14: If a user attempts to execute a shell script 'test.sh' with permissions '-rw-r--r--', what error is returned by the shell?
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#question-15-which-command-creates-a-hard-link-named-link_topv-pointing-to-topv" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Question 15: Which command creates a hard link named 'link_top.v' pointing to 'top.v'?
+      
+    </span>
+  </a>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+          
+          
+            <div class="md-content" data-md-component="content">
+              
+              <article class="md-content__inner md-typeset">
+                
+                  
+
+
+
+<h1 id="assignment-01-linux-basics-directory-operations-permissions">Assignment 01: Linux Basics, Directory Operations &amp; Permissions<a class="headerlink" href="#assignment-01-linux-basics-directory-operations-permissions" title="Permanent link">&para;</a></h1>
+<p>Comprehensive self-testing question bank covering User/Group identification (<code>id</code>, <code>whoami</code>), directory tree navigation (<code>pwd</code>, <code>cd</code>, <code>mkdir -p</code>), file inspection, octal/symbolic permissions (<code>chmod</code>), ownership (<code>chown</code>, <code>chgrp</code>), and manual pages (<code>man</code>).</p>
+<div class="admonition tip">
+<p class="admonition-title">Interactive Self-Study Mode</p>
+<p>Attempt each question in your terminal or mentally before expanding the solution block to review the detailed four-option technical breakdown.</p>
+</div>
+<hr />
+<h3 id="question-1-which-command-is-used-to-display-both-the-numeric-user-id-uid-primary-group-id-gid-and-all-supplementary-groups-of-the-currently-logged-in-user">Question 1: Which command is used to display both the numeric User ID (UID), primary Group ID (GID), and all supplementary groups of the currently logged-in user?<a class="headerlink" href="#question-1-which-command-is-used-to-display-both-the-numeric-user-id-uid-primary-group-id-gid-and-all-supplementary-groups-of-the-currently-logged-in-user" title="Permanent link">&para;</a></h3>
+<ul>
+<li><strong>(A)</strong> whoami</li>
+<li><strong>(B)</strong> id</li>
+<li><strong>(C)</strong> groups</li>
+<li><strong>(D)</strong> uname -u</li>
+</ul>
+<details class="success">
+<summary>Answer &amp; Detailed Technical Explanation (Click to Expand)</summary>
+<p><strong>Correct Answer:</strong> <img alt="✅" class="twemoji" src="https://cdn.jsdelivr.net/gh/jdecked/twemoji@16.0.1/assets/svg/2705.svg" title=":white_check_mark:" /> <strong>(B) id</strong></p>
+<p><strong>Option-by-Option Breakdown:</strong>
+- <strong>(A)</strong> <img alt="❌" class="twemoji" src="https://cdn.jsdelivr.net/gh/jdecked/twemoji@16.0.1/assets/svg/274c.svg" title=":x:" /> Displays only the effective username string (e.g., 'saichand'), without numeric UID, GID, or group lists.
+- <strong>(B)</strong> <img alt="✅" class="twemoji" src="https://cdn.jsdelivr.net/gh/jdecked/twemoji@16.0.1/assets/svg/2705.svg" title=":white_check_mark:" /> Correct. 'id' outputs the complete identity string including numeric UID, GID, and all associated supplementary groups.
+- <strong>(C)</strong> <img alt="❌" class="twemoji" src="https://cdn.jsdelivr.net/gh/jdecked/twemoji@16.0.1/assets/svg/274c.svg" title=":x:" /> Displays only group names associated with the user, omitting the numeric UID, GID, and username.
+- <strong>(D)</strong> <img alt="❌" class="twemoji" src="https://cdn.jsdelivr.net/gh/jdecked/twemoji@16.0.1/assets/svg/274c.svg" title=":x:" /> 'uname' reports kernel and OS architecture information; the '-u' flag is invalid.</p>
+</details>
+<hr />
+<h3 id="question-2-which-command-and-option-creates-a-3-level-nested-directory-structure-mydirsubdir1subdir2-in-a-single-command-without-failing-if-parent-directories-do-not-exist">Question 2: Which command and option creates a 3-level nested directory structure 'mydir/Subdir1/Subdir2' in a single command without failing if parent directories do not exist?<a class="headerlink" href="#question-2-which-command-and-option-creates-a-3-level-nested-directory-structure-mydirsubdir1subdir2-in-a-single-command-without-failing-if-parent-directories-do-not-exist" title="Permanent link">&para;</a></h3>
+<ul>
+<li><strong>(A)</strong> mkdir -r mydir/Subdir1/Subdir2</li>
+<li><strong>(B)</strong> mkdir -p mydir/Subdir1/Subdir2</li>
+<li><strong>(C)</strong> mkdir -f mydir/Subdir1/Subdir2</li>
+<li><strong>(D)</strong> md -all mydir/Subdir1/Subdir2</li>
+</ul>
+<details class="success">
+<summary>Answer &amp; Detailed Technical Explanation (Click to Expand)</summary>
+<p><strong>Correct Answer:</strong> <img alt="✅" class="twemoji" src="https://cdn.jsdelivr.net/gh/jdecked/twemoji@16.0.1/assets/svg/2705.svg" title=":white_check_mark:" /> <strong>(B) mkdir -p mydir/Subdir1/Subdir2</strong></p>
+<p><strong>Option-by-Option Breakdown:</strong>
+- <strong>(A)</strong> <img alt="❌" class="twemoji" src="https://cdn.jsdelivr.net/gh/jdecked/twemoji@16.0.1/assets/svg/274c.svg" title=":x:" /> '-r' is used for recursive operations in commands like 'rm' and 'cp', but is not a valid parent-creation option in 'mkdir'.
+- <strong>(B)</strong> <img alt="✅" class="twemoji" src="https://cdn.jsdelivr.net/gh/jdecked/twemoji@16.0.1/assets/svg/2705.svg" title=":white_check_mark:" /> Correct. The '-p' (parents) flag creates intermediate parent directories as needed and does not return an error if directories already exist.
+- <strong>(C)</strong> <img alt="❌" class="twemoji" src="https://cdn.jsdelivr.net/gh/jdecked/twemoji@16.0.1/assets/svg/274c.svg" title=":x:" /> '-f' (force) is not a valid flag for 'mkdir'.
+- <strong>(D)</strong> <img alt="❌" class="twemoji" src="https://cdn.jsdelivr.net/gh/jdecked/twemoji@16.0.1/assets/svg/274c.svg" title=":x:" /> 'md' is a DOS/Windows command; Linux uses 'mkdir'.</p>
+</details>
+<hr />
+<h3 id="question-3-to-modify-the-permissions-of-a-file-ctest-such-that-the-user-has-read-write-and-execute-rwx-the-group-has-read-and-execute-r-x-and-others-have-no-permissions-which-command-is-correct">Question 3: To modify the permissions of a file 'ctest' such that the User has Read, Write, and Execute (rwx), the Group has Read and Execute (r-x), and Others have No permissions (---), which command is correct?<a class="headerlink" href="#question-3-to-modify-the-permissions-of-a-file-ctest-such-that-the-user-has-read-write-and-execute-rwx-the-group-has-read-and-execute-r-x-and-others-have-no-permissions-which-command-is-correct" title="Permanent link">&para;</a></h3>
+<ul>
+<li><strong>(A)</strong> chmod 750 ctest</li>
+<li><strong>(B)</strong> chmod 755 ctest</li>
+<li><strong>(C)</strong> chmod 640 ctest</li>
+<li><strong>(D)</strong> chmod 700 ctest</li>
+</ul>
+<details class="success">
+<summary>Answer &amp; Detailed Technical Explanation (Click to Expand)</summary>
+<p><strong>Correct Answer:</strong> <img alt="✅" class="twemoji" src="https://cdn.jsdelivr.net/gh/jdecked/twemoji@16.0.1/assets/svg/2705.svg" title=":white_check_mark:" /> <strong>(A) chmod 750 ctest</strong></p>
+<p><strong>Option-by-Option Breakdown:</strong>
+- <strong>(A)</strong> <img alt="✅" class="twemoji" src="https://cdn.jsdelivr.net/gh/jdecked/twemoji@16.0.1/assets/svg/2705.svg" title=":white_check_mark:" /> Correct. In octal: User rwx (4+2+1=7), Group r-x (4+0+1=5), Others --- (0+0+0=0) gives 750.
+- <strong>(B)</strong> <img alt="❌" class="twemoji" src="https://cdn.jsdelivr.net/gh/jdecked/twemoji@16.0.1/assets/svg/274c.svg" title=":x:" /> 755 gives Others read and execute (r-x) permissions instead of no permissions (---).
+- <strong>(C)</strong> <img alt="❌" class="twemoji" src="https://cdn.jsdelivr.net/gh/jdecked/twemoji@16.0.1/assets/svg/274c.svg" title=":x:" /> 640 sets User to rw- (no execute) and Group to r-- (no execute).
+- <strong>(D)</strong> <img alt="❌" class="twemoji" src="https://cdn.jsdelivr.net/gh/jdecked/twemoji@16.0.1/assets/svg/274c.svg" title=":x:" /> 700 sets Group to --- (no permissions), whereas Group requires r-x.</p>
+</details>
+<hr />
+<h3 id="question-4-which-command-changes-both-the-owner-user-to-saichand-and-the-owning-group-to-vlsidevs-for-the-file-topv-in-a-single-command">Question 4: Which command changes both the owner user to 'saichand' and the owning group to 'vlsidevs' for the file 'top.v' in a single command?<a class="headerlink" href="#question-4-which-command-changes-both-the-owner-user-to-saichand-and-the-owning-group-to-vlsidevs-for-the-file-topv-in-a-single-command" title="Permanent link">&para;</a></h3>
+<ul>
+<li><strong>(A)</strong> chgrp saichand:vlsidevs top.v</li>
+<li><strong>(B)</strong> chown saichand.vlsidevs top.v</li>
+<li><strong>(C)</strong> chown saichand:vlsidevs top.v</li>
+<li><strong>(D)</strong> chmod saichand:vlsidevs top.v</li>
+</ul>
+<details class="success">
+<summary>Answer &amp; Detailed Technical Explanation (Click to Expand)</summary>
+<p><strong>Correct Answer:</strong> <img alt="✅" class="twemoji" src="https://cdn.jsdelivr.net/gh/jdecked/twemoji@16.0.1/assets/svg/2705.svg" title=":white_check_mark:" /> <strong>(C) chown saichand:vlsidevs top.v</strong></p>
+<p><strong>Option-by-Option Breakdown:</strong>
+- <strong>(A)</strong> <img alt="❌" class="twemoji" src="https://cdn.jsdelivr.net/gh/jdecked/twemoji@16.0.1/assets/svg/274c.svg" title=":x:" /> 'chgrp' modifies group ownership only and does not accept user:group syntax.
+- <strong>(B)</strong> <img alt="❌" class="twemoji" src="https://cdn.jsdelivr.net/gh/jdecked/twemoji@16.0.1/assets/svg/274c.svg" title=":x:" /> While dot syntax was historically supported, colon syntax 'user:group' is the POSIX standard across modern Linux.
+- <strong>(C)</strong> <img alt="✅" class="twemoji" src="https://cdn.jsdelivr.net/gh/jdecked/twemoji@16.0.1/assets/svg/2705.svg" title=":white_check_mark:" /> Correct. 'chown user:group filename' updates both the user owner and group owner atomically.
+- <strong>(D)</strong> <img alt="❌" class="twemoji" src="https://cdn.jsdelivr.net/gh/jdecked/twemoji@16.0.1/assets/svg/274c.svg" title=":x:" /> 'chmod' alters permission mode bits (read/write/execute), not file ownership.</p>
+</details>
+<hr />
+<h3 id="question-5-what-is-the-difference-between-running-cd-and-cd-in-a-bash-terminal">Question 5: What is the difference between running 'cd ~' and 'cd -' in a Bash terminal?<a class="headerlink" href="#question-5-what-is-the-difference-between-running-cd-and-cd-in-a-bash-terminal" title="Permanent link">&para;</a></h3>
+<ul>
+<li><strong>(A)</strong> 'cd ~' goes to root directory '/', while 'cd -' goes to home directory.</li>
+<li><strong>(B)</strong> 'cd ~' goes to user home directory ($HOME), while 'cd -' switches to the previous working directory ($OLDPWD).</li>
+<li><strong>(C)</strong> 'cd ~' creates a temporary directory, while 'cd -' deletes the current directory.</li>
+<li><strong>(D)</strong> 'cd ~' and 'cd -' are identical aliases for navigating up one directory level.</li>
+</ul>
+<details class="success">
+<summary>Answer &amp; Detailed Technical Explanation (Click to Expand)</summary>
+<p><strong>Correct Answer:</strong> <img alt="✅" class="twemoji" src="https://cdn.jsdelivr.net/gh/jdecked/twemoji@16.0.1/assets/svg/2705.svg" title=":white_check_mark:" /> <strong>(B) 'cd ~' goes to user home directory ($HOME), while 'cd -' switches to the previous working directory ($OLDPWD).</strong></p>
+<p><strong>Option-by-Option Breakdown:</strong>
+- <strong>(A)</strong> <img alt="❌" class="twemoji" src="https://cdn.jsdelivr.net/gh/jdecked/twemoji@16.0.1/assets/svg/274c.svg" title=":x:" /> Root directory is reached via 'cd /', not 'cd ~'.
+- <strong>(B)</strong> <img alt="✅" class="twemoji" src="https://cdn.jsdelivr.net/gh/jdecked/twemoji@16.0.1/assets/svg/2705.svg" title=":white_check_mark:" /> Correct. The tilde '~' expands to $HOME, while the hyphen '-' expands to the previous working directory stored in $OLDPWD.
+- <strong>(C)</strong> <img alt="❌" class="twemoji" src="https://cdn.jsdelivr.net/gh/jdecked/twemoji@16.0.1/assets/svg/274c.svg" title=":x:" /> Neither command creates or deletes directories.
+- <strong>(D)</strong> <img alt="❌" class="twemoji" src="https://cdn.jsdelivr.net/gh/jdecked/twemoji@16.0.1/assets/svg/274c.svg" title=":x:" /> Navigating up one level is performed using 'cd ..'.</p>
+</details>
+<hr />
+<h3 id="question-6-which-command-lists-all-files-including-hidden-files-sorted-with-the-most-recently-modified-files-at-the-bottom-of-the-terminal-output">Question 6: Which command lists all files including hidden files, sorted with the most recently modified files at the bottom of the terminal output?<a class="headerlink" href="#question-6-which-command-lists-all-files-including-hidden-files-sorted-with-the-most-recently-modified-files-at-the-bottom-of-the-terminal-output" title="Permanent link">&para;</a></h3>
+<ul>
+<li><strong>(A)</strong> ls -la</li>
+<li><strong>(B)</strong> ls -latr</li>
+<li><strong>(C)</strong> ls -lR</li>
+<li><strong>(D)</strong> ls -lhS</li>
+</ul>
+<details class="success">
+<summary>Answer &amp; Detailed Technical Explanation (Click to Expand)</summary>
+<p><strong>Correct Answer:</strong> <img alt="✅" class="twemoji" src="https://cdn.jsdelivr.net/gh/jdecked/twemoji@16.0.1/assets/svg/2705.svg" title=":white_check_mark:" /> <strong>(B) ls -latr</strong></p>
+<p><strong>Option-by-Option Breakdown:</strong>
+- <strong>(A)</strong> <img alt="❌" class="twemoji" src="https://cdn.jsdelivr.net/gh/jdecked/twemoji@16.0.1/assets/svg/274c.svg" title=":x:" /> 'ls -la' lists all files including hidden files, but sorts them alphabetically.
+- <strong>(B)</strong> <img alt="✅" class="twemoji" src="https://cdn.jsdelivr.net/gh/jdecked/twemoji@16.0.1/assets/svg/2705.svg" title=":white_check_mark:" /> Correct. '-l' (long format), '-a' (all/hidden), '-t' (sort by modification time), and '-r' (reverse order) puts newest files at the bottom.
+- <strong>(C)</strong> <img alt="❌" class="twemoji" src="https://cdn.jsdelivr.net/gh/jdecked/twemoji@16.0.1/assets/svg/274c.svg" title=":x:" /> 'ls -lR' lists directories recursively.
+- <strong>(D)</strong> <img alt="❌" class="twemoji" src="https://cdn.jsdelivr.net/gh/jdecked/twemoji@16.0.1/assets/svg/274c.svg" title=":x:" /> 'ls -lhS' sorts files by file size in descending order.</p>
+</details>
+<hr />
+<h3 id="question-7-how-do-you-view-section-1-of-the-man-page-for-the-passwd-user-command-rather-than-section-5-for-the-etcpasswd-file-format">Question 7: How do you view section 1 of the man page for the 'passwd' user command rather than section 5 for the '/etc/passwd' file format?<a class="headerlink" href="#question-7-how-do-you-view-section-1-of-the-man-page-for-the-passwd-user-command-rather-than-section-5-for-the-etcpasswd-file-format" title="Permanent link">&para;</a></h3>
+<ul>
+<li><strong>(A)</strong> man passwd</li>
+<li><strong>(B)</strong> man 1 passwd</li>
+<li><strong>(C)</strong> man 5 passwd</li>
+<li><strong>(D)</strong> man -a passwd</li>
+</ul>
+<details class="success">
+<summary>Answer &amp; Detailed Technical Explanation (Click to Expand)</summary>
+<p><strong>Correct Answer:</strong> <img alt="✅" class="twemoji" src="https://cdn.jsdelivr.net/gh/jdecked/twemoji@16.0.1/assets/svg/2705.svg" title=":white_check_mark:" /> <strong>(B) man 1 passwd</strong></p>
+<p><strong>Option-by-Option Breakdown:</strong>
+- <strong>(A)</strong> <img alt="❌" class="twemoji" src="https://cdn.jsdelivr.net/gh/jdecked/twemoji@16.0.1/assets/svg/274c.svg" title=":x:" /> Running 'man passwd' without a section number defaults to the first matching section, which may be ambiguous.
+- <strong>(B)</strong> <img alt="✅" class="twemoji" src="https://cdn.jsdelivr.net/gh/jdecked/twemoji@16.0.1/assets/svg/2705.svg" title=":white_check_mark:" /> Correct. 'man 1 passwd' explicitly requests Section 1 (User executable commands).
+- <strong>(C)</strong> <img alt="❌" class="twemoji" src="https://cdn.jsdelivr.net/gh/jdecked/twemoji@16.0.1/assets/svg/274c.svg" title=":x:" /> 'man 5 passwd' opens Section 5 (File formats and conventions, specifically /etc/passwd).
+- <strong>(D)</strong> <img alt="❌" class="twemoji" src="https://cdn.jsdelivr.net/gh/jdecked/twemoji@16.0.1/assets/svg/274c.svg" title=":x:" /> 'man -a passwd' displays all matching man sections in sequential order.</p>
+</details>
+<hr />
+<h3 id="question-8-which-command-creates-an-empty-file-named-simulationlog-if-it-does-not-exist-or-updates-its-accessmodification-timestamps-if-it-already-exists">Question 8: Which command creates an empty file named 'simulation.log' if it does not exist, or updates its access/modification timestamps if it already exists?<a class="headerlink" href="#question-8-which-command-creates-an-empty-file-named-simulationlog-if-it-does-not-exist-or-updates-its-accessmodification-timestamps-if-it-already-exists" title="Permanent link">&para;</a></h3>
+<ul>
+<li><strong>(A)</strong> make simulation.log</li>
+<li><strong>(B)</strong> create simulation.log</li>
+<li><strong>(C)</strong> touch simulation.log</li>
+<li><strong>(D)</strong> new simulation.log</li>
+</ul>
+<details class="success">
+<summary>Answer &amp; Detailed Technical Explanation (Click to Expand)</summary>
+<p><strong>Correct Answer:</strong> <img alt="✅" class="twemoji" src="https://cdn.jsdelivr.net/gh/jdecked/twemoji@16.0.1/assets/svg/2705.svg" title=":white_check_mark:" /> <strong>(C) touch simulation.log</strong></p>
+<p><strong>Option-by-Option Breakdown:</strong>
+- <strong>(A)</strong> <img alt="❌" class="twemoji" src="https://cdn.jsdelivr.net/gh/jdecked/twemoji@16.0.1/assets/svg/274c.svg" title=":x:" /> 'make' is a build automation tool that reads Makefiles, not a file creation utility.
+- <strong>(B)</strong> <img alt="❌" class="twemoji" src="https://cdn.jsdelivr.net/gh/jdecked/twemoji@16.0.1/assets/svg/274c.svg" title=":x:" /> 'create' is not a standard Linux command.
+- <strong>(C)</strong> <img alt="✅" class="twemoji" src="https://cdn.jsdelivr.net/gh/jdecked/twemoji@16.0.1/assets/svg/2705.svg" title=":white_check_mark:" /> Correct. 'touch' creates a 0-byte file if non-existent or updates inode timestamps if existing.
+- <strong>(D)</strong> <img alt="❌" class="twemoji" src="https://cdn.jsdelivr.net/gh/jdecked/twemoji@16.0.1/assets/svg/274c.svg" title=":x:" /> 'new' is not a valid Linux file utility.</p>
+</details>
+<hr />
+<h3 id="question-9-when-moving-a-directory-mydir-into-a-new-directory-mydir1-using-mv-mydir-mydir1-what-happens-if-mydir1-already-exists-as-a-directory">Question 9: When moving a directory 'mydir' into a new directory 'mydir1' using 'mv mydir mydir1', what happens if 'mydir1' already exists as a directory?<a class="headerlink" href="#question-9-when-moving-a-directory-mydir-into-a-new-directory-mydir1-using-mv-mydir-mydir1-what-happens-if-mydir1-already-exists-as-a-directory" title="Permanent link">&para;</a></h3>
+<ul>
+<li><strong>(A)</strong> The command fails with a directory overwrite error.</li>
+<li><strong>(B)</strong> 'mydir' is moved inside 'mydir1' as a subdirectory ('mydir1/mydir').</li>
+<li><strong>(C)</strong> 'mydir1' is deleted and replaced with 'mydir'.</li>
+<li><strong>(D)</strong> The contents of 'mydir' are merged with 'mydir1' and 'mydir' is deleted.</li>
+</ul>
+<details class="success">
+<summary>Answer &amp; Detailed Technical Explanation (Click to Expand)</summary>
+<p><strong>Correct Answer:</strong> <img alt="✅" class="twemoji" src="https://cdn.jsdelivr.net/gh/jdecked/twemoji@16.0.1/assets/svg/2705.svg" title=":white_check_mark:" /> <strong>(B) 'mydir' is moved inside 'mydir1' as a subdirectory ('mydir1/mydir').</strong></p>
+<p><strong>Option-by-Option Breakdown:</strong>
+- <strong>(A)</strong> <img alt="❌" class="twemoji" src="https://cdn.jsdelivr.net/gh/jdecked/twemoji@16.0.1/assets/svg/274c.svg" title=":x:" /> 'mv' does not error when moving into an existing target directory.
+- <strong>(B)</strong> <img alt="✅" class="twemoji" src="https://cdn.jsdelivr.net/gh/jdecked/twemoji@16.0.1/assets/svg/2705.svg" title=":white_check_mark:" /> Correct. If the destination is an existing directory, 'mv' places the source directory inside it.
+- <strong>(C)</strong> <img alt="❌" class="twemoji" src="https://cdn.jsdelivr.net/gh/jdecked/twemoji@16.0.1/assets/svg/274c.svg" title=":x:" /> 'mv' will not overwrite an existing non-empty directory with another directory.
+- <strong>(D)</strong> <img alt="❌" class="twemoji" src="https://cdn.jsdelivr.net/gh/jdecked/twemoji@16.0.1/assets/svg/274c.svg" title=":x:" /> Directory merging is performed using 'rsync' or 'cp -r', not standard 'mv'.</p>
+</details>
+<hr />
+<h3 id="question-10-which-symbolic-command-grants-execute-permission-to-the-user-removes-write-permission-from-group-and-assigns-read-only-permission-to-others-for-file-scriptsh">Question 10: Which symbolic command grants execute permission to the User, removes write permission from Group, and assigns read-only permission to Others for file 'script.sh'?<a class="headerlink" href="#question-10-which-symbolic-command-grants-execute-permission-to-the-user-removes-write-permission-from-group-and-assigns-read-only-permission-to-others-for-file-scriptsh" title="Permanent link">&para;</a></h3>
+<ul>
+<li><strong>(A)</strong> chmod u+x,g-w,o=r script.sh</li>
+<li><strong>(B)</strong> chmod u+x;g-w;o=r script.sh</li>
+<li><strong>(C)</strong> chmod u=x,g=w,o=r script.sh</li>
+<li><strong>(D)</strong> chmod +x -w =r script.sh</li>
+</ul>
+<details class="success">
+<summary>Answer &amp; Detailed Technical Explanation (Click to Expand)</summary>
+<p><strong>Correct Answer:</strong> <img alt="✅" class="twemoji" src="https://cdn.jsdelivr.net/gh/jdecked/twemoji@16.0.1/assets/svg/2705.svg" title=":white_check_mark:" /> <strong>(A) chmod u+x,g-w,o=r script.sh</strong></p>
+<p><strong>Option-by-Option Breakdown:</strong>
+- <strong>(A)</strong> <img alt="✅" class="twemoji" src="https://cdn.jsdelivr.net/gh/jdecked/twemoji@16.0.1/assets/svg/2705.svg" title=":white_check_mark:" /> Correct. Comma-separated symbolic clauses 'u+x,g-w,o=r' apply the exact requested modifications.
+- <strong>(B)</strong> <img alt="❌" class="twemoji" src="https://cdn.jsdelivr.net/gh/jdecked/twemoji@16.0.1/assets/svg/274c.svg" title=":x:" /> Semicolons separate distinct shell commands rather than clauses within 'chmod'.
+- <strong>(C)</strong> <img alt="❌" class="twemoji" src="https://cdn.jsdelivr.net/gh/jdecked/twemoji@16.0.1/assets/svg/274c.svg" title=":x:" /> 'u=x' sets execute ONLY for user (revoking existing read/write), rather than adding execute (+x).
+- <strong>(D)</strong> <img alt="❌" class="twemoji" src="https://cdn.jsdelivr.net/gh/jdecked/twemoji@16.0.1/assets/svg/274c.svg" title=":x:" /> Missing category qualifiers (u/g/o) causes ambiguous application across umask.</p>
+</details>
+<hr />
+<h3 id="question-11-which-command-removes-a-non-empty-directory-old_build-and-all-of-its-contents-without-prompting-for-confirmation">Question 11: Which command removes a non-empty directory 'old_build' and all of its contents without prompting for confirmation?<a class="headerlink" href="#question-11-which-command-removes-a-non-empty-directory-old_build-and-all-of-its-contents-without-prompting-for-confirmation" title="Permanent link">&para;</a></h3>
+<ul>
+<li><strong>(A)</strong> rmdir old_build</li>
+<li><strong>(B)</strong> rm -r -f old_build</li>
+<li><strong>(C)</strong> del /s old_build</li>
+<li><strong>(D)</strong> erase -rf old_build</li>
+</ul>
+<details class="success">
+<summary>Answer &amp; Detailed Technical Explanation (Click to Expand)</summary>
+<p><strong>Correct Answer:</strong> <img alt="✅" class="twemoji" src="https://cdn.jsdelivr.net/gh/jdecked/twemoji@16.0.1/assets/svg/2705.svg" title=":white_check_mark:" /> <strong>(B) rm -r -f old_build</strong></p>
+<p><strong>Option-by-Option Breakdown:</strong>
+- <strong>(A)</strong> <img alt="❌" class="twemoji" src="https://cdn.jsdelivr.net/gh/jdecked/twemoji@16.0.1/assets/svg/274c.svg" title=":x:" /> 'rmdir' strictly removes empty directories; it fails with 'Directory not empty' on populated folders.
+- <strong>(B)</strong> <img alt="✅" class="twemoji" src="https://cdn.jsdelivr.net/gh/jdecked/twemoji@16.0.1/assets/svg/2705.svg" title=":white_check_mark:" /> Correct. 'rm -rf' recursively (-r) and forcefully (-f) removes files and subdirectories without interactive prompts.
+- <strong>(C)</strong> <img alt="❌" class="twemoji" src="https://cdn.jsdelivr.net/gh/jdecked/twemoji@16.0.1/assets/svg/274c.svg" title=":x:" /> 'del /s' is Windows cmd syntax.
+- <strong>(D)</strong> <img alt="❌" class="twemoji" src="https://cdn.jsdelivr.net/gh/jdecked/twemoji@16.0.1/assets/svg/274c.svg" title=":x:" /> 'erase' is not a standard Linux command.</p>
+</details>
+<hr />
+<h3 id="question-12-what-is-the-result-of-executing-chmod-644-designv-on-an-rtl-source-file">Question 12: What is the result of executing 'chmod 644 design.v' on an RTL source file?<a class="headerlink" href="#question-12-what-is-the-result-of-executing-chmod-644-designv-on-an-rtl-source-file" title="Permanent link">&para;</a></h3>
+<ul>
+<li><strong>(A)</strong> Owner: Read/Write, Group: Read-Only, Others: Read-Only</li>
+<li><strong>(B)</strong> Owner: Read/Write/Execute, Group: Read-Only, Others: None</li>
+<li><strong>(C)</strong> Owner: Read-Only, Group: Read-Only, Others: Read/Write</li>
+<li><strong>(D)</strong> Owner: Read/Write, Group: Read/Write, Others: Read/Write</li>
+</ul>
+<details class="success">
+<summary>Answer &amp; Detailed Technical Explanation (Click to Expand)</summary>
+<p><strong>Correct Answer:</strong> <img alt="✅" class="twemoji" src="https://cdn.jsdelivr.net/gh/jdecked/twemoji@16.0.1/assets/svg/2705.svg" title=":white_check_mark:" /> <strong>(A) Owner: Read/Write, Group: Read-Only, Others: Read-Only</strong></p>
+<p><strong>Option-by-Option Breakdown:</strong>
+- <strong>(A)</strong> <img alt="✅" class="twemoji" src="https://cdn.jsdelivr.net/gh/jdecked/twemoji@16.0.1/assets/svg/2705.svg" title=":white_check_mark:" /> Correct. 6 = 4+2 (rw-), 4 = 4+0 (r--), 4 = 4+0 (r--).
+- <strong>(B)</strong> <img alt="❌" class="twemoji" src="https://cdn.jsdelivr.net/gh/jdecked/twemoji@16.0.1/assets/svg/274c.svg" title=":x:" /> Read/Write/Execute is octal 7, not 6.
+- <strong>(C)</strong> <img alt="❌" class="twemoji" src="https://cdn.jsdelivr.net/gh/jdecked/twemoji@16.0.1/assets/svg/274c.svg" title=":x:" /> Read-Only across owner is octal 446, not 644.
+- <strong>(D)</strong> <img alt="❌" class="twemoji" src="https://cdn.jsdelivr.net/gh/jdecked/twemoji@16.0.1/assets/svg/274c.svg" title=":x:" /> Read/Write across all categories is octal 666.</p>
+</details>
+<hr />
+<h3 id="question-13-which-command-displays-the-manual-page-summary-description-for-a-keyword-equivalent-to-man-k">Question 13: Which command displays the manual page summary description for a keyword, equivalent to 'man -k'?<a class="headerlink" href="#question-13-which-command-displays-the-manual-page-summary-description-for-a-keyword-equivalent-to-man-k" title="Permanent link">&para;</a></h3>
+<ul>
+<li><strong>(A)</strong> whatis</li>
+<li><strong>(B)</strong> apropos</li>
+<li><strong>(C)</strong> whereis</li>
+<li><strong>(D)</strong> which</li>
+</ul>
+<details class="success">
+<summary>Answer &amp; Detailed Technical Explanation (Click to Expand)</summary>
+<p><strong>Correct Answer:</strong> <img alt="✅" class="twemoji" src="https://cdn.jsdelivr.net/gh/jdecked/twemoji@16.0.1/assets/svg/2705.svg" title=":white_check_mark:" /> <strong>(B) apropos</strong></p>
+<p><strong>Option-by-Option Breakdown:</strong>
+- <strong>(A)</strong> <img alt="❌" class="twemoji" src="https://cdn.jsdelivr.net/gh/jdecked/twemoji@16.0.1/assets/svg/274c.svg" title=":x:" /> 'whatis' searches for complete exact command names in the whatis database, equivalent to 'man -f'.
+- <strong>(B)</strong> <img alt="✅" class="twemoji" src="https://cdn.jsdelivr.net/gh/jdecked/twemoji@16.0.1/assets/svg/2705.svg" title=":white_check_mark:" /> Correct. 'apropos keyword' searches description strings across all man pages, identical to 'man -k keyword'.
+- <strong>(C)</strong> <img alt="❌" class="twemoji" src="https://cdn.jsdelivr.net/gh/jdecked/twemoji@16.0.1/assets/svg/274c.svg" title=":x:" /> 'whereis' locates binary, source, and man page file paths on disk.
+- <strong>(D)</strong> <img alt="❌" class="twemoji" src="https://cdn.jsdelivr.net/gh/jdecked/twemoji@16.0.1/assets/svg/274c.svg" title=":x:" /> 'which' locates executable binaries in the user's $PATH.</p>
+</details>
+<hr />
+<h3 id="question-14-if-a-user-attempts-to-execute-a-shell-script-testsh-with-permissions-rw-r-r-what-error-is-returned-by-the-shell">Question 14: If a user attempts to execute a shell script 'test.sh' with permissions '-rw-r--r--', what error is returned by the shell?<a class="headerlink" href="#question-14-if-a-user-attempts-to-execute-a-shell-script-testsh-with-permissions-rw-r-r-what-error-is-returned-by-the-shell" title="Permanent link">&para;</a></h3>
+<ul>
+<li><strong>(A)</strong> Segmentation fault</li>
+<li><strong>(B)</strong> Permission denied</li>
+<li><strong>(C)</strong> Command not found</li>
+<li><strong>(D)</strong> Bad interpreter error</li>
+</ul>
+<details class="success">
+<summary>Answer &amp; Detailed Technical Explanation (Click to Expand)</summary>
+<p><strong>Correct Answer:</strong> <img alt="✅" class="twemoji" src="https://cdn.jsdelivr.net/gh/jdecked/twemoji@16.0.1/assets/svg/2705.svg" title=":white_check_mark:" /> <strong>(B) Permission denied</strong></p>
+<p><strong>Option-by-Option Breakdown:</strong>
+- <strong>(A)</strong> <img alt="❌" class="twemoji" src="https://cdn.jsdelivr.net/gh/jdecked/twemoji@16.0.1/assets/svg/274c.svg" title=":x:" /> Segmentation fault indicates invalid memory access by a compiled binary.
+- <strong>(B)</strong> <img alt="✅" class="twemoji" src="https://cdn.jsdelivr.net/gh/jdecked/twemoji@16.0.1/assets/svg/2705.svg" title=":white_check_mark:" /> Correct. The file lacks the execute bit ('x') for the executing user, triggering a 'Permission denied' error.
+- <strong>(C)</strong> <img alt="❌" class="twemoji" src="https://cdn.jsdelivr.net/gh/jdecked/twemoji@16.0.1/assets/svg/274c.svg" title=":x:" /> 'Command not found' occurs when an executable is not in $PATH or the specified relative path is wrong.
+- <strong>(D)</strong> <img alt="❌" class="twemoji" src="https://cdn.jsdelivr.net/gh/jdecked/twemoji@16.0.1/assets/svg/274c.svg" title=":x:" /> 'Bad interpreter error' occurs when the shebang line points to a non-existent binary.</p>
+</details>
+<hr />
+<h3 id="question-15-which-command-creates-a-hard-link-named-link_topv-pointing-to-topv">Question 15: Which command creates a hard link named 'link_top.v' pointing to 'top.v'?<a class="headerlink" href="#question-15-which-command-creates-a-hard-link-named-link_topv-pointing-to-topv" title="Permanent link">&para;</a></h3>
+<ul>
+<li><strong>(A)</strong> ln -s top.v link_top.v</li>
+<li><strong>(B)</strong> ln top.v link_top.v</li>
+<li><strong>(C)</strong> link -h top.v link_top.v</li>
+<li><strong>(D)</strong> cp -l top.v link_top.v</li>
+</ul>
+<details class="success">
+<summary>Answer &amp; Detailed Technical Explanation (Click to Expand)</summary>
+<p><strong>Correct Answer:</strong> <img alt="✅" class="twemoji" src="https://cdn.jsdelivr.net/gh/jdecked/twemoji@16.0.1/assets/svg/2705.svg" title=":white_check_mark:" /> <strong>(B) ln top.v link_top.v</strong></p>
+<p><strong>Option-by-Option Breakdown:</strong>
+- <strong>(A)</strong> <img alt="❌" class="twemoji" src="https://cdn.jsdelivr.net/gh/jdecked/twemoji@16.0.1/assets/svg/274c.svg" title=":x:" /> '-s' creates a symbolic (soft) link, not a hard link.
+- <strong>(B)</strong> <img alt="✅" class="twemoji" src="https://cdn.jsdelivr.net/gh/jdecked/twemoji@16.0.1/assets/svg/2705.svg" title=":white_check_mark:" /> Correct. 'ln source target' creates a hard link by default sharing the exact same inode number.
+- <strong>(C)</strong> <img alt="❌" class="twemoji" src="https://cdn.jsdelivr.net/gh/jdecked/twemoji@16.0.1/assets/svg/274c.svg" title=":x:" /> 'link' takes exactly two arguments without flags.
+- <strong>(D)</strong> <img alt="❌" class="twemoji" src="https://cdn.jsdelivr.net/gh/jdecked/twemoji@16.0.1/assets/svg/274c.svg" title=":x:" /> While 'cp -l' can link instead of copying, standard 'ln' is the POSIX utility.</p>
+</details>
+<hr />
+
+
+
+
+
+
+
+
+
+
+
+
+                
+              </article>
+            </div>
+          
+          
+  <script>var tabs=__md_get("__tabs");if(Array.isArray(tabs))e:for(var set of document.querySelectorAll(".tabbed-set")){var labels=set.querySelector(".tabbed-labels");for(var tab of tabs)for(var label of labels.getElementsByTagName("label"))if(label.innerText.trim()===tab){var input=document.getElementById(label.htmlFor);input.checked=!0;continue e}}</script>
+
+<script>var target=document.getElementById(location.hash.slice(1));target&&target.name&&(target.checked=target.name.startsWith("__tabbed_"))</script>
+        </div>
+        
+          <button type="button" class="md-top md-icon" data-md-component="top" hidden>
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M13 20h-2V8l-5.5 5.5-1.42-1.42L12 4.16l7.92 7.92-1.42 1.42L13 8z"/></svg>
+  Back to top
+</button>
+        
+      </main>
+      
+        <footer class="md-footer">
+  
+  <div class="md-footer-meta md-typeset">
+    <div class="md-footer-meta__inner md-grid">
+      <div class="md-copyright">
+  
+  
+</div>
+      
+        
+<div class="md-social">
+  
+    
+    
+    
+    
+      
+      
+    
+    <a href="https://github.com/saichand" target="_blank" rel="noopener" title="github.com" class="md-social__link">
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512"><!--! Font Awesome Free 7.1.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2025 Fonticons, Inc.--><path d="M173.9 397.4c0 2-2.3 3.6-5.2 3.6-3.3.3-5.6-1.3-5.6-3.6 0-2 2.3-3.6 5.2-3.6 3-.3 5.6 1.3 5.6 3.6m-31.1-4.5c-.7 2 1.3 4.3 4.3 4.9 2.6 1 5.6 0 6.2-2s-1.3-4.3-4.3-5.2c-2.6-.7-5.5.3-6.2 2.3m44.2-1.7c-2.9.7-4.9 2.6-4.6 4.9.3 2 2.9 3.3 5.9 2.6 2.9-.7 4.9-2.6 4.6-4.6-.3-1.9-3-3.2-5.9-2.9M252.8 8C114.1 8 8 113.3 8 252c0 110.9 69.8 205.8 169.5 239.2 12.8 2.3 17.3-5.6 17.3-12.1 0-6.2-.3-40.4-.3-61.4 0 0-70 15-84.7-29.8 0 0-11.4-29.1-27.8-36.6 0 0-22.9-15.7 1.6-15.4 0 0 24.9 2 38.6 25.8 21.9 38.6 58.6 27.5 72.9 20.9 2.3-16 8.8-27.1 16-33.7-55.9-6.2-112.3-14.3-112.3-110.5 0-27.5 7.6-41.3 23.6-58.9-2.6-6.5-11.1-33.3 2.6-67.9 20.9-6.5 69 27 69 27 20-5.6 41.5-8.5 62.8-8.5s42.8 2.9 62.8 8.5c0 0 48.1-33.6 69-27 13.7 34.7 5.2 61.4 2.6 67.9 16 17.7 25.8 31.5 25.8 58.9 0 96.5-58.9 104.2-114.8 110.5 9.2 7.9 17 22.9 17 46.4 0 33.7-.3 75.4-.3 83.6 0 6.5 4.6 14.4 17.3 12.1C436.2 457.8 504 362.9 504 252 504 113.3 391.5 8 252.8 8M105.2 352.9c-1.3 1-1 3.3.7 5.2 1.6 1.6 3.9 2.3 5.2 1 1.3-1 1-3.3-.7-5.2-1.6-1.6-3.9-2.3-5.2-1m-10.8-8.1c-.7 1.3.3 2.9 2.3 3.9 1.6 1 3.6.7 4.3-.7.7-1.3-.3-2.9-2.3-3.9-2-.6-3.6-.3-4.3.7m32.4 35.6c-1.6 1.3-1 4.3 1.3 6.2 2.3 2.3 5.2 2.6 6.5 1 1.3-1.3.7-4.3-1.3-6.2-2.2-2.3-5.2-2.6-6.5-1m-11.4-14.7c-1.6 1-1.6 3.6 0 5.9s4.3 3.3 5.6 2.3c1.6-1.3 1.6-3.9 0-6.2-1.4-2.3-4-3.3-5.6-2"/></svg>
+    </a>
+  
+</div>
+      
+    </div>
+  </div>
+</footer>
+      
+    </div>
+    <div class="md-dialog" data-md-component="dialog">
+      <div class="md-dialog__inner md-typeset"></div>
+    </div>
+    
+    
+    
+      
+      
+      <script id="__config" type="application/json">{"annotate": null, "base": "../..", "features": ["navigation.tabs", "navigation.sections", "navigation.expand", "navigation.top", "navigation.tracking", "search.suggest", "search.highlight", "search.share", "content.code.copy", "content.code.annotate", "content.tabs.link"], "search": "../../assets/javascripts/workers/search.2c215733.min.js", "tags": null, "translations": {"clipboard.copied": "Copied to clipboard", "clipboard.copy": "Copy to clipboard", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.placeholder": "Type to start searching", "search.result.term.missing": "Missing", "select.version": "Select version"}, "version": null}</script>
+    
+    
+      <script src="../../assets/javascripts/bundle.d7400e89.min.js"></script>
+      
+        <script src="../../assets/js/progress_tracker.js"></script>
+      
+        <script src="https://plausible.io/js/plausible.js"></script>
+      
+    
+  </body>
+</html>

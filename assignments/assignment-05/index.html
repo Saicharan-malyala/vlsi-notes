@@ -1,0 +1,2314 @@
+
+<!doctype html>
+<html lang="en" class="no-js">
+  <head>
+    
+      <meta charset="utf-8">
+      <meta name="viewport" content="width=device-width,initial-scale=1">
+      
+        <meta name="description" content="Comprehensive, structured technical notes, lab manuals, assignments, and interview preparation for PGCP-VLSI.">
+      
+      
+        <meta name="author" content="Sai Chand">
+      
+      
+        <link rel="canonical" href="https://saichand.github.io/vlsi-notes/assignments/assignment-05/">
+      
+      
+        <link rel="prev" href="../assignment-04/">
+      
+      
+        <link rel="next" href="../assignment-06/">
+      
+      
+        
+      
+      
+      <link rel="icon" href="../../assets/images/favicon.png">
+      <meta name="generator" content="mkdocs-1.6.1, mkdocs-material-9.7.7">
+    
+    
+      
+        <title>Assignment 05 - Shell Scripting Labs - VLSI & Embedded Systems Notes</title>
+      
+    
+    
+      <link rel="stylesheet" href="../../assets/stylesheets/main.ec1eaa64.min.css">
+      
+        
+        <link rel="stylesheet" href="../../assets/stylesheets/palette.ab4e12ef.min.css">
+      
+      
+
+
+    
+    
+      
+    
+    
+      
+        
+        
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto:300,300i,400,400i,700,700i%7CRoboto+Mono:400,400i,700,700i&display=fallback">
+        <style>:root{--md-text-font:"Roboto";--md-code-font:"Roboto Mono"}</style>
+      
+    
+    
+      <link rel="stylesheet" href="../../assets/css/custom.css">
+    
+    <script>__md_scope=new URL("../..",location),__md_hash=e=>[...e].reduce(((e,_)=>(e<<5)-e+_.charCodeAt(0)),0),__md_get=(e,_=localStorage,t=__md_scope)=>JSON.parse(_.getItem(t.pathname+"."+e)),__md_set=(e,_,t=localStorage,a=__md_scope)=>{try{t.setItem(a.pathname+"."+e,JSON.stringify(_))}catch(e){}}</script>
+    
+      
+
+    
+    
+  </head>
+  
+  
+    
+    
+      
+    
+    
+    
+    
+    <body dir="ltr" data-md-color-scheme="default" data-md-color-primary="indigo" data-md-color-accent="cyan">
+  
+    
+    <input class="md-toggle" data-md-toggle="drawer" type="checkbox" id="__drawer" autocomplete="off">
+    <input class="md-toggle" data-md-toggle="search" type="checkbox" id="__search" autocomplete="off">
+    <label class="md-overlay" for="__drawer"></label>
+    <div data-md-component="skip">
+      
+        
+        <a href="#assignment-05-shell-scripting-automation-lab-problem-sets" class="md-skip">
+          Skip to content
+        </a>
+      
+    </div>
+    <div data-md-component="announce">
+      
+    </div>
+    
+    
+      
+
+<header class="md-header" data-md-component="header">
+  <nav class="md-header__inner md-grid" aria-label="Header">
+    <a href="../.." title="VLSI &amp; Embedded Systems Notes" class="md-header__button md-logo" aria-label="VLSI & Embedded Systems Notes" data-md-component="logo">
+      
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a3 3 0 0 0 3-3 3 3 0 0 0-3-3 3 3 0 0 0-3 3 3 3 0 0 0 3 3m0 3.54C9.64 9.35 6.5 8 3 8v11c3.5 0 6.64 1.35 9 3.54 2.36-2.19 5.5-3.54 9-3.54V8c-3.5 0-6.64 1.35-9 3.54"/></svg>
+
+    </a>
+    <label class="md-header__button md-icon" for="__drawer">
+      
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M3 6h18v2H3zm0 5h18v2H3zm0 5h18v2H3z"/></svg>
+    </label>
+    <div class="md-header__title" data-md-component="header-title">
+      <div class="md-header__ellipsis">
+        <div class="md-header__topic">
+          <span class="md-ellipsis">
+            VLSI & Embedded Systems Notes
+          </span>
+        </div>
+        <div class="md-header__topic" data-md-component="header-topic">
+          <span class="md-ellipsis">
+            
+              Assignment 05 - Shell Scripting Labs
+            
+          </span>
+        </div>
+      </div>
+    </div>
+    
+      
+        <form class="md-header__option" data-md-component="palette">
+  
+    
+    
+    
+    <input class="md-option" data-md-color-media="" data-md-color-scheme="default" data-md-color-primary="indigo" data-md-color-accent="cyan"  aria-label="Switch to dark mode"  type="radio" name="__palette" id="__palette_0">
+    
+      <label class="md-header__button md-icon" title="Switch to dark mode" for="__palette_1" hidden>
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a4 4 0 0 0-4 4 4 4 0 0 0 4 4 4 4 0 0 0 4-4 4 4 0 0 0-4-4m0 10a6 6 0 0 1-6-6 6 6 0 0 1 6-6 6 6 0 0 1 6 6 6 6 0 0 1-6 6m8-9.31V4h-4.69L12 .69 8.69 4H4v4.69L.69 12 4 15.31V20h4.69L12 23.31 15.31 20H20v-4.69L23.31 12z"/></svg>
+      </label>
+    
+  
+    
+    
+    
+    <input class="md-option" data-md-color-media="" data-md-color-scheme="slate" data-md-color-primary="indigo" data-md-color-accent="cyan"  aria-label="Switch to light mode"  type="radio" name="__palette" id="__palette_1">
+    
+      <label class="md-header__button md-icon" title="Switch to light mode" for="__palette_0" hidden>
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 18c-.89 0-1.74-.2-2.5-.55C11.56 16.5 13 14.42 13 12s-1.44-4.5-3.5-5.45C10.26 6.2 11.11 6 12 6a6 6 0 0 1 6 6 6 6 0 0 1-6 6m8-9.31V4h-4.69L12 .69 8.69 4H4v4.69L.69 12 4 15.31V20h4.69L12 23.31 15.31 20H20v-4.69L23.31 12z"/></svg>
+      </label>
+    
+  
+</form>
+      
+    
+    
+      <script>var palette=__md_get("__palette");if(palette&&palette.color){if("(prefers-color-scheme)"===palette.color.media){var media=matchMedia("(prefers-color-scheme: light)"),input=document.querySelector(media.matches?"[data-md-color-media='(prefers-color-scheme: light)']":"[data-md-color-media='(prefers-color-scheme: dark)']");palette.color.media=input.getAttribute("data-md-color-media"),palette.color.scheme=input.getAttribute("data-md-color-scheme"),palette.color.primary=input.getAttribute("data-md-color-primary"),palette.color.accent=input.getAttribute("data-md-color-accent")}for(var[key,value]of Object.entries(palette.color))document.body.setAttribute("data-md-color-"+key,value)}</script>
+    
+    
+    
+      
+      
+        <label class="md-header__button md-icon" for="__search">
+          
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.52 6.52 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5"/></svg>
+        </label>
+        <div class="md-search" data-md-component="search" role="dialog">
+  <label class="md-search__overlay" for="__search"></label>
+  <div class="md-search__inner" role="search">
+    <form class="md-search__form" name="search">
+      <input type="text" class="md-search__input" name="query" aria-label="Search" placeholder="Search" autocapitalize="off" autocorrect="off" autocomplete="off" spellcheck="false" data-md-component="search-query" required>
+      <label class="md-search__icon md-icon" for="__search">
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.52 6.52 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5"/></svg>
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11z"/></svg>
+      </label>
+      <nav class="md-search__options" aria-label="Search">
+        
+          <a href="javascript:void(0)" class="md-search__icon md-icon" title="Share" aria-label="Share" data-clipboard data-clipboard-text="" data-md-component="search-share" tabindex="-1">
+            
+            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M18 16.08c-.76 0-1.44.3-1.96.77L8.91 12.7c.05-.23.09-.46.09-.7s-.04-.47-.09-.7l7.05-4.11c.54.5 1.25.81 2.04.81a3 3 0 0 0 3-3 3 3 0 0 0-3-3 3 3 0 0 0-3 3c0 .24.04.47.09.7L8.04 9.81C7.5 9.31 6.79 9 6 9a3 3 0 0 0-3 3 3 3 0 0 0 3 3c.79 0 1.5-.31 2.04-.81l7.12 4.15c-.05.21-.08.43-.08.66 0 1.61 1.31 2.91 2.92 2.91s2.92-1.3 2.92-2.91A2.92 2.92 0 0 0 18 16.08"/></svg>
+          </a>
+        
+        <button type="reset" class="md-search__icon md-icon" title="Clear" aria-label="Clear" tabindex="-1">
+          
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M19 6.41 17.59 5 12 10.59 6.41 5 5 6.41 10.59 12 5 17.59 6.41 19 12 13.41 17.59 19 19 17.59 13.41 12z"/></svg>
+        </button>
+      </nav>
+      
+        <div class="md-search__suggest" data-md-component="search-suggest"></div>
+      
+    </form>
+    <div class="md-search__output">
+      <div class="md-search__scrollwrap" tabindex="0" data-md-scrollfix>
+        <div class="md-search-result" data-md-component="search-result">
+          <div class="md-search-result__meta">
+            Initializing search
+          </div>
+          <ol class="md-search-result__list" role="presentation"></ol>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+      
+    
+    
+      <div class="md-header__source">
+        <a href="https://github.com/saichand/vlsi-notes" title="Go to repository" class="md-source" data-md-component="source">
+  <div class="md-source__icon md-icon">
+    
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512"><!--! Font Awesome Free 7.1.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2025 Fonticons, Inc.--><path d="M173.9 397.4c0 2-2.3 3.6-5.2 3.6-3.3.3-5.6-1.3-5.6-3.6 0-2 2.3-3.6 5.2-3.6 3-.3 5.6 1.3 5.6 3.6m-31.1-4.5c-.7 2 1.3 4.3 4.3 4.9 2.6 1 5.6 0 6.2-2s-1.3-4.3-4.3-5.2c-2.6-.7-5.5.3-6.2 2.3m44.2-1.7c-2.9.7-4.9 2.6-4.6 4.9.3 2 2.9 3.3 5.9 2.6 2.9-.7 4.9-2.6 4.6-4.6-.3-1.9-3-3.2-5.9-2.9M252.8 8C114.1 8 8 113.3 8 252c0 110.9 69.8 205.8 169.5 239.2 12.8 2.3 17.3-5.6 17.3-12.1 0-6.2-.3-40.4-.3-61.4 0 0-70 15-84.7-29.8 0 0-11.4-29.1-27.8-36.6 0 0-22.9-15.7 1.6-15.4 0 0 24.9 2 38.6 25.8 21.9 38.6 58.6 27.5 72.9 20.9 2.3-16 8.8-27.1 16-33.7-55.9-6.2-112.3-14.3-112.3-110.5 0-27.5 7.6-41.3 23.6-58.9-2.6-6.5-11.1-33.3 2.6-67.9 20.9-6.5 69 27 69 27 20-5.6 41.5-8.5 62.8-8.5s42.8 2.9 62.8 8.5c0 0 48.1-33.6 69-27 13.7 34.7 5.2 61.4 2.6 67.9 16 17.7 25.8 31.5 25.8 58.9 0 96.5-58.9 104.2-114.8 110.5 9.2 7.9 17 22.9 17 46.4 0 33.7-.3 75.4-.3 83.6 0 6.5 4.6 14.4 17.3 12.1C436.2 457.8 504 362.9 504 252 504 113.3 391.5 8 252.8 8M105.2 352.9c-1.3 1-1 3.3.7 5.2 1.6 1.6 3.9 2.3 5.2 1 1.3-1 1-3.3-.7-5.2-1.6-1.6-3.9-2.3-5.2-1m-10.8-8.1c-.7 1.3.3 2.9 2.3 3.9 1.6 1 3.6.7 4.3-.7.7-1.3-.3-2.9-2.3-3.9-2-.6-3.6-.3-4.3.7m32.4 35.6c-1.6 1.3-1 4.3 1.3 6.2 2.3 2.3 5.2 2.6 6.5 1 1.3-1.3.7-4.3-1.3-6.2-2.2-2.3-5.2-2.6-6.5-1m-11.4-14.7c-1.6 1-1.6 3.6 0 5.9s4.3 3.3 5.6 2.3c1.6-1.3 1.6-3.9 0-6.2-1.4-2.3-4-3.3-5.6-2"/></svg>
+  </div>
+  <div class="md-source__repository">
+    saichand/vlsi-notes
+  </div>
+</a>
+      </div>
+    
+  </nav>
+  
+</header>
+    
+    <div class="md-container" data-md-component="container">
+      
+      
+        
+          
+            
+<nav class="md-tabs" aria-label="Tabs" data-md-component="tabs">
+  <div class="md-grid">
+    <ul class="md-tabs__list">
+      
+        
+  
+  
+  
+  
+    <li class="md-tabs__item">
+      <a href="../.." class="md-tabs__link">
+        
+  
+  
+    
+  
+  Home
+
+      </a>
+    </li>
+  
+
+      
+        
+  
+  
+  
+  
+    
+    
+      <li class="md-tabs__item">
+        <a href="../../modules/linux-shell-scripting/index.md" class="md-tabs__link">
+          
+  
+  
+  Linux & Shell Scripting
+
+        </a>
+      </li>
+    
+  
+
+      
+        
+  
+  
+  
+    
+  
+  
+    
+    
+      <li class="md-tabs__item md-tabs__item--active">
+        <a href="../" class="md-tabs__link">
+          
+  
+  
+  Assignments & Self-Testing
+
+        </a>
+      </li>
+    
+  
+
+      
+        
+  
+  
+  
+  
+    
+    
+      <li class="md-tabs__item">
+        <a href="../../modules/digital-design/index.md" class="md-tabs__link">
+          
+  
+  
+  Curriculum Modules
+
+        </a>
+      </li>
+    
+  
+
+      
+    </ul>
+  </div>
+</nav>
+          
+        
+      
+      <main class="md-main" data-md-component="main">
+        <div class="md-main__inner md-grid">
+          
+            
+              
+              <div class="md-sidebar md-sidebar--primary" data-md-component="sidebar" data-md-type="navigation" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+
+  
+
+
+<nav class="md-nav md-nav--primary md-nav--lifted" aria-label="Navigation" data-md-level="0">
+  <label class="md-nav__title" for="__drawer">
+    <a href="../.." title="VLSI &amp; Embedded Systems Notes" class="md-nav__button md-logo" aria-label="VLSI & Embedded Systems Notes" data-md-component="logo">
+      
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a3 3 0 0 0 3-3 3 3 0 0 0-3-3 3 3 0 0 0-3 3 3 3 0 0 0 3 3m0 3.54C9.64 9.35 6.5 8 3 8v11c3.5 0 6.64 1.35 9 3.54 2.36-2.19 5.5-3.54 9-3.54V8c-3.5 0-6.64 1.35-9 3.54"/></svg>
+
+    </a>
+    VLSI & Embedded Systems Notes
+  </label>
+  
+    <div class="md-nav__source">
+      <a href="https://github.com/saichand/vlsi-notes" title="Go to repository" class="md-source" data-md-component="source">
+  <div class="md-source__icon md-icon">
+    
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512"><!--! Font Awesome Free 7.1.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2025 Fonticons, Inc.--><path d="M173.9 397.4c0 2-2.3 3.6-5.2 3.6-3.3.3-5.6-1.3-5.6-3.6 0-2 2.3-3.6 5.2-3.6 3-.3 5.6 1.3 5.6 3.6m-31.1-4.5c-.7 2 1.3 4.3 4.3 4.9 2.6 1 5.6 0 6.2-2s-1.3-4.3-4.3-5.2c-2.6-.7-5.5.3-6.2 2.3m44.2-1.7c-2.9.7-4.9 2.6-4.6 4.9.3 2 2.9 3.3 5.9 2.6 2.9-.7 4.9-2.6 4.6-4.6-.3-1.9-3-3.2-5.9-2.9M252.8 8C114.1 8 8 113.3 8 252c0 110.9 69.8 205.8 169.5 239.2 12.8 2.3 17.3-5.6 17.3-12.1 0-6.2-.3-40.4-.3-61.4 0 0-70 15-84.7-29.8 0 0-11.4-29.1-27.8-36.6 0 0-22.9-15.7 1.6-15.4 0 0 24.9 2 38.6 25.8 21.9 38.6 58.6 27.5 72.9 20.9 2.3-16 8.8-27.1 16-33.7-55.9-6.2-112.3-14.3-112.3-110.5 0-27.5 7.6-41.3 23.6-58.9-2.6-6.5-11.1-33.3 2.6-67.9 20.9-6.5 69 27 69 27 20-5.6 41.5-8.5 62.8-8.5s42.8 2.9 62.8 8.5c0 0 48.1-33.6 69-27 13.7 34.7 5.2 61.4 2.6 67.9 16 17.7 25.8 31.5 25.8 58.9 0 96.5-58.9 104.2-114.8 110.5 9.2 7.9 17 22.9 17 46.4 0 33.7-.3 75.4-.3 83.6 0 6.5 4.6 14.4 17.3 12.1C436.2 457.8 504 362.9 504 252 504 113.3 391.5 8 252.8 8M105.2 352.9c-1.3 1-1 3.3.7 5.2 1.6 1.6 3.9 2.3 5.2 1 1.3-1 1-3.3-.7-5.2-1.6-1.6-3.9-2.3-5.2-1m-10.8-8.1c-.7 1.3.3 2.9 2.3 3.9 1.6 1 3.6.7 4.3-.7.7-1.3-.3-2.9-2.3-3.9-2-.6-3.6-.3-4.3.7m32.4 35.6c-1.6 1.3-1 4.3 1.3 6.2 2.3 2.3 5.2 2.6 6.5 1 1.3-1.3.7-4.3-1.3-6.2-2.2-2.3-5.2-2.6-6.5-1m-11.4-14.7c-1.6 1-1.6 3.6 0 5.9s4.3 3.3 5.6 2.3c1.6-1.3 1.6-3.9 0-6.2-1.4-2.3-4-3.3-5.6-2"/></svg>
+  </div>
+  <div class="md-source__repository">
+    saichand/vlsi-notes
+  </div>
+</a>
+    </div>
+  
+  <ul class="md-nav__list" data-md-scrollfix>
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../.." class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Home
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+    
+    
+      
+      
+        
+      
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+          
+        
+        <input class="md-nav__toggle md-toggle md-toggle--indeterminate" type="checkbox" id="__nav_2" >
+        
+          
+          <label class="md-nav__link" for="__nav_2" id="__nav_2_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Linux & Shell Scripting
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_2_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_2">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    Linux & Shell Scripting
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../modules/linux-shell-scripting/index.md" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Overview
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../modules/linux-shell-scripting/01-ubuntu-installation-virtualbox.md" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    01. Ubuntu Installation & VirtualBox
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../modules/linux-shell-scripting/02-architecture-startup-shutdown.md" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    02. Architecture & Boot Sequence
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../modules/linux-shell-scripting/03-filesystem-hierarchy-inodes.md" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    03. Filesystem Hierarchy & Inodes
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../modules/linux-shell-scripting/04-core-commands.md" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    04. Core Commands & File Management
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../modules/linux-shell-scripting/05-permissions-acls.md" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    05. Permissions, Ownership & ACLs
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../modules/linux-shell-scripting/06-text-processing.md" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    06. Text Processing & RegEx
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../modules/linux-shell-scripting/07-processes-scheduling.md" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    07. Processes, Signals & Crontab
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../modules/linux-shell-scripting/08-networking-diagnostics.md" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    08. Networking & Remote Access
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../modules/linux-shell-scripting/09-shell-scripting.md" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    09. Bash Shell Scripting
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+    
+  
+  
+  
+    
+    
+    
+    
+      
+        
+        
+      
+      
+        
+      
+    
+    
+    <li class="md-nav__item md-nav__item--active md-nav__item--section md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_3" checked>
+        
+          
+          <label class="md-nav__link" for="__nav_3" id="__nav_3_label" tabindex="">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Assignments & Self-Testing
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_3_label" aria-expanded="true">
+          <label class="md-nav__title" for="__nav_3">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    Assignments & Self-Testing
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Hub Overview
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../assignment-01/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Assignment 01 - Basics & Permissions
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../assignment-02/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Assignment 02 - Text Filters & Search
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../assignment-03/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Assignment 03 - Users, ACLs & Crontab
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../assignment-04/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Assignment 04 - Networking & Env
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+    
+  
+  
+  
+    <li class="md-nav__item md-nav__item--active">
+      
+      <input class="md-nav__toggle md-toggle" type="checkbox" id="__toc">
+      
+      
+        
+      
+      
+        <label class="md-nav__link md-nav__link--active" for="__toc">
+          
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Assignment 05 - Shell Scripting Labs
+  
+
+    
+  </span>
+  
+  
+
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <a href="./" class="md-nav__link md-nav__link--active">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Assignment 05 - Shell Scripting Labs
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+      
+        
+
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#part-1-simple-shell-scripting-automation" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        📑 Part 1: Simple Shell Scripting Automation
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="📑 Part 1: Simple Shell Scripting Automation">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#question-1-lab-11-write-a-shell-script-to-create-a-new-user-account-named-emp1-with-a-home-directory-and-set-an-initial-password" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Question 1: Lab 1.1: Write a shell script to create a new user account named 'emp1' with a home directory and set an initial password.
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#question-2-lab-12-write-a-shell-script-that-creates-a-new-group-called-hr-and-adds-an-existing-user-passed-as-1-to-that-group" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Question 2: Lab 1.2: Write a shell script that creates a new group called 'hr' and adds an existing user (passed as $1) to that group.
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#question-3-lab-13-write-a-shell-script-that-displays-the-uid-gid-and-all-group-memberships-of-a-user-whose-username-is-supplied-as-1" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Question 3: Lab 1.3: Write a shell script that displays the UID, GID, and all group memberships of a user whose username is supplied as $1.
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#question-4-lab-14-write-a-shell-script-that-creates-datatxt-and-sets-its-permissions-to-rwxr-r-owner-rwx-group-r-others-r-" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Question 4: Lab 1.4: Write a shell script that creates 'data.txt' and sets its permissions to 'rwxr--r--' (Owner: rwx, Group: r--, Others: r--).
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#question-5-lab-15-write-a-shell-script-that-changes-the-owner-and-group-of-reporttxt-to-a-given-username-1-and-group-name-2" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Question 5: Lab 1.5: Write a shell script that changes the owner and group of 'report.txt' to a given username ($1) and group name ($2).
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#question-6-lab-16-write-a-shell-script-that-displays-a-given-files-permissions-in-both-symbolic-form-eg-rw-r-r-and-numericoctal-form-eg-644" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Question 6: Lab 1.6: Write a shell script that displays a given file's permissions in both symbolic form (e.g., -rw-r--r--) and numeric/octal form (e.g., 644).
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#question-7-lab-17-write-a-shell-script-that-creates-the-directory-structure-dbdaprojectsrcbindocs-in-a-single-command-and-lists-the-structure" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Question 7: Lab 1.7: Write a shell script that creates the directory structure '/dbda/project/{src,bin,docs}' in a single command and lists the structure.
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#question-8-lab-18-write-a-shell-script-that-accepts-a-username-as-1-and-displays-that-users-home-directory-path-and-login-shell" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Question 8: Lab 1.8: Write a shell script that accepts a username as $1 and displays that user's home directory path and login shell.
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#question-9-lab-19-write-a-shell-script-that-takes-an-old-filename-1-and-new-filename-2-renames-the-file-and-displays-its-permissions" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Question 9: Lab 1.9: Write a shell script that takes an old filename ($1) and new filename ($2), renames the file, and displays its permissions.
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#question-10-lab-110-write-a-shell-script-that-creates-a-backup-copy-of-etcpasswd-inside-dbdabackup-named-passwd_backup_" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Question 10: Lab 1.10: Write a shell script that creates a backup copy of '/etc/passwd' inside '/dbda/backup' named 'passwd_backup_'.
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#part-2-conditional-logic-file-testing-system-monitoring" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        📑 Part 2: Conditional Logic, File Testing &amp; System Monitoring
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="📑 Part 2: Conditional Logic, File Testing &amp; System Monitoring">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#question-11-lab-21-write-a-shell-script-that-accepts-a-username-as-input-and-checks-whether-that-user-account-exists-on-the-system" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Question 11: Lab 2.1: Write a shell script that accepts a username as input and checks whether that user account exists on the system.
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#question-12-lab-22-write-a-shell-script-that-accepts-a-filename-and-checks-whether-the-file-exists-and-is-readable-if-so-displays-its-contents-otherwise-displays-an-error-message" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Question 12: Lab 2.2: Write a shell script that accepts a filename and checks whether the file exists and is readable; if so, displays its contents, otherwise displays an error message.
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#question-13-lab-23-write-a-shell-script-that-accepts-two-integer-arguments-1-2-and-prints-whichever-is-greater-or-reports-that-they-are-equal" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Question 13: Lab 2.3: Write a shell script that accepts two integer arguments ($1, $2) and prints whichever is greater, or reports that they are equal.
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#question-14-lab-24-write-a-shell-script-that-checks-whether-a-given-directory-1-exists-if-not-creates-it-and-confirms-creation-otherwise-informs-the-user-it-already-exists" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Question 14: Lab 2.4: Write a shell script that checks whether a given directory ($1) exists; if not, creates it and confirms creation, otherwise informs the user it already exists.
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#question-15-lab-25-write-a-shell-script-that-accepts-a-filename-and-checks-whether-the-owner-has-read-write-and-execute-permissions-reporting-each-separately" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Question 15: Lab 2.5: Write a shell script that accepts a filename and checks whether the owner has read, write, and execute permissions, reporting each separately.
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#question-16-lab-26-write-a-shell-script-that-checks-current-disk-usage-of-the-root-partition-and-prints-a-warning-if-it-has-crossed-80-otherwise-prints-normal-status" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Question 16: Lab 2.6: Write a shell script that checks current disk usage of the root partition ('/') and prints a warning if it has crossed 80%, otherwise prints normal status.
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#question-17-lab-27-write-a-shell-script-that-accepts-a-username-as-1-if-the-user-does-not-exist-creates-the-account-with-a-home-directory-and-confirms-success-otherwise-reports-that-the-user-already-exists" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Question 17: Lab 2.7: Write a shell script that accepts a username as $1; if the user does not exist, creates the account with a home directory and confirms success, otherwise reports that the user already exists.
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#question-18-lab-28-write-a-shell-script-that-accepts-a-number-as-input-and-checks-whether-it-is-positive-negative-or-zero" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Question 18: Lab 2.8: Write a shell script that accepts a number as input and checks whether it is positive, negative, or zero.
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#question-19-lab-29-write-a-shell-script-that-accepts-a-username-1-and-a-group-name-2-and-checks-whether-that-user-is-a-member-of-the-given-group" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Question 19: Lab 2.9: Write a shell script that accepts a username ($1) and a group name ($2), and checks whether that user is a member of the given group.
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#question-20-lab-210-write-a-shell-script-that-accepts-a-filename-argument-and-checks-whether-it-is-a-regular-file-a-directory-or-does-not-exist-at-all-printing-an-appropriate-message" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Question 20: Lab 2.10: Write a shell script that accepts a filename argument and checks whether it is a regular file, a directory, or does not exist at all, printing an appropriate message.
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../assignment-06/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Assignment 06 - 100 Linux MCQs
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+    
+    
+      
+      
+        
+      
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+          
+        
+        <input class="md-nav__toggle md-toggle md-toggle--indeterminate" type="checkbox" id="__nav_4" >
+        
+          
+          <label class="md-nav__link" for="__nav_4" id="__nav_4_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Curriculum Modules
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_4_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_4">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    Curriculum Modules
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../modules/digital-design/index.md" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Digital Design
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../modules/programming-c-cpp/index.md" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    C & C++ Programming
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../modules/verilog-hdl/index.md" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Verilog HDL
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../modules/hdl-simulation-synthesis/index.md" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    HDL Simulation & Synthesis
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../modules/cmos-vlsi-devices/index.md" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    CMOS VLSI Devices
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../modules/asic-backend-physical-design/index.md" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    ASIC Physical Design
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../modules/systemverilog/index.md" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    SystemVerilog
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../modules/uvm-verification/index.md" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    UVM Verification
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+  </ul>
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+            
+              
+              <div class="md-sidebar md-sidebar--secondary" data-md-component="sidebar" data-md-type="toc" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#part-1-simple-shell-scripting-automation" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        📑 Part 1: Simple Shell Scripting Automation
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="📑 Part 1: Simple Shell Scripting Automation">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#question-1-lab-11-write-a-shell-script-to-create-a-new-user-account-named-emp1-with-a-home-directory-and-set-an-initial-password" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Question 1: Lab 1.1: Write a shell script to create a new user account named 'emp1' with a home directory and set an initial password.
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#question-2-lab-12-write-a-shell-script-that-creates-a-new-group-called-hr-and-adds-an-existing-user-passed-as-1-to-that-group" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Question 2: Lab 1.2: Write a shell script that creates a new group called 'hr' and adds an existing user (passed as $1) to that group.
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#question-3-lab-13-write-a-shell-script-that-displays-the-uid-gid-and-all-group-memberships-of-a-user-whose-username-is-supplied-as-1" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Question 3: Lab 1.3: Write a shell script that displays the UID, GID, and all group memberships of a user whose username is supplied as $1.
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#question-4-lab-14-write-a-shell-script-that-creates-datatxt-and-sets-its-permissions-to-rwxr-r-owner-rwx-group-r-others-r-" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Question 4: Lab 1.4: Write a shell script that creates 'data.txt' and sets its permissions to 'rwxr--r--' (Owner: rwx, Group: r--, Others: r--).
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#question-5-lab-15-write-a-shell-script-that-changes-the-owner-and-group-of-reporttxt-to-a-given-username-1-and-group-name-2" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Question 5: Lab 1.5: Write a shell script that changes the owner and group of 'report.txt' to a given username ($1) and group name ($2).
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#question-6-lab-16-write-a-shell-script-that-displays-a-given-files-permissions-in-both-symbolic-form-eg-rw-r-r-and-numericoctal-form-eg-644" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Question 6: Lab 1.6: Write a shell script that displays a given file's permissions in both symbolic form (e.g., -rw-r--r--) and numeric/octal form (e.g., 644).
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#question-7-lab-17-write-a-shell-script-that-creates-the-directory-structure-dbdaprojectsrcbindocs-in-a-single-command-and-lists-the-structure" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Question 7: Lab 1.7: Write a shell script that creates the directory structure '/dbda/project/{src,bin,docs}' in a single command and lists the structure.
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#question-8-lab-18-write-a-shell-script-that-accepts-a-username-as-1-and-displays-that-users-home-directory-path-and-login-shell" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Question 8: Lab 1.8: Write a shell script that accepts a username as $1 and displays that user's home directory path and login shell.
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#question-9-lab-19-write-a-shell-script-that-takes-an-old-filename-1-and-new-filename-2-renames-the-file-and-displays-its-permissions" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Question 9: Lab 1.9: Write a shell script that takes an old filename ($1) and new filename ($2), renames the file, and displays its permissions.
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#question-10-lab-110-write-a-shell-script-that-creates-a-backup-copy-of-etcpasswd-inside-dbdabackup-named-passwd_backup_" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Question 10: Lab 1.10: Write a shell script that creates a backup copy of '/etc/passwd' inside '/dbda/backup' named 'passwd_backup_'.
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#part-2-conditional-logic-file-testing-system-monitoring" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        📑 Part 2: Conditional Logic, File Testing &amp; System Monitoring
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="📑 Part 2: Conditional Logic, File Testing &amp; System Monitoring">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#question-11-lab-21-write-a-shell-script-that-accepts-a-username-as-input-and-checks-whether-that-user-account-exists-on-the-system" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Question 11: Lab 2.1: Write a shell script that accepts a username as input and checks whether that user account exists on the system.
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#question-12-lab-22-write-a-shell-script-that-accepts-a-filename-and-checks-whether-the-file-exists-and-is-readable-if-so-displays-its-contents-otherwise-displays-an-error-message" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Question 12: Lab 2.2: Write a shell script that accepts a filename and checks whether the file exists and is readable; if so, displays its contents, otherwise displays an error message.
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#question-13-lab-23-write-a-shell-script-that-accepts-two-integer-arguments-1-2-and-prints-whichever-is-greater-or-reports-that-they-are-equal" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Question 13: Lab 2.3: Write a shell script that accepts two integer arguments ($1, $2) and prints whichever is greater, or reports that they are equal.
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#question-14-lab-24-write-a-shell-script-that-checks-whether-a-given-directory-1-exists-if-not-creates-it-and-confirms-creation-otherwise-informs-the-user-it-already-exists" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Question 14: Lab 2.4: Write a shell script that checks whether a given directory ($1) exists; if not, creates it and confirms creation, otherwise informs the user it already exists.
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#question-15-lab-25-write-a-shell-script-that-accepts-a-filename-and-checks-whether-the-owner-has-read-write-and-execute-permissions-reporting-each-separately" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Question 15: Lab 2.5: Write a shell script that accepts a filename and checks whether the owner has read, write, and execute permissions, reporting each separately.
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#question-16-lab-26-write-a-shell-script-that-checks-current-disk-usage-of-the-root-partition-and-prints-a-warning-if-it-has-crossed-80-otherwise-prints-normal-status" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Question 16: Lab 2.6: Write a shell script that checks current disk usage of the root partition ('/') and prints a warning if it has crossed 80%, otherwise prints normal status.
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#question-17-lab-27-write-a-shell-script-that-accepts-a-username-as-1-if-the-user-does-not-exist-creates-the-account-with-a-home-directory-and-confirms-success-otherwise-reports-that-the-user-already-exists" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Question 17: Lab 2.7: Write a shell script that accepts a username as $1; if the user does not exist, creates the account with a home directory and confirms success, otherwise reports that the user already exists.
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#question-18-lab-28-write-a-shell-script-that-accepts-a-number-as-input-and-checks-whether-it-is-positive-negative-or-zero" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Question 18: Lab 2.8: Write a shell script that accepts a number as input and checks whether it is positive, negative, or zero.
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#question-19-lab-29-write-a-shell-script-that-accepts-a-username-1-and-a-group-name-2-and-checks-whether-that-user-is-a-member-of-the-given-group" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Question 19: Lab 2.9: Write a shell script that accepts a username ($1) and a group name ($2), and checks whether that user is a member of the given group.
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#question-20-lab-210-write-a-shell-script-that-accepts-a-filename-argument-and-checks-whether-it-is-a-regular-file-a-directory-or-does-not-exist-at-all-printing-an-appropriate-message" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Question 20: Lab 2.10: Write a shell script that accepts a filename argument and checks whether it is a regular file, a directory, or does not exist at all, printing an appropriate message.
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+          
+          
+            <div class="md-content" data-md-component="content">
+              
+              <article class="md-content__inner md-typeset">
+                
+                  
+
+
+
+<h1 id="assignment-05-shell-scripting-automation-lab-problem-sets">Assignment 05: Shell Scripting Automation Lab Problem Sets<a class="headerlink" href="#assignment-05-shell-scripting-automation-lab-problem-sets" title="Permanent link">&para;</a></h1>
+<p>A comprehensive 20-problem laboratory assessment divided into <strong>Part 1: Simple Automation Scripts</strong> (user/group creation, file permissions, directory trees, timestamped backups) and <strong>Part 2: Conditional Statements &amp; Validation</strong> (user validation, file test operators, arithmetic comparisons, disk usage monitors).</p>
+<div class="admonition tip">
+<p class="admonition-title">Interactive Self-Study &amp; Script Testing</p>
+<p>Write each shell script in your Ubuntu terminal and test with real arguments before expanding the solution box to review the code breakdown and alternative approaches.</p>
+</div>
+<hr />
+<h2 id="part-1-simple-shell-scripting-automation">📑 Part 1: Simple Shell Scripting Automation<a class="headerlink" href="#part-1-simple-shell-scripting-automation" title="Permanent link">&para;</a></h2>
+<h3 id="question-1-lab-11-write-a-shell-script-to-create-a-new-user-account-named-emp1-with-a-home-directory-and-set-an-initial-password">Question 1: Lab 1.1: Write a shell script to create a new user account named 'emp1' with a home directory and set an initial password.<a class="headerlink" href="#question-1-lab-11-write-a-shell-script-to-create-a-new-user-account-named-emp1-with-a-home-directory-and-set-an-initial-password" title="Permanent link">&para;</a></h3>
+<ul>
+<li><strong>(A)</strong> sudo useradd -m emp1 &amp;&amp; echo 'emp1:Password123' | sudo chpasswd</li>
+<li><strong>(B)</strong> sudo adduser --no-home emp1</li>
+<li><strong>(C)</strong> sudo usercreate emp1 -p Password123</li>
+<li><strong>(D)</strong> echo 'emp1' &gt;&gt; /etc/passwd</li>
+</ul>
+<details class="success">
+<summary>Answer &amp; Script Implementation (Click to Expand)</summary>
+<p><strong>Correct Solution:</strong> <img alt="✅" class="twemoji" src="https://cdn.jsdelivr.net/gh/jdecked/twemoji@16.0.1/assets/svg/2705.svg" title=":white_check_mark:" /> <strong>(A) <code>sudo useradd -m emp1 &amp;&amp; echo 'emp1:Password123' | sudo chpasswd</code></strong></p>
+<p><strong>Option-by-Option Breakdown:</strong>
+- <strong>(A)</strong> <img alt="✅" class="twemoji" src="https://cdn.jsdelivr.net/gh/jdecked/twemoji@16.0.1/assets/svg/2705.svg" title=":white_check_mark:" /> Correct. 'useradd -m emp1' creates the user with a home directory in /home/emp1, and 'chpasswd' batch-sets the initial password securely in non-interactive scripts.
+- <strong>(B)</strong> <img alt="❌" class="twemoji" src="https://cdn.jsdelivr.net/gh/jdecked/twemoji@16.0.1/assets/svg/274c.svg" title=":x:" /> '--no-home' explicitly prevents home directory creation.
+- <strong>(C)</strong> <img alt="❌" class="twemoji" src="https://cdn.jsdelivr.net/gh/jdecked/twemoji@16.0.1/assets/svg/274c.svg" title=":x:" /> 'usercreate' is not a standard Linux command.
+- <strong>(D)</strong> <img alt="❌" class="twemoji" src="https://cdn.jsdelivr.net/gh/jdecked/twemoji@16.0.1/assets/svg/274c.svg" title=":x:" /> Directly appending to /etc/passwd bypasses password encryption, shadow hashing, GID generation, and home directory initialization.</p>
+</details>
+<hr />
+<h3 id="question-2-lab-12-write-a-shell-script-that-creates-a-new-group-called-hr-and-adds-an-existing-user-passed-as-1-to-that-group">Question 2: Lab 1.2: Write a shell script that creates a new group called 'hr' and adds an existing user (passed as $1) to that group.<a class="headerlink" href="#question-2-lab-12-write-a-shell-script-that-creates-a-new-group-called-hr-and-adds-an-existing-user-passed-as-1-to-that-group" title="Permanent link">&para;</a></h3>
+<ul>
+<li><strong>(A)</strong> sudo groupadd hr &amp;&amp; sudo usermod -aG hr "$1"</li>
+<li><strong>(B)</strong> sudo groupadd hr &amp;&amp; sudo useradd -g hr "$1"</li>
+<li><strong>(C)</strong> sudo addgroup hr "$1"</li>
+<li><strong>(D)</strong> sudo usermod -g hr "$1"</li>
+</ul>
+<details class="success">
+<summary>Answer &amp; Script Implementation (Click to Expand)</summary>
+<p><strong>Correct Solution:</strong> <img alt="✅" class="twemoji" src="https://cdn.jsdelivr.net/gh/jdecked/twemoji@16.0.1/assets/svg/2705.svg" title=":white_check_mark:" /> <strong>(A) <code>sudo groupadd hr &amp;&amp; sudo usermod -aG hr "$1"</code></strong></p>
+<p><strong>Option-by-Option Breakdown:</strong>
+- <strong>(A)</strong> <img alt="✅" class="twemoji" src="https://cdn.jsdelivr.net/gh/jdecked/twemoji@16.0.1/assets/svg/2705.svg" title=":white_check_mark:" /> Correct. 'groupadd hr' creates the group, and 'usermod -aG hr "$1"' safely appends the user to the secondary group without overwriting existing memberships.
+- <strong>(B)</strong> <img alt="❌" class="twemoji" src="https://cdn.jsdelivr.net/gh/jdecked/twemoji@16.0.1/assets/svg/274c.svg" title=":x:" /> 'useradd' is used to create new users, not modify existing user accounts.
+- <strong>(C)</strong> <img alt="❌" class="twemoji" src="https://cdn.jsdelivr.net/gh/jdecked/twemoji@16.0.1/assets/svg/274c.svg" title=":x:" /> 'addgroup hr "$1"' syntax varies across distributions and may fail without group pre-existence.
+- <strong>(D)</strong> <img alt="❌" class="twemoji" src="https://cdn.jsdelivr.net/gh/jdecked/twemoji@16.0.1/assets/svg/274c.svg" title=":x:" /> '-g' replaces the primary group rather than adding 'hr' as a supplementary group.</p>
+</details>
+<hr />
+<h3 id="question-3-lab-13-write-a-shell-script-that-displays-the-uid-gid-and-all-group-memberships-of-a-user-whose-username-is-supplied-as-1">Question 3: Lab 1.3: Write a shell script that displays the UID, GID, and all group memberships of a user whose username is supplied as $1.<a class="headerlink" href="#question-3-lab-13-write-a-shell-script-that-displays-the-uid-gid-and-all-group-memberships-of-a-user-whose-username-is-supplied-as-1" title="Permanent link">&para;</a></h3>
+<ul>
+<li><strong>(A)</strong> id "$1"</li>
+<li><strong>(B)</strong> whoami "$1"</li>
+<li><strong>(C)</strong> groups --all "$1"</li>
+<li><strong>(D)</strong> cat /etc/passwd | grep "$1" | cut -d: -f3</li>
+</ul>
+<details class="success">
+<summary>Answer &amp; Script Implementation (Click to Expand)</summary>
+<p><strong>Correct Solution:</strong> <img alt="✅" class="twemoji" src="https://cdn.jsdelivr.net/gh/jdecked/twemoji@16.0.1/assets/svg/2705.svg" title=":white_check_mark:" /> <strong>(A) <code>id "$1"</code></strong></p>
+<p><strong>Option-by-Option Breakdown:</strong>
+- <strong>(A)</strong> <img alt="✅" class="twemoji" src="https://cdn.jsdelivr.net/gh/jdecked/twemoji@16.0.1/assets/svg/2705.svg" title=":white_check_mark:" /> Correct. 'id username' outputs numeric UID, GID, and all associated group names and GIDs in standard format.
+- <strong>(B)</strong> <img alt="❌" class="twemoji" src="https://cdn.jsdelivr.net/gh/jdecked/twemoji@16.0.1/assets/svg/274c.svg" title=":x:" /> 'whoami' takes no arguments and prints only the current effective username.
+- <strong>(C)</strong> <img alt="❌" class="twemoji" src="https://cdn.jsdelivr.net/gh/jdecked/twemoji@16.0.1/assets/svg/274c.svg" title=":x:" /> 'groups' displays group names only, omitting numeric UID and primary GID.
+- <strong>(D)</strong> <img alt="❌" class="twemoji" src="https://cdn.jsdelivr.net/gh/jdecked/twemoji@16.0.1/assets/svg/274c.svg" title=":x:" /> Extracts only the UID field, omitting GID and secondary group memberships.</p>
+</details>
+<hr />
+<h3 id="question-4-lab-14-write-a-shell-script-that-creates-datatxt-and-sets-its-permissions-to-rwxr-r-owner-rwx-group-r-others-r-">Question 4: Lab 1.4: Write a shell script that creates 'data.txt' and sets its permissions to 'rwxr--r--' (Owner: rwx, Group: r--, Others: r--).<a class="headerlink" href="#question-4-lab-14-write-a-shell-script-that-creates-datatxt-and-sets-its-permissions-to-rwxr-r-owner-rwx-group-r-others-r-" title="Permanent link">&para;</a></h3>
+<ul>
+<li><strong>(A)</strong> touch data.txt &amp;&amp; chmod 744 data.txt</li>
+<li><strong>(B)</strong> touch data.txt &amp;&amp; chmod 755 data.txt</li>
+<li><strong>(C)</strong> touch data.txt &amp;&amp; chmod 644 data.txt</li>
+<li><strong>(D)</strong> make data.txt &amp;&amp; chmod u=rwx,go=r data.txt</li>
+</ul>
+<details class="success">
+<summary>Answer &amp; Script Implementation (Click to Expand)</summary>
+<p><strong>Correct Solution:</strong> <img alt="✅" class="twemoji" src="https://cdn.jsdelivr.net/gh/jdecked/twemoji@16.0.1/assets/svg/2705.svg" title=":white_check_mark:" /> <strong>(A) <code>touch data.txt &amp;&amp; chmod 744 data.txt</code></strong></p>
+<p><strong>Option-by-Option Breakdown:</strong>
+- <strong>(A)</strong> <img alt="✅" class="twemoji" src="https://cdn.jsdelivr.net/gh/jdecked/twemoji@16.0.1/assets/svg/2705.svg" title=":white_check_mark:" /> Correct. 'touch data.txt' creates the file and octal 744 sets User=rwx (7), Group=r-- (4), Others=r-- (4).
+- <strong>(B)</strong> <img alt="❌" class="twemoji" src="https://cdn.jsdelivr.net/gh/jdecked/twemoji@16.0.1/assets/svg/274c.svg" title=":x:" /> 755 grants execute permission to Group and Others (r-x).
+- <strong>(C)</strong> <img alt="❌" class="twemoji" src="https://cdn.jsdelivr.net/gh/jdecked/twemoji@16.0.1/assets/svg/274c.svg" title=":x:" /> 644 sets User to rw- (missing execute bit).
+- <strong>(D)</strong> <img alt="❌" class="twemoji" src="https://cdn.jsdelivr.net/gh/jdecked/twemoji@16.0.1/assets/svg/274c.svg" title=":x:" /> 'make' is a build utility, not a file creation tool.</p>
+</details>
+<hr />
+<h3 id="question-5-lab-15-write-a-shell-script-that-changes-the-owner-and-group-of-reporttxt-to-a-given-username-1-and-group-name-2">Question 5: Lab 1.5: Write a shell script that changes the owner and group of 'report.txt' to a given username ($1) and group name ($2).<a class="headerlink" href="#question-5-lab-15-write-a-shell-script-that-changes-the-owner-and-group-of-reporttxt-to-a-given-username-1-and-group-name-2" title="Permanent link">&para;</a></h3>
+<ul>
+<li><strong>(A)</strong> sudo chown "$1:$2" report.txt</li>
+<li><strong>(B)</strong> sudo chgrp "$1:$2" report.txt</li>
+<li><strong>(C)</strong> sudo chmod "$1:$2" report.txt</li>
+<li><strong>(D)</strong> sudo chown "$1" report.txt &amp;&amp; sudo chown "$2" report.txt</li>
+</ul>
+<details class="success">
+<summary>Answer &amp; Script Implementation (Click to Expand)</summary>
+<p><strong>Correct Solution:</strong> <img alt="✅" class="twemoji" src="https://cdn.jsdelivr.net/gh/jdecked/twemoji@16.0.1/assets/svg/2705.svg" title=":white_check_mark:" /> <strong>(A) <code>sudo chown "$1:$2" report.txt</code></strong></p>
+<p><strong>Option-by-Option Breakdown:</strong>
+- <strong>(A)</strong> <img alt="✅" class="twemoji" src="https://cdn.jsdelivr.net/gh/jdecked/twemoji@16.0.1/assets/svg/2705.svg" title=":white_check_mark:" /> Correct. 'chown user:group filename' updates both the user owner and group owner in a single atomic command.
+- <strong>(B)</strong> <img alt="❌" class="twemoji" src="https://cdn.jsdelivr.net/gh/jdecked/twemoji@16.0.1/assets/svg/274c.svg" title=":x:" /> 'chgrp' modifies group ownership only and does not accept user:group syntax.
+- <strong>(C)</strong> <img alt="❌" class="twemoji" src="https://cdn.jsdelivr.net/gh/jdecked/twemoji@16.0.1/assets/svg/274c.svg" title=":x:" /> 'chmod' changes permission bits (rwx), not ownership.
+- <strong>(D)</strong> <img alt="❌" class="twemoji" src="https://cdn.jsdelivr.net/gh/jdecked/twemoji@16.0.1/assets/svg/274c.svg" title=":x:" /> The second command would attempt to set the user owner to '$2' rather than changing the group.</p>
+</details>
+<hr />
+<h3 id="question-6-lab-16-write-a-shell-script-that-displays-a-given-files-permissions-in-both-symbolic-form-eg-rw-r-r-and-numericoctal-form-eg-644">Question 6: Lab 1.6: Write a shell script that displays a given file's permissions in both symbolic form (e.g., -rw-r--r--) and numeric/octal form (e.g., 644).<a class="headerlink" href="#question-6-lab-16-write-a-shell-script-that-displays-a-given-files-permissions-in-both-symbolic-form-eg-rw-r-r-and-numericoctal-form-eg-644" title="Permanent link">&para;</a></h3>
+<ul>
+<li><strong>(A)</strong> ls -l "$1" | awk '{print $1}'; stat -c "%a" "$1"</li>
+<li><strong>(B)</strong> stat -c "%A %a" "$1"</li>
+<li><strong>(C)</strong> ls -l "$1" &amp;&amp; chmod -v "$1"</li>
+<li><strong>(D)</strong> Both A and B are valid solutions.</li>
+</ul>
+<details class="success">
+<summary>Answer &amp; Script Implementation (Click to Expand)</summary>
+<p><strong>Correct Solution:</strong> <img alt="✅" class="twemoji" src="https://cdn.jsdelivr.net/gh/jdecked/twemoji@16.0.1/assets/svg/2705.svg" title=":white_check_mark:" /> <strong>(D) <code>Both A and B are valid solutions.</code></strong></p>
+<p><strong>Option-by-Option Breakdown:</strong>
+- <strong>(A)</strong> <img alt="❌" class="twemoji" src="https://cdn.jsdelivr.net/gh/jdecked/twemoji@16.0.1/assets/svg/274c.svg" title=":x:" /> Valid. 'ls -l' extracts symbolic mode via awk, and 'stat -c %a' prints octal mode.
+- <strong>(B)</strong> <img alt="❌" class="twemoji" src="https://cdn.jsdelivr.net/gh/jdecked/twemoji@16.0.1/assets/svg/274c.svg" title=":x:" /> Valid. 'stat -c "%A %a"' directly outputs symbolic (%A) and octal (%a) permissions in a single command.
+- <strong>(C)</strong> <img alt="❌" class="twemoji" src="https://cdn.jsdelivr.net/gh/jdecked/twemoji@16.0.1/assets/svg/274c.svg" title=":x:" /> 'chmod -v' modifies permissions rather than simply displaying existing values.
+- <strong>(D)</strong> <img alt="✅" class="twemoji" src="https://cdn.jsdelivr.net/gh/jdecked/twemoji@16.0.1/assets/svg/2705.svg" title=":white_check_mark:" /> Correct. Both A and B are accurate implementations.</p>
+</details>
+<hr />
+<h3 id="question-7-lab-17-write-a-shell-script-that-creates-the-directory-structure-dbdaprojectsrcbindocs-in-a-single-command-and-lists-the-structure">Question 7: Lab 1.7: Write a shell script that creates the directory structure '/dbda/project/{src,bin,docs}' in a single command and lists the structure.<a class="headerlink" href="#question-7-lab-17-write-a-shell-script-that-creates-the-directory-structure-dbdaprojectsrcbindocs-in-a-single-command-and-lists-the-structure" title="Permanent link">&para;</a></h3>
+<ul>
+<li><strong>(A)</strong> mkdir -p /dbda/project/{src,bin,docs} &amp;&amp; ls -l /dbda/project</li>
+<li><strong>(B)</strong> mkdir /dbda/project/src /dbda/project/bin /dbda/project/docs</li>
+<li><strong>(C)</strong> mkdir -r /dbda/project/{src,bin,docs}</li>
+<li><strong>(D)</strong> create -p /dbda/project/{src,bin,docs}</li>
+</ul>
+<details class="success">
+<summary>Answer &amp; Script Implementation (Click to Expand)</summary>
+<p><strong>Correct Solution:</strong> <img alt="✅" class="twemoji" src="https://cdn.jsdelivr.net/gh/jdecked/twemoji@16.0.1/assets/svg/2705.svg" title=":white_check_mark:" /> <strong>(A) <code>mkdir -p /dbda/project/{src,bin,docs} &amp;&amp; ls -l /dbda/project</code></strong></p>
+<p><strong>Option-by-Option Breakdown:</strong>
+- <strong>(A)</strong> <img alt="✅" class="twemoji" src="https://cdn.jsdelivr.net/gh/jdecked/twemoji@16.0.1/assets/svg/2705.svg" title=":white_check_mark:" /> Correct. 'mkdir -p' with bash brace expansion creates intermediate parent directories and all three subdirectories, followed by 'ls -l'.
+- <strong>(B)</strong> <img alt="❌" class="twemoji" src="https://cdn.jsdelivr.net/gh/jdecked/twemoji@16.0.1/assets/svg/274c.svg" title=":x:" /> Fails if parent directories '/dbda' and '/dbda/project' do not already exist.
+- <strong>(C)</strong> <img alt="❌" class="twemoji" src="https://cdn.jsdelivr.net/gh/jdecked/twemoji@16.0.1/assets/svg/274c.svg" title=":x:" /> '-r' is invalid for mkdir; the parent creation flag is '-p'.
+- <strong>(D)</strong> <img alt="❌" class="twemoji" src="https://cdn.jsdelivr.net/gh/jdecked/twemoji@16.0.1/assets/svg/274c.svg" title=":x:" /> 'create' is not a standard Linux command.</p>
+</details>
+<hr />
+<h3 id="question-8-lab-18-write-a-shell-script-that-accepts-a-username-as-1-and-displays-that-users-home-directory-path-and-login-shell">Question 8: Lab 1.8: Write a shell script that accepts a username as $1 and displays that user's home directory path and login shell.<a class="headerlink" href="#question-8-lab-18-write-a-shell-script-that-accepts-a-username-as-1-and-displays-that-users-home-directory-path-and-login-shell" title="Permanent link">&para;</a></h3>
+<ul>
+<li><strong>(A)</strong> getent passwd "$1" | cut -d: -f6,7</li>
+<li><strong>(B)</strong> grep "^$1:" /etc/passwd | awk -F: '{print "Home:", $6, "Shell:", $7}'</li>
+<li><strong>(C)</strong> finger "$1"</li>
+<li><strong>(D)</strong> Both A and B are standard, robust solutions.</li>
+</ul>
+<details class="success">
+<summary>Answer &amp; Script Implementation (Click to Expand)</summary>
+<p><strong>Correct Solution:</strong> <img alt="✅" class="twemoji" src="https://cdn.jsdelivr.net/gh/jdecked/twemoji@16.0.1/assets/svg/2705.svg" title=":white_check_mark:" /> <strong>(D) <code>Both A and B are standard, robust solutions.</code></strong></p>
+<p><strong>Option-by-Option Breakdown:</strong>
+- <strong>(A)</strong> <img alt="❌" class="twemoji" src="https://cdn.jsdelivr.net/gh/jdecked/twemoji@16.0.1/assets/svg/274c.svg" title=":x:" /> Valid. 'getent passwd' queries the NSS database (supporting local and LDAP users) and fields 6 &amp; 7 are home and shell.
+- <strong>(B)</strong> <img alt="❌" class="twemoji" src="https://cdn.jsdelivr.net/gh/jdecked/twemoji@16.0.1/assets/svg/274c.svg" title=":x:" /> Valid. Anchored grep '^$1:' on /etc/passwd extracts fields 6 (home directory) and 7 (login shell) via awk.
+- <strong>(C)</strong> <img alt="❌" class="twemoji" src="https://cdn.jsdelivr.net/gh/jdecked/twemoji@16.0.1/assets/svg/274c.svg" title=":x:" /> 'finger' is a legacy utility not installed by default on modern Linux distributions.
+- <strong>(D)</strong> <img alt="✅" class="twemoji" src="https://cdn.jsdelivr.net/gh/jdecked/twemoji@16.0.1/assets/svg/2705.svg" title=":white_check_mark:" /> Correct. Both A and B provide robust, production-grade implementations.</p>
+</details>
+<hr />
+<h3 id="question-9-lab-19-write-a-shell-script-that-takes-an-old-filename-1-and-new-filename-2-renames-the-file-and-displays-its-permissions">Question 9: Lab 1.9: Write a shell script that takes an old filename ($1) and new filename ($2), renames the file, and displays its permissions.<a class="headerlink" href="#question-9-lab-19-write-a-shell-script-that-takes-an-old-filename-1-and-new-filename-2-renames-the-file-and-displays-its-permissions" title="Permanent link">&para;</a></h3>
+<ul>
+<li><strong>(A)</strong> mv "$1" "$2" &amp;&amp; ls -l "$2"</li>
+<li><strong>(B)</strong> rename "$1" "$2" &amp;&amp; stat "$1"</li>
+<li><strong>(C)</strong> cp "$1" "$2" &amp;&amp; rm "$1" &amp;&amp; ls -l "$1"</li>
+<li><strong>(D)</strong> mv -p "$1" "$2"</li>
+</ul>
+<details class="success">
+<summary>Answer &amp; Script Implementation (Click to Expand)</summary>
+<p><strong>Correct Solution:</strong> <img alt="✅" class="twemoji" src="https://cdn.jsdelivr.net/gh/jdecked/twemoji@16.0.1/assets/svg/2705.svg" title=":white_check_mark:" /> <strong>(A) <code>mv "$1" "$2" &amp;&amp; ls -l "$2"</code></strong></p>
+<p><strong>Option-by-Option Breakdown:</strong>
+- <strong>(A)</strong> <img alt="✅" class="twemoji" src="https://cdn.jsdelivr.net/gh/jdecked/twemoji@16.0.1/assets/svg/2705.svg" title=":white_check_mark:" /> Correct. 'mv "$1" "$2"' renames the file and 'ls -l "$2"' displays its permissions upon successful move.
+- <strong>(B)</strong> <img alt="❌" class="twemoji" src="https://cdn.jsdelivr.net/gh/jdecked/twemoji@16.0.1/assets/svg/274c.svg" title=":x:" /> Running 'stat "$1"' after renaming fails with 'No such file or directory' because the old path was renamed.
+- <strong>(C)</strong> <img alt="❌" class="twemoji" src="https://cdn.jsdelivr.net/gh/jdecked/twemoji@16.0.1/assets/svg/274c.svg" title=":x:" /> 'ls -l "$1"' fails because '$1' was deleted.
+- <strong>(D)</strong> <img alt="❌" class="twemoji" src="https://cdn.jsdelivr.net/gh/jdecked/twemoji@16.0.1/assets/svg/274c.svg" title=":x:" /> '-p' is not a valid flag for mv.</p>
+</details>
+<hr />
+<h3 id="question-10-lab-110-write-a-shell-script-that-creates-a-backup-copy-of-etcpasswd-inside-dbdabackup-named-passwd_backup_">Question 10: Lab 1.10: Write a shell script that creates a backup copy of '/etc/passwd' inside '/dbda/backup' named 'passwd_backup_<YYYY-MM-DD>'.<a class="headerlink" href="#question-10-lab-110-write-a-shell-script-that-creates-a-backup-copy-of-etcpasswd-inside-dbdabackup-named-passwd_backup_" title="Permanent link">&para;</a></h3>
+<ul>
+<li><strong>(A)</strong> mkdir -p /dbda/backup &amp;&amp; cp /etc/passwd "/dbda/backup/passwd_backup_$(date +%F)"</li>
+<li><strong>(B)</strong> cp /etc/passwd /dbda/backup/passwd_backup_date</li>
+<li><strong>(C)</strong> backup /etc/passwd /dbda/backup/</li>
+<li><strong>(D)</strong> tar -cvf /dbda/backup/passwd.tar /etc/passwd</li>
+</ul>
+<details class="success">
+<summary>Answer &amp; Script Implementation (Click to Expand)</summary>
+<p><strong>Correct Solution:</strong> <img alt="✅" class="twemoji" src="https://cdn.jsdelivr.net/gh/jdecked/twemoji@16.0.1/assets/svg/2705.svg" title=":white_check_mark:" /> <strong>(A)</strong>
+<div class="language-bash highlight"><pre><span></span><code><span id="__span-0-1"><a id="__codelineno-0-1" name="__codelineno-0-1" href="#__codelineno-0-1"></a>mkdir<span class="w"> </span>-p<span class="w"> </span>/dbda/backup<span class="w"> </span><span class="o">&amp;&amp;</span><span class="w"> </span>cp<span class="w"> </span>/etc/passwd<span class="w"> </span><span class="s2">"/dbda/backup/passwd_backup_</span><span class="k">$(</span>date<span class="w"> </span>+%F<span class="k">)</span><span class="s2">"</span>
+</span></code></pre></div></p>
+<p><strong>Option-by-Option Breakdown:</strong>
+- <strong>(A)</strong> <img alt="✅" class="twemoji" src="https://cdn.jsdelivr.net/gh/jdecked/twemoji@16.0.1/assets/svg/2705.svg" title=":white_check_mark:" /> Correct. 'mkdir -p' ensures destination directory exists, and '$(date +%F)' evaluates to the current date (YYYY-MM-DD).
+- <strong>(B)</strong> <img alt="❌" class="twemoji" src="https://cdn.jsdelivr.net/gh/jdecked/twemoji@16.0.1/assets/svg/274c.svg" title=":x:" /> Hardcodes literal string '_date' rather than evaluating the current dynamic system date.
+- <strong>(C)</strong> <img alt="❌" class="twemoji" src="https://cdn.jsdelivr.net/gh/jdecked/twemoji@16.0.1/assets/svg/274c.svg" title=":x:" /> 'backup' is not a standard Linux command.
+- <strong>(D)</strong> <img alt="❌" class="twemoji" src="https://cdn.jsdelivr.net/gh/jdecked/twemoji@16.0.1/assets/svg/274c.svg" title=":x:" /> Creates a tar archive without the requested specific filename format.</p>
+</details>
+<hr />
+<h2 id="part-2-conditional-logic-file-testing-system-monitoring">📑 Part 2: Conditional Logic, File Testing &amp; System Monitoring<a class="headerlink" href="#part-2-conditional-logic-file-testing-system-monitoring" title="Permanent link">&para;</a></h2>
+<h3 id="question-11-lab-21-write-a-shell-script-that-accepts-a-username-as-input-and-checks-whether-that-user-account-exists-on-the-system">Question 11: Lab 2.1: Write a shell script that accepts a username as input and checks whether that user account exists on the system.<a class="headerlink" href="#question-11-lab-21-write-a-shell-script-that-accepts-a-username-as-input-and-checks-whether-that-user-account-exists-on-the-system" title="Permanent link">&para;</a></h3>
+<ul>
+<li><strong>(A)</strong> if id "$1" &amp;&gt;/dev/null; then echo "User exists"; else echo "User does not exist"; fi</li>
+<li><strong>(B)</strong> if grep -q "^$1:" /etc/passwd; then echo "User exists"; else echo "User does not exist"; fi</li>
+<li><strong>(C)</strong> if [ -u "$1" ]; then echo "User exists"; fi</li>
+<li><strong>(D)</strong> Both A and B are correct implementations.</li>
+</ul>
+<details class="success">
+<summary>Answer &amp; Script Implementation (Click to Expand)</summary>
+<p><strong>Correct Solution:</strong> <img alt="✅" class="twemoji" src="https://cdn.jsdelivr.net/gh/jdecked/twemoji@16.0.1/assets/svg/2705.svg" title=":white_check_mark:" /> <strong>(D) <code>Both A and B are correct implementations.</code></strong></p>
+<p><strong>Option-by-Option Breakdown:</strong>
+- <strong>(A)</strong> <img alt="❌" class="twemoji" src="https://cdn.jsdelivr.net/gh/jdecked/twemoji@16.0.1/assets/svg/274c.svg" title=":x:" /> Valid. 'id' returns exit code 0 if user exists, non-zero if user does not exist.
+- <strong>(B)</strong> <img alt="❌" class="twemoji" src="https://cdn.jsdelivr.net/gh/jdecked/twemoji@16.0.1/assets/svg/274c.svg" title=":x:" /> Valid. 'grep -q' quietly searches /etc/passwd and returns exit code 0 on match.
+- <strong>(C)</strong> <img alt="❌" class="twemoji" src="https://cdn.jsdelivr.net/gh/jdecked/twemoji@16.0.1/assets/svg/274c.svg" title=":x:" /> '-u' is a file test operator for SUID permissions, not a user existence check.
+- <strong>(D)</strong> <img alt="✅" class="twemoji" src="https://cdn.jsdelivr.net/gh/jdecked/twemoji@16.0.1/assets/svg/2705.svg" title=":white_check_mark:" /> Correct. Both A and B are standard, robust solutions.</p>
+</details>
+<hr />
+<h3 id="question-12-lab-22-write-a-shell-script-that-accepts-a-filename-and-checks-whether-the-file-exists-and-is-readable-if-so-displays-its-contents-otherwise-displays-an-error-message">Question 12: Lab 2.2: Write a shell script that accepts a filename and checks whether the file exists and is readable; if so, displays its contents, otherwise displays an error message.<a class="headerlink" href="#question-12-lab-22-write-a-shell-script-that-accepts-a-filename-and-checks-whether-the-file-exists-and-is-readable-if-so-displays-its-contents-otherwise-displays-an-error-message" title="Permanent link">&para;</a></h3>
+<ul>
+<li><strong>(A)</strong> if [ -f "$1" ] &amp;&amp; [ -r "$1" ]; then cat "$1"; else echo "Error: File not found or unreadable" &gt;&2; fi</li>
+<li><strong>(B)</strong> if [ -e "$1" ]; then cat "$1"; else echo "Error"; fi</li>
+<li><strong>(C)</strong> if [ -w "$1" ]; then cat "$1"; fi</li>
+<li><strong>(D)</strong> cat "$1" || echo "Error"</li>
+</ul>
+<details class="success">
+<summary>Answer &amp; Script Implementation (Click to Expand)</summary>
+<p><strong>Correct Solution:</strong> <img alt="✅" class="twemoji" src="https://cdn.jsdelivr.net/gh/jdecked/twemoji@16.0.1/assets/svg/2705.svg" title=":white_check_mark:" /> <strong>(A)</strong>
+<div class="language-bash highlight"><pre><span></span><code><span id="__span-1-1"><a id="__codelineno-1-1" name="__codelineno-1-1" href="#__codelineno-1-1"></a><span class="k">if</span><span class="w"> </span><span class="o">[</span><span class="w"> </span>-f<span class="w"> </span><span class="s2">"</span><span class="nv">$1</span><span class="s2">"</span><span class="w"> </span><span class="o">]</span><span class="w"> </span><span class="o">&amp;&amp;</span><span class="w"> </span><span class="o">[</span><span class="w"> </span>-r<span class="w"> </span><span class="s2">"</span><span class="nv">$1</span><span class="s2">"</span><span class="w"> </span><span class="o">]</span><span class="p">;</span><span class="w"> </span><span class="k">then</span><span class="w"> </span>cat<span class="w"> </span><span class="s2">"</span><span class="nv">$1</span><span class="s2">"</span><span class="p">;</span><span class="w"> </span><span class="k">else</span><span class="w"> </span><span class="nb">echo</span><span class="w"> </span><span class="s2">"Error: File not found or unreadable"</span><span class="w"> </span>&gt;<span class="p">&amp;</span><span class="m">2</span><span class="p">;</span><span class="w"> </span><span class="k">fi</span>
+</span></code></pre></div></p>
+<p><strong>Option-by-Option Breakdown:</strong>
+- <strong>(A)</strong> <img alt="✅" class="twemoji" src="https://cdn.jsdelivr.net/gh/jdecked/twemoji@16.0.1/assets/svg/2705.svg" title=":white_check_mark:" /> Correct. '[ -f "$1" ]' verifies regular file existence and '[ -r "$1" ]' validates read permissions before invoking cat.
+- <strong>(B)</strong> <img alt="❌" class="twemoji" src="https://cdn.jsdelivr.net/gh/jdecked/twemoji@16.0.1/assets/svg/274c.svg" title=":x:" /> '-e' does not check read permissions; attempting cat on an unreadable file will trigger an unhandled permission error.
+- <strong>(C)</strong> <img alt="❌" class="twemoji" src="https://cdn.jsdelivr.net/gh/jdecked/twemoji@16.0.1/assets/svg/274c.svg" title=":x:" /> '-w' checks write permission, not read permission.
+- <strong>(D)</strong> <img alt="❌" class="twemoji" src="https://cdn.jsdelivr.net/gh/jdecked/twemoji@16.0.1/assets/svg/274c.svg" title=":x:" /> Does not use conditional statement syntax ('if...then...else...fi') as requested.</p>
+</details>
+<hr />
+<h3 id="question-13-lab-23-write-a-shell-script-that-accepts-two-integer-arguments-1-2-and-prints-whichever-is-greater-or-reports-that-they-are-equal">Question 13: Lab 2.3: Write a shell script that accepts two integer arguments ($1, $2) and prints whichever is greater, or reports that they are equal.<a class="headerlink" href="#question-13-lab-23-write-a-shell-script-that-accepts-two-integer-arguments-1-2-and-prints-whichever-is-greater-or-reports-that-they-are-equal" title="Permanent link">&para;</a></h3>
+<ul>
+<li><strong>(A)</strong> if [ "$1" -gt "$2" ]; then echo "$1 is greater"; elif [ "$2" -gt "$1" ]; then echo "$2 is greater"; else echo "Numbers are equal"; fi</li>
+<li><strong>(B)</strong> if [ "$1" &gt; "$2" ]; then echo "$1 is greater"; fi</li>
+<li><strong>(C)</strong> if [[ "$1" -ge "$2" ]]; then echo "$1 is greater"; fi</li>
+<li><strong>(D)</strong> expr "$1" &gt; "$2"</li>
+</ul>
+<details class="success">
+<summary>Answer &amp; Script Implementation (Click to Expand)</summary>
+<p><strong>Correct Solution:</strong> <img alt="✅" class="twemoji" src="https://cdn.jsdelivr.net/gh/jdecked/twemoji@16.0.1/assets/svg/2705.svg" title=":white_check_mark:" /> <strong>(A)</strong>
+<div class="language-bash highlight"><pre><span></span><code><span id="__span-2-1"><a id="__codelineno-2-1" name="__codelineno-2-1" href="#__codelineno-2-1"></a><span class="k">if</span><span class="w"> </span><span class="o">[</span><span class="w"> </span><span class="s2">"</span><span class="nv">$1</span><span class="s2">"</span><span class="w"> </span>-gt<span class="w"> </span><span class="s2">"</span><span class="nv">$2</span><span class="s2">"</span><span class="w"> </span><span class="o">]</span><span class="p">;</span><span class="w"> </span><span class="k">then</span><span class="w"> </span><span class="nb">echo</span><span class="w"> </span><span class="s2">"</span><span class="nv">$1</span><span class="s2"> is greater"</span><span class="p">;</span><span class="w"> </span><span class="k">elif</span><span class="w"> </span><span class="o">[</span><span class="w"> </span><span class="s2">"</span><span class="nv">$2</span><span class="s2">"</span><span class="w"> </span>-gt<span class="w"> </span><span class="s2">"</span><span class="nv">$1</span><span class="s2">"</span><span class="w"> </span><span class="o">]</span><span class="p">;</span><span class="w"> </span><span class="k">then</span><span class="w"> </span><span class="nb">echo</span><span class="w"> </span><span class="s2">"</span><span class="nv">$2</span><span class="s2"> is greater"</span><span class="p">;</span><span class="w"> </span><span class="k">else</span><span class="w"> </span><span class="nb">echo</span><span class="w"> </span><span class="s2">"Numbers are equal"</span><span class="p">;</span><span class="w"> </span><span class="k">fi</span>
+</span></code></pre></div></p>
+<p><strong>Option-by-Option Breakdown:</strong>
+- <strong>(A)</strong> <img alt="✅" class="twemoji" src="https://cdn.jsdelivr.net/gh/jdecked/twemoji@16.0.1/assets/svg/2705.svg" title=":white_check_mark:" /> Correct. Uses integer comparison operators '-gt' with complete if-elif-else branches covering greater, lesser, and equality.
+- <strong>(B)</strong> <img alt="❌" class="twemoji" src="https://cdn.jsdelivr.net/gh/jdecked/twemoji@16.0.1/assets/svg/274c.svg" title=":x:" /> Single bracket '[' with '&gt;' performs ASCII string comparison and requires redirection escaping.
+- <strong>(C)</strong> <img alt="❌" class="twemoji" src="https://cdn.jsdelivr.net/gh/jdecked/twemoji@16.0.1/assets/svg/274c.svg" title=":x:" /> '-ge' does not differentiate between strictly greater and equal.
+- <strong>(D)</strong> <img alt="❌" class="twemoji" src="https://cdn.jsdelivr.net/gh/jdecked/twemoji@16.0.1/assets/svg/274c.svg" title=":x:" /> 'expr' evaluates mathematical expressions but does not provide the conditional report branching.</p>
+</details>
+<hr />
+<h3 id="question-14-lab-24-write-a-shell-script-that-checks-whether-a-given-directory-1-exists-if-not-creates-it-and-confirms-creation-otherwise-informs-the-user-it-already-exists">Question 14: Lab 2.4: Write a shell script that checks whether a given directory ($1) exists; if not, creates it and confirms creation, otherwise informs the user it already exists.<a class="headerlink" href="#question-14-lab-24-write-a-shell-script-that-checks-whether-a-given-directory-1-exists-if-not-creates-it-and-confirms-creation-otherwise-informs-the-user-it-already-exists" title="Permanent link">&para;</a></h3>
+<ul>
+<li><strong>(A)</strong> if [ ! -d "$1" ]; then mkdir -p "$1" &amp;&amp; echo "Directory created"; else echo "Directory already exists"; fi</li>
+<li><strong>(B)</strong> if [ -f "$1" ]; then echo "Exists"; else mkdir "$1"; fi</li>
+<li><strong>(C)</strong> mkdir "$1" 2&gt;/dev/null || echo "Directory exists"</li>
+<li><strong>(D)</strong> if [ -z "$1" ]; then mkdir "$1"; fi</li>
+</ul>
+<details class="success">
+<summary>Answer &amp; Script Implementation (Click to Expand)</summary>
+<p><strong>Correct Solution:</strong> <img alt="✅" class="twemoji" src="https://cdn.jsdelivr.net/gh/jdecked/twemoji@16.0.1/assets/svg/2705.svg" title=":white_check_mark:" /> <strong>(A)</strong>
+<div class="language-bash highlight"><pre><span></span><code><span id="__span-3-1"><a id="__codelineno-3-1" name="__codelineno-3-1" href="#__codelineno-3-1"></a><span class="k">if</span><span class="w"> </span><span class="o">[</span><span class="w"> </span>!<span class="w"> </span>-d<span class="w"> </span><span class="s2">"</span><span class="nv">$1</span><span class="s2">"</span><span class="w"> </span><span class="o">]</span><span class="p">;</span><span class="w"> </span><span class="k">then</span><span class="w"> </span>mkdir<span class="w"> </span>-p<span class="w"> </span><span class="s2">"</span><span class="nv">$1</span><span class="s2">"</span><span class="w"> </span><span class="o">&amp;&amp;</span><span class="w"> </span><span class="nb">echo</span><span class="w"> </span><span class="s2">"Directory created"</span><span class="p">;</span><span class="w"> </span><span class="k">else</span><span class="w"> </span><span class="nb">echo</span><span class="w"> </span><span class="s2">"Directory already exists"</span><span class="p">;</span><span class="w"> </span><span class="k">fi</span>
+</span></code></pre></div></p>
+<p><strong>Option-by-Option Breakdown:</strong>
+- <strong>(A)</strong> <img alt="✅" class="twemoji" src="https://cdn.jsdelivr.net/gh/jdecked/twemoji@16.0.1/assets/svg/2705.svg" title=":white_check_mark:" /> Correct. '[ ! -d "$1" ]' tests if directory does not exist, creating it with 'mkdir -p' and confirming success.
+- <strong>(B)</strong> <img alt="❌" class="twemoji" src="https://cdn.jsdelivr.net/gh/jdecked/twemoji@16.0.1/assets/svg/274c.svg" title=":x:" /> '-f' tests for regular files, not directories.
+- <strong>(C)</strong> <img alt="❌" class="twemoji" src="https://cdn.jsdelivr.net/gh/jdecked/twemoji@16.0.1/assets/svg/274c.svg" title=":x:" /> Short-circuit syntax does not differentiate between pre-existence and permission errors.
+- <strong>(D)</strong> <img alt="❌" class="twemoji" src="https://cdn.jsdelivr.net/gh/jdecked/twemoji@16.0.1/assets/svg/274c.svg" title=":x:" /> '-z' tests for empty string arguments, not directory existence.</p>
+</details>
+<hr />
+<h3 id="question-15-lab-25-write-a-shell-script-that-accepts-a-filename-and-checks-whether-the-owner-has-read-write-and-execute-permissions-reporting-each-separately">Question 15: Lab 2.5: Write a shell script that accepts a filename and checks whether the owner has read, write, and execute permissions, reporting each separately.<a class="headerlink" href="#question-15-lab-25-write-a-shell-script-that-accepts-a-filename-and-checks-whether-the-owner-has-read-write-and-execute-permissions-reporting-each-separately" title="Permanent link">&para;</a></h3>
+<ul>
+<li><strong>(A)</strong> [ -r "$1" ] &amp;&amp; echo "Read: Yes" || echo "Read: No"; [ -w "$1" ] &amp;&amp; echo "Write: Yes" || echo "Write: No"; [ -x "$1" ] &amp;&amp; echo "Exec: Yes" || echo "Exec: No"</li>
+<li><strong>(B)</strong> ls -l "$1" | cut -c 2-4</li>
+<li><strong>(C)</strong> chmod -check "$1"</li>
+<li><strong>(D)</strong> stat -p "$1"</li>
+</ul>
+<details class="success">
+<summary>Answer &amp; Script Implementation (Click to Expand)</summary>
+<p><strong>Correct Solution:</strong> <img alt="✅" class="twemoji" src="https://cdn.jsdelivr.net/gh/jdecked/twemoji@16.0.1/assets/svg/2705.svg" title=":white_check_mark:" /> <strong>(A)</strong>
+<div class="language-bash highlight"><pre><span></span><code><span id="__span-4-1"><a id="__codelineno-4-1" name="__codelineno-4-1" href="#__codelineno-4-1"></a><span class="o">[</span><span class="w"> </span>-r<span class="w"> </span><span class="s2">"</span><span class="nv">$1</span><span class="s2">"</span><span class="w"> </span><span class="o">]</span><span class="w"> </span><span class="o">&amp;&amp;</span><span class="w"> </span><span class="nb">echo</span><span class="w"> </span><span class="s2">"Read: Yes"</span><span class="w"> </span><span class="o">||</span><span class="w"> </span><span class="nb">echo</span><span class="w"> </span><span class="s2">"Read: No"</span><span class="p">;</span><span class="w"> </span><span class="o">[</span><span class="w"> </span>-w<span class="w"> </span><span class="s2">"</span><span class="nv">$1</span><span class="s2">"</span><span class="w"> </span><span class="o">]</span><span class="w"> </span><span class="o">&amp;&amp;</span><span class="w"> </span><span class="nb">echo</span><span class="w"> </span><span class="s2">"Write: Yes"</span><span class="w"> </span><span class="o">||</span><span class="w"> </span><span class="nb">echo</span><span class="w"> </span><span class="s2">"Write: No"</span><span class="p">;</span><span class="w"> </span><span class="o">[</span><span class="w"> </span>-x<span class="w"> </span><span class="s2">"</span><span class="nv">$1</span><span class="s2">"</span><span class="w"> </span><span class="o">]</span><span class="w"> </span><span class="o">&amp;&amp;</span><span class="w"> </span><span class="nb">echo</span><span class="w"> </span><span class="s2">"Exec: Yes"</span><span class="w"> </span><span class="o">||</span><span class="w"> </span><span class="nb">echo</span><span class="w"> </span><span class="s2">"Exec: No"</span>
+</span></code></pre></div></p>
+<p><strong>Option-by-Option Breakdown:</strong>
+- <strong>(A)</strong> <img alt="✅" class="twemoji" src="https://cdn.jsdelivr.net/gh/jdecked/twemoji@16.0.1/assets/svg/2705.svg" title=":white_check_mark:" /> Correct. Evaluates file test operators '-r', '-w', and '-x' independently and prints discrete status for each permission.
+- <strong>(B)</strong> <img alt="❌" class="twemoji" src="https://cdn.jsdelivr.net/gh/jdecked/twemoji@16.0.1/assets/svg/274c.svg" title=":x:" /> Prints the raw 3-character string without discrete formatted per-permission status messages.
+- <strong>(C)</strong> <img alt="❌" class="twemoji" src="https://cdn.jsdelivr.net/gh/jdecked/twemoji@16.0.1/assets/svg/274c.svg" title=":x:" /> '-check' is not a valid flag for chmod.
+- <strong>(D)</strong> <img alt="❌" class="twemoji" src="https://cdn.jsdelivr.net/gh/jdecked/twemoji@16.0.1/assets/svg/274c.svg" title=":x:" /> '-p' is invalid flag syntax for stat.</p>
+</details>
+<hr />
+<h3 id="question-16-lab-26-write-a-shell-script-that-checks-current-disk-usage-of-the-root-partition-and-prints-a-warning-if-it-has-crossed-80-otherwise-prints-normal-status">Question 16: Lab 2.6: Write a shell script that checks current disk usage of the root partition ('/') and prints a warning if it has crossed 80%, otherwise prints normal status.<a class="headerlink" href="#question-16-lab-26-write-a-shell-script-that-checks-current-disk-usage-of-the-root-partition-and-prints-a-warning-if-it-has-crossed-80-otherwise-prints-normal-status" title="Permanent link">&para;</a></h3>
+<ul>
+<li><strong>(A)</strong> USAGE=$(df / | awk 'NR==2 {gsub("%", ""); print $5}'); if [ "$USAGE" -gt 80 ]; then echo "WARNING: Disk usage high: ${USAGE}%"; else echo "Disk usage normal: ${USAGE}%"; fi</li>
+<li><strong>(B)</strong> if df / &gt; 80%; then echo "Warning"; fi</li>
+<li><strong>(C)</strong> if [ $(du -sh /) -gt 80 ]; then echo "Warning"; fi</li>
+<li><strong>(D)</strong> df -h | grep '80%' &amp;&amp; echo 'Warning'</li>
+</ul>
+<details class="success">
+<summary>Answer &amp; Script Implementation (Click to Expand)</summary>
+<p><strong>Correct Solution:</strong> <img alt="✅" class="twemoji" src="https://cdn.jsdelivr.net/gh/jdecked/twemoji@16.0.1/assets/svg/2705.svg" title=":white_check_mark:" /> <strong>(A)</strong>
+<div class="language-bash highlight"><pre><span></span><code><span id="__span-5-1"><a id="__codelineno-5-1" name="__codelineno-5-1" href="#__codelineno-5-1"></a><span class="nv">USAGE</span><span class="o">=</span><span class="k">$(</span>df<span class="w"> </span>/<span class="w"> </span><span class="p">|</span><span class="w"> </span>awk<span class="w"> </span><span class="s1">'NR==2 {gsub("%", ""); print $5}'</span><span class="k">)</span><span class="p">;</span><span class="w"> </span><span class="k">if</span><span class="w"> </span><span class="o">[</span><span class="w"> </span><span class="s2">"</span><span class="nv">$USAGE</span><span class="s2">"</span><span class="w"> </span>-gt<span class="w"> </span><span class="m">80</span><span class="w"> </span><span class="o">]</span><span class="p">;</span><span class="w"> </span><span class="k">then</span><span class="w"> </span><span class="nb">echo</span><span class="w"> </span><span class="s2">"WARNING: Disk usage high: </span><span class="si">${</span><span class="nv">USAGE</span><span class="si">}</span><span class="s2">%"</span><span class="p">;</span><span class="w"> </span><span class="k">else</span><span class="w"> </span><span class="nb">echo</span><span class="w"> </span><span class="s2">"Disk usage normal: </span><span class="si">${</span><span class="nv">USAGE</span><span class="si">}</span><span class="s2">%"</span><span class="p">;</span><span class="w"> </span><span class="k">fi</span>
+</span></code></pre></div></p>
+<p><strong>Option-by-Option Breakdown:</strong>
+- <strong>(A)</strong> <img alt="✅" class="twemoji" src="https://cdn.jsdelivr.net/gh/jdecked/twemoji@16.0.1/assets/svg/2705.svg" title=":white_check_mark:" /> Correct. 'df /' extracts row 2 column 5 (capacity percentage), strips the '%' symbol, and compares numerically against 80.
+- <strong>(B)</strong> <img alt="❌" class="twemoji" src="https://cdn.jsdelivr.net/gh/jdecked/twemoji@16.0.1/assets/svg/274c.svg" title=":x:" /> 'df / &gt; 80%' is invalid syntax that redirects df output to a file named '80%'.
+- <strong>(C)</strong> <img alt="❌" class="twemoji" src="https://cdn.jsdelivr.net/gh/jdecked/twemoji@16.0.1/assets/svg/274c.svg" title=":x:" /> 'du -sh /' outputs total byte size string (e.g. '12G'), not percentage capacity.
+- <strong>(D)</strong> <img alt="❌" class="twemoji" src="https://cdn.jsdelivr.net/gh/jdecked/twemoji@16.0.1/assets/svg/274c.svg" title=":x:" /> Only matches if usage is exactly '80%', missing all higher usage values (81%-100%).</p>
+</details>
+<hr />
+<h3 id="question-17-lab-27-write-a-shell-script-that-accepts-a-username-as-1-if-the-user-does-not-exist-creates-the-account-with-a-home-directory-and-confirms-success-otherwise-reports-that-the-user-already-exists">Question 17: Lab 2.7: Write a shell script that accepts a username as $1; if the user does not exist, creates the account with a home directory and confirms success, otherwise reports that the user already exists.<a class="headerlink" href="#question-17-lab-27-write-a-shell-script-that-accepts-a-username-as-1-if-the-user-does-not-exist-creates-the-account-with-a-home-directory-and-confirms-success-otherwise-reports-that-the-user-already-exists" title="Permanent link">&para;</a></h3>
+<ul>
+<li><strong>(A)</strong> if id "$1" &amp;&gt;/dev/null; then echo "User '$1' already exists"; else sudo useradd -m "$1" &amp;&amp; echo "User '$1' created successfully"; fi</li>
+<li><strong>(B)</strong> sudo useradd "$1" || echo "User exists"</li>
+<li><strong>(C)</strong> if grep "$1" /etc/shadow; then echo "Exists"; fi</li>
+<li><strong>(D)</strong> usercreate -check "$1"</li>
+</ul>
+<details class="success">
+<summary>Answer &amp; Script Implementation (Click to Expand)</summary>
+<p><strong>Correct Solution:</strong> <img alt="✅" class="twemoji" src="https://cdn.jsdelivr.net/gh/jdecked/twemoji@16.0.1/assets/svg/2705.svg" title=":white_check_mark:" /> <strong>(A)</strong>
+<div class="language-bash highlight"><pre><span></span><code><span id="__span-6-1"><a id="__codelineno-6-1" name="__codelineno-6-1" href="#__codelineno-6-1"></a><span class="k">if</span><span class="w"> </span>id<span class="w"> </span><span class="s2">"</span><span class="nv">$1</span><span class="s2">"</span><span class="w"> </span><span class="p">&amp;</span>&gt;/dev/null<span class="p">;</span><span class="w"> </span><span class="k">then</span><span class="w"> </span><span class="nb">echo</span><span class="w"> </span><span class="s2">"User '</span><span class="nv">$1</span><span class="s2">' already exists"</span><span class="p">;</span><span class="w"> </span><span class="k">else</span><span class="w"> </span>sudo<span class="w"> </span>useradd<span class="w"> </span>-m<span class="w"> </span><span class="s2">"</span><span class="nv">$1</span><span class="s2">"</span><span class="w"> </span><span class="o">&amp;&amp;</span><span class="w"> </span><span class="nb">echo</span><span class="w"> </span><span class="s2">"User '</span><span class="nv">$1</span><span class="s2">' created successfully"</span><span class="p">;</span><span class="w"> </span><span class="k">fi</span>
+</span></code></pre></div></p>
+<p><strong>Option-by-Option Breakdown:</strong>
+- <strong>(A)</strong> <img alt="✅" class="twemoji" src="https://cdn.jsdelivr.net/gh/jdecked/twemoji@16.0.1/assets/svg/2705.svg" title=":white_check_mark:" /> Correct. Tests user existence via 'id', branches cleanly, and executes 'useradd -m' to create the user account and home directory.
+- <strong>(B)</strong> <img alt="❌" class="twemoji" src="https://cdn.jsdelivr.net/gh/jdecked/twemoji@16.0.1/assets/svg/274c.svg" title=":x:" /> Lacks '-m' to create home directory and does not provide explicit pre-validation branching.
+- <strong>(C)</strong> <img alt="❌" class="twemoji" src="https://cdn.jsdelivr.net/gh/jdecked/twemoji@16.0.1/assets/svg/274c.svg" title=":x:" /> Unprivileged users cannot read /etc/shadow, causing the check to fail under standard accounts.
+- <strong>(D)</strong> <img alt="❌" class="twemoji" src="https://cdn.jsdelivr.net/gh/jdecked/twemoji@16.0.1/assets/svg/274c.svg" title=":x:" /> 'usercreate' is not a valid Linux command.</p>
+</details>
+<hr />
+<h3 id="question-18-lab-28-write-a-shell-script-that-accepts-a-number-as-input-and-checks-whether-it-is-positive-negative-or-zero">Question 18: Lab 2.8: Write a shell script that accepts a number as input and checks whether it is positive, negative, or zero.<a class="headerlink" href="#question-18-lab-28-write-a-shell-script-that-accepts-a-number-as-input-and-checks-whether-it-is-positive-negative-or-zero" title="Permanent link">&para;</a></h3>
+<ul>
+<li><strong>(A)</strong> if [ "$1" -gt 0 ]; then echo "Positive"; elif [ "$1" -lt 0 ]; then echo "Negative"; else echo "Zero"; fi</li>
+<li><strong>(B)</strong> if [ "$1" &gt; 0 ]; then echo "Positive"; else echo "Negative"; fi</li>
+<li><strong>(C)</strong> case $1 in +<em>) echo Positive ;; -</em>) echo Negative ;; 0) echo Zero ;; esac</li>
+<li><strong>(D)</strong> Both A and C are valid implementations.</li>
+</ul>
+<details class="success">
+<summary>Answer &amp; Script Implementation (Click to Expand)</summary>
+<p><strong>Correct Solution:</strong> <img alt="✅" class="twemoji" src="https://cdn.jsdelivr.net/gh/jdecked/twemoji@16.0.1/assets/svg/2705.svg" title=":white_check_mark:" /> <strong>(D) <code>Both A and C are valid implementations.</code></strong></p>
+<p><strong>Option-by-Option Breakdown:</strong>
+- <strong>(A)</strong> <img alt="❌" class="twemoji" src="https://cdn.jsdelivr.net/gh/jdecked/twemoji@16.0.1/assets/svg/274c.svg" title=":x:" /> Valid. Integer comparison operators '-gt' and '-lt' correctly classify numbers.
+- <strong>(B)</strong> <img alt="❌" class="twemoji" src="https://cdn.jsdelivr.net/gh/jdecked/twemoji@16.0.1/assets/svg/274c.svg" title=":x:" /> '&gt;' inside single brackets performs string comparison and misses the zero condition.
+- <strong>(C)</strong> <img alt="❌" class="twemoji" src="https://cdn.jsdelivr.net/gh/jdecked/twemoji@16.0.1/assets/svg/274c.svg" title=":x:" /> Valid. Pattern matching inside case statement correctly matches signed numbers.
+- <strong>(D)</strong> <img alt="✅" class="twemoji" src="https://cdn.jsdelivr.net/gh/jdecked/twemoji@16.0.1/assets/svg/2705.svg" title=":white_check_mark:" /> Correct. Both A and C are valid implementations.</p>
+</details>
+<hr />
+<h3 id="question-19-lab-29-write-a-shell-script-that-accepts-a-username-1-and-a-group-name-2-and-checks-whether-that-user-is-a-member-of-the-given-group">Question 19: Lab 2.9: Write a shell script that accepts a username ($1) and a group name ($2), and checks whether that user is a member of the given group.<a class="headerlink" href="#question-19-lab-29-write-a-shell-script-that-accepts-a-username-1-and-a-group-name-2-and-checks-whether-that-user-is-a-member-of-the-given-group" title="Permanent link">&para;</a></h3>
+<ul>
+<li><strong>(A)</strong> if id -nG "$1" 2&gt;/dev/null | grep -qw "$2"; then echo "User '$1' is a member of '$2'"; else echo "User '$1' is NOT a member of '$2'"; fi</li>
+<li><strong>(B)</strong> if groups "$1" | grep "$2"; then echo "Member"; fi</li>
+<li><strong>(C)</strong> if [ "$1" == "$2" ]; then echo "Member"; fi</li>
+<li><strong>(D)</strong> getent group "$2" | grep "$1"</li>
+</ul>
+<details class="success">
+<summary>Answer &amp; Script Implementation (Click to Expand)</summary>
+<p><strong>Correct Solution:</strong> <img alt="✅" class="twemoji" src="https://cdn.jsdelivr.net/gh/jdecked/twemoji@16.0.1/assets/svg/2705.svg" title=":white_check_mark:" /> <strong>(A)</strong>
+<div class="language-bash highlight"><pre><span></span><code><span id="__span-7-1"><a id="__codelineno-7-1" name="__codelineno-7-1" href="#__codelineno-7-1"></a><span class="k">if</span><span class="w"> </span>id<span class="w"> </span>-nG<span class="w"> </span><span class="s2">"</span><span class="nv">$1</span><span class="s2">"</span><span class="w"> </span><span class="m">2</span>&gt;/dev/null<span class="w"> </span><span class="p">|</span><span class="w"> </span>grep<span class="w"> </span>-qw<span class="w"> </span><span class="s2">"</span><span class="nv">$2</span><span class="s2">"</span><span class="p">;</span><span class="w"> </span><span class="k">then</span><span class="w"> </span><span class="nb">echo</span><span class="w"> </span><span class="s2">"User '</span><span class="nv">$1</span><span class="s2">' is a member of '</span><span class="nv">$2</span><span class="s2">'"</span><span class="p">;</span><span class="w"> </span><span class="k">else</span><span class="w"> </span><span class="nb">echo</span><span class="w"> </span><span class="s2">"User '</span><span class="nv">$1</span><span class="s2">' is NOT a member of '</span><span class="nv">$2</span><span class="s2">'"</span><span class="p">;</span><span class="w"> </span><span class="k">fi</span>
+</span></code></pre></div></p>
+<p><strong>Option-by-Option Breakdown:</strong>
+- <strong>(A)</strong> <img alt="✅" class="twemoji" src="https://cdn.jsdelivr.net/gh/jdecked/twemoji@16.0.1/assets/svg/2705.svg" title=":white_check_mark:" /> Correct. 'id -nG "$1"' lists all group names, and 'grep -qw' checks for exact whole-word matching.
+- <strong>(B)</strong> <img alt="❌" class="twemoji" src="https://cdn.jsdelivr.net/gh/jdecked/twemoji@16.0.1/assets/svg/274c.svg" title=":x:" /> Lacks '-w' whole-word match (e.g., group 'admin' would falsely match 'administrator').
+- <strong>(C)</strong> <img alt="❌" class="twemoji" src="https://cdn.jsdelivr.net/gh/jdecked/twemoji@16.0.1/assets/svg/274c.svg" title=":x:" /> Compares username string directly against group name string, which is logically invalid.
+- <strong>(D)</strong> <img alt="❌" class="twemoji" src="https://cdn.jsdelivr.net/gh/jdecked/twemoji@16.0.1/assets/svg/274c.svg" title=":x:" /> Does not account for primary group memberships defined in /etc/passwd.</p>
+</details>
+<hr />
+<h3 id="question-20-lab-210-write-a-shell-script-that-accepts-a-filename-argument-and-checks-whether-it-is-a-regular-file-a-directory-or-does-not-exist-at-all-printing-an-appropriate-message">Question 20: Lab 2.10: Write a shell script that accepts a filename argument and checks whether it is a regular file, a directory, or does not exist at all, printing an appropriate message.<a class="headerlink" href="#question-20-lab-210-write-a-shell-script-that-accepts-a-filename-argument-and-checks-whether-it-is-a-regular-file-a-directory-or-does-not-exist-at-all-printing-an-appropriate-message" title="Permanent link">&para;</a></h3>
+<ul>
+<li><strong>(A)</strong> if [ ! -e "$1" ]; then echo "Target does not exist"; elif [ -f "$1" ]; then echo "Regular file"; elif [ -d "$1" ]; then echo "Directory"; else echo "Other special file"; fi</li>
+<li><strong>(B)</strong> if [ -f "$1" ]; then echo "File"; else echo "Directory"; fi</li>
+<li><strong>(C)</strong> if [ -d "$1" ]; then echo "Directory"; else echo "File"; fi</li>
+<li><strong>(D)</strong> file "$1"</li>
+</ul>
+<details class="success">
+<summary>Answer &amp; Script Implementation (Click to Expand)</summary>
+<p><strong>Correct Solution:</strong> <img alt="✅" class="twemoji" src="https://cdn.jsdelivr.net/gh/jdecked/twemoji@16.0.1/assets/svg/2705.svg" title=":white_check_mark:" /> <strong>(A)</strong>
+<div class="language-bash highlight"><pre><span></span><code><span id="__span-8-1"><a id="__codelineno-8-1" name="__codelineno-8-1" href="#__codelineno-8-1"></a><span class="k">if</span><span class="w"> </span><span class="o">[</span><span class="w"> </span>!<span class="w"> </span>-e<span class="w"> </span><span class="s2">"</span><span class="nv">$1</span><span class="s2">"</span><span class="w"> </span><span class="o">]</span><span class="p">;</span><span class="w"> </span><span class="k">then</span><span class="w"> </span><span class="nb">echo</span><span class="w"> </span><span class="s2">"Target does not exist"</span><span class="p">;</span><span class="w"> </span><span class="k">elif</span><span class="w"> </span><span class="o">[</span><span class="w"> </span>-f<span class="w"> </span><span class="s2">"</span><span class="nv">$1</span><span class="s2">"</span><span class="w"> </span><span class="o">]</span><span class="p">;</span><span class="w"> </span><span class="k">then</span><span class="w"> </span><span class="nb">echo</span><span class="w"> </span><span class="s2">"Regular file"</span><span class="p">;</span><span class="w"> </span><span class="k">elif</span><span class="w"> </span><span class="o">[</span><span class="w"> </span>-d<span class="w"> </span><span class="s2">"</span><span class="nv">$1</span><span class="s2">"</span><span class="w"> </span><span class="o">]</span><span class="p">;</span><span class="w"> </span><span class="k">then</span><span class="w"> </span><span class="nb">echo</span><span class="w"> </span><span class="s2">"Directory"</span><span class="p">;</span><span class="w"> </span><span class="k">else</span><span class="w"> </span><span class="nb">echo</span><span class="w"> </span><span class="s2">"Other special file"</span><span class="p">;</span><span class="w"> </span><span class="k">fi</span>
+</span></code></pre></div></p>
+<p><strong>Option-by-Option Breakdown:</strong>
+- <strong>(A)</strong> <img alt="✅" class="twemoji" src="https://cdn.jsdelivr.net/gh/jdecked/twemoji@16.0.1/assets/svg/2705.svg" title=":white_check_mark:" /> Correct. Tests for non-existence ('! -e'), regular file ('-f'), directory ('-d'), and other special file types with complete branching.
+- <strong>(B)</strong> <img alt="❌" class="twemoji" src="https://cdn.jsdelivr.net/gh/jdecked/twemoji@16.0.1/assets/svg/274c.svg" title=":x:" /> Fails to identify directories or non-existent files (assumes anything that isn't a regular file is a directory).
+- <strong>(C)</strong> <img alt="❌" class="twemoji" src="https://cdn.jsdelivr.net/gh/jdecked/twemoji@16.0.1/assets/svg/274c.svg" title=":x:" /> Assumes any non-directory file is a regular file, ignoring non-existent paths and sockets/pipes.
+- <strong>(D)</strong> <img alt="❌" class="twemoji" src="https://cdn.jsdelivr.net/gh/jdecked/twemoji@16.0.1/assets/svg/274c.svg" title=":x:" /> 'file' is a command binary, not a conditional shell script structure.</p>
+</details>
+<hr />
+
+
+
+
+
+
+
+
+
+
+
+
+                
+              </article>
+            </div>
+          
+          
+  <script>var tabs=__md_get("__tabs");if(Array.isArray(tabs))e:for(var set of document.querySelectorAll(".tabbed-set")){var labels=set.querySelector(".tabbed-labels");for(var tab of tabs)for(var label of labels.getElementsByTagName("label"))if(label.innerText.trim()===tab){var input=document.getElementById(label.htmlFor);input.checked=!0;continue e}}</script>
+
+<script>var target=document.getElementById(location.hash.slice(1));target&&target.name&&(target.checked=target.name.startsWith("__tabbed_"))</script>
+        </div>
+        
+          <button type="button" class="md-top md-icon" data-md-component="top" hidden>
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M13 20h-2V8l-5.5 5.5-1.42-1.42L12 4.16l7.92 7.92-1.42 1.42L13 8z"/></svg>
+  Back to top
+</button>
+        
+      </main>
+      
+        <footer class="md-footer">
+  
+  <div class="md-footer-meta md-typeset">
+    <div class="md-footer-meta__inner md-grid">
+      <div class="md-copyright">
+  
+  
+</div>
+      
+        
+<div class="md-social">
+  
+    
+    
+    
+    
+      
+      
+    
+    <a href="https://github.com/saichand" target="_blank" rel="noopener" title="github.com" class="md-social__link">
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512"><!--! Font Awesome Free 7.1.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2025 Fonticons, Inc.--><path d="M173.9 397.4c0 2-2.3 3.6-5.2 3.6-3.3.3-5.6-1.3-5.6-3.6 0-2 2.3-3.6 5.2-3.6 3-.3 5.6 1.3 5.6 3.6m-31.1-4.5c-.7 2 1.3 4.3 4.3 4.9 2.6 1 5.6 0 6.2-2s-1.3-4.3-4.3-5.2c-2.6-.7-5.5.3-6.2 2.3m44.2-1.7c-2.9.7-4.9 2.6-4.6 4.9.3 2 2.9 3.3 5.9 2.6 2.9-.7 4.9-2.6 4.6-4.6-.3-1.9-3-3.2-5.9-2.9M252.8 8C114.1 8 8 113.3 8 252c0 110.9 69.8 205.8 169.5 239.2 12.8 2.3 17.3-5.6 17.3-12.1 0-6.2-.3-40.4-.3-61.4 0 0-70 15-84.7-29.8 0 0-11.4-29.1-27.8-36.6 0 0-22.9-15.7 1.6-15.4 0 0 24.9 2 38.6 25.8 21.9 38.6 58.6 27.5 72.9 20.9 2.3-16 8.8-27.1 16-33.7-55.9-6.2-112.3-14.3-112.3-110.5 0-27.5 7.6-41.3 23.6-58.9-2.6-6.5-11.1-33.3 2.6-67.9 20.9-6.5 69 27 69 27 20-5.6 41.5-8.5 62.8-8.5s42.8 2.9 62.8 8.5c0 0 48.1-33.6 69-27 13.7 34.7 5.2 61.4 2.6 67.9 16 17.7 25.8 31.5 25.8 58.9 0 96.5-58.9 104.2-114.8 110.5 9.2 7.9 17 22.9 17 46.4 0 33.7-.3 75.4-.3 83.6 0 6.5 4.6 14.4 17.3 12.1C436.2 457.8 504 362.9 504 252 504 113.3 391.5 8 252.8 8M105.2 352.9c-1.3 1-1 3.3.7 5.2 1.6 1.6 3.9 2.3 5.2 1 1.3-1 1-3.3-.7-5.2-1.6-1.6-3.9-2.3-5.2-1m-10.8-8.1c-.7 1.3.3 2.9 2.3 3.9 1.6 1 3.6.7 4.3-.7.7-1.3-.3-2.9-2.3-3.9-2-.6-3.6-.3-4.3.7m32.4 35.6c-1.6 1.3-1 4.3 1.3 6.2 2.3 2.3 5.2 2.6 6.5 1 1.3-1.3.7-4.3-1.3-6.2-2.2-2.3-5.2-2.6-6.5-1m-11.4-14.7c-1.6 1-1.6 3.6 0 5.9s4.3 3.3 5.6 2.3c1.6-1.3 1.6-3.9 0-6.2-1.4-2.3-4-3.3-5.6-2"/></svg>
+    </a>
+  
+</div>
+      
+    </div>
+  </div>
+</footer>
+      
+    </div>
+    <div class="md-dialog" data-md-component="dialog">
+      <div class="md-dialog__inner md-typeset"></div>
+    </div>
+    
+    
+    
+      
+      
+      <script id="__config" type="application/json">{"annotate": null, "base": "../..", "features": ["navigation.tabs", "navigation.sections", "navigation.expand", "navigation.top", "navigation.tracking", "search.suggest", "search.highlight", "search.share", "content.code.copy", "content.code.annotate", "content.tabs.link"], "search": "../../assets/javascripts/workers/search.2c215733.min.js", "tags": null, "translations": {"clipboard.copied": "Copied to clipboard", "clipboard.copy": "Copy to clipboard", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.placeholder": "Type to start searching", "search.result.term.missing": "Missing", "select.version": "Select version"}, "version": null}</script>
+    
+    
+      <script src="../../assets/javascripts/bundle.d7400e89.min.js"></script>
+      
+        <script src="../../assets/js/progress_tracker.js"></script>
+      
+        <script src="https://plausible.io/js/plausible.js"></script>
+      
+    
+  </body>
+</html>
