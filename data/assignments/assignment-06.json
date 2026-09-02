@@ -1,0 +1,1702 @@
+[
+  {
+    "id": "mcq_001",
+    "question": "Which command displays the current working directory?",
+    "options": [
+      "cd",
+      "pwd",
+      "ls",
+      "whoami"
+    ],
+    "correct_index": 1,
+    "explanations": [
+      "Incorrect. 'cd' is either invalid syntax, a non-existent utility, or performs a different operation.",
+      "Correct. 'pwd' is the standard Linux command/syntax for this operation.",
+      "Incorrect. 'ls' is either invalid syntax, a non-existent utility, or performs a different operation.",
+      "Incorrect. 'whoami' is either invalid syntax, a non-existent utility, or performs a different operation."
+    ]
+  },
+  {
+    "id": "mcq_002",
+    "question": "Which command lists files and directories?",
+    "options": [
+      "ls",
+      "list",
+      "dirshow",
+      "files"
+    ],
+    "correct_index": 0,
+    "explanations": [
+      "Correct. 'ls' is the standard Linux command/syntax for this operation.",
+      "Incorrect. 'list' is either invalid syntax, a non-existent utility, or performs a different operation.",
+      "Incorrect. 'dirshow' is either invalid syntax, a non-existent utility, or performs a different operation.",
+      "Incorrect. 'files' is either invalid syntax, a non-existent utility, or performs a different operation."
+    ]
+  },
+  {
+    "id": "mcq_003",
+    "question": "Which option of ls commonly shows hidden files?",
+    "options": [
+      "-r",
+      "-h",
+      "-a",
+      "-s"
+    ],
+    "correct_index": 2,
+    "explanations": [
+      "Incorrect. '-r' is either invalid syntax, a non-existent utility, or performs a different operation.",
+      "Incorrect. '-h' is either invalid syntax, a non-existent utility, or performs a different operation.",
+      "Correct. '-a' is the standard Linux command/syntax for this operation.",
+      "Incorrect. '-s' is either invalid syntax, a non-existent utility, or performs a different operation."
+    ]
+  },
+  {
+    "id": "mcq_004",
+    "question": "Which command changes the current directory?",
+    "options": [
+      "mv",
+      "cd",
+      "pwd",
+      "chdirx"
+    ],
+    "correct_index": 1,
+    "explanations": [
+      "Incorrect. 'mv' is either invalid syntax, a non-existent utility, or performs a different operation.",
+      "Correct. 'cd' is the standard Linux command/syntax for this operation.",
+      "Incorrect. 'pwd' is either invalid syntax, a non-existent utility, or performs a different operation.",
+      "Incorrect. 'chdirx' is either invalid syntax, a non-existent utility, or performs a different operation."
+    ]
+  },
+  {
+    "id": "mcq_005",
+    "question": "Which command creates a new directory?",
+    "options": [
+      "mkdir",
+      "makedir",
+      "newdir",
+      "mdfile"
+    ],
+    "correct_index": 0,
+    "explanations": [
+      "Correct. 'mkdir' is the standard Linux command/syntax for this operation.",
+      "Incorrect. 'makedir' is either invalid syntax, a non-existent utility, or performs a different operation.",
+      "Incorrect. 'newdir' is either invalid syntax, a non-existent utility, or performs a different operation.",
+      "Incorrect. 'mdfile' is either invalid syntax, a non-existent utility, or performs a different operation."
+    ]
+  },
+  {
+    "id": "mcq_006",
+    "question": "Which command removes an empty directory?",
+    "options": [
+      "rm",
+      "deldir",
+      "rmdir",
+      "erase"
+    ],
+    "correct_index": 2,
+    "explanations": [
+      "Incorrect. 'rm' is either invalid syntax, a non-existent utility, or performs a different operation.",
+      "Incorrect. 'deldir' is either invalid syntax, a non-existent utility, or performs a different operation.",
+      "Correct. 'rmdir' is the standard Linux command/syntax for this operation.",
+      "Incorrect. 'erase' is either invalid syntax, a non-existent utility, or performs a different operation."
+    ]
+  },
+  {
+    "id": "mcq_007",
+    "question": "Which command creates an empty file or updates its timestamp?",
+    "options": [
+      "touch",
+      "make",
+      "create",
+      "file"
+    ],
+    "correct_index": 0,
+    "explanations": [
+      "Correct. 'touch' is the standard Linux command/syntax for this operation.",
+      "Incorrect. 'make' is either invalid syntax, a non-existent utility, or performs a different operation.",
+      "Incorrect. 'create' is either invalid syntax, a non-existent utility, or performs a different operation.",
+      "Incorrect. 'file' is either invalid syntax, a non-existent utility, or performs a different operation."
+    ]
+  },
+  {
+    "id": "mcq_008",
+    "question": "Which command copies files or directories?",
+    "options": [
+      "cp",
+      "mv",
+      "copyx",
+      "dup"
+    ],
+    "correct_index": 0,
+    "explanations": [
+      "Correct. 'cp' is the standard Linux command/syntax for this operation.",
+      "Incorrect. 'mv' is either invalid syntax, a non-existent utility, or performs a different operation.",
+      "Incorrect. 'copyx' is either invalid syntax, a non-existent utility, or performs a different operation.",
+      "Incorrect. 'dup' is either invalid syntax, a non-existent utility, or performs a different operation."
+    ]
+  },
+  {
+    "id": "mcq_009",
+    "question": "Which command moves or renames a file?",
+    "options": [
+      "cp",
+      "mv",
+      "rn",
+      "shift"
+    ],
+    "correct_index": 1,
+    "explanations": [
+      "Incorrect. 'cp' is either invalid syntax, a non-existent utility, or performs a different operation.",
+      "Correct. 'mv' is the standard Linux command/syntax for this operation.",
+      "Incorrect. 'rn' is either invalid syntax, a non-existent utility, or performs a different operation.",
+      "Incorrect. 'shift' is either invalid syntax, a non-existent utility, or performs a different operation."
+    ]
+  },
+  {
+    "id": "mcq_010",
+    "question": "Which command removes files?",
+    "options": [
+      "rm",
+      "erasefile",
+      "del",
+      "remove-dir"
+    ],
+    "correct_index": 0,
+    "explanations": [
+      "Correct. 'rm' is the standard Linux command/syntax for this operation.",
+      "Incorrect. 'erasefile' is either invalid syntax, a non-existent utility, or performs a different operation.",
+      "Incorrect. 'del' is either invalid syntax, a non-existent utility, or performs a different operation.",
+      "Incorrect. 'remove-dir' is either invalid syntax, a non-existent utility, or performs a different operation."
+    ]
+  },
+  {
+    "id": "mcq_011",
+    "question": "Which command displays the contents of a text file?",
+    "options": [
+      "cat",
+      "show",
+      "viewfile",
+      "typefile"
+    ],
+    "correct_index": 0,
+    "explanations": [
+      "Correct. 'cat' is the standard Linux command/syntax for this operation.",
+      "Incorrect. 'show' is either invalid syntax, a non-existent utility, or performs a different operation.",
+      "Incorrect. 'viewfile' is either invalid syntax, a non-existent utility, or performs a different operation.",
+      "Incorrect. 'typefile' is either invalid syntax, a non-existent utility, or performs a different operation."
+    ]
+  },
+  {
+    "id": "mcq_012",
+    "question": "Which command displays the first lines of a file?",
+    "options": [
+      "top",
+      "head",
+      "first",
+      "beginning"
+    ],
+    "correct_index": 1,
+    "explanations": [
+      "Incorrect. 'top' is either invalid syntax, a non-existent utility, or performs a different operation.",
+      "Correct. 'head' is the standard Linux command/syntax for this operation.",
+      "Incorrect. 'first' is either invalid syntax, a non-existent utility, or performs a different operation.",
+      "Incorrect. 'beginning' is either invalid syntax, a non-existent utility, or performs a different operation."
+    ]
+  },
+  {
+    "id": "mcq_013",
+    "question": "Which command displays the last lines of a file?",
+    "options": [
+      "tail",
+      "end",
+      "last",
+      "bottom"
+    ],
+    "correct_index": 0,
+    "explanations": [
+      "Correct. 'tail' is the standard Linux command/syntax for this operation.",
+      "Incorrect. 'end' is either invalid syntax, a non-existent utility, or performs a different operation.",
+      "Incorrect. 'last' is either invalid syntax, a non-existent utility, or performs a different operation.",
+      "Incorrect. 'bottom' is either invalid syntax, a non-existent utility, or performs a different operation."
+    ]
+  },
+  {
+    "id": "mcq_014",
+    "question": "Which command searches text patterns in files?",
+    "options": [
+      "grep",
+      "findtext",
+      "search",
+      "locate"
+    ],
+    "correct_index": 0,
+    "explanations": [
+      "Correct. 'grep' is the standard Linux command/syntax for this operation.",
+      "Incorrect. 'findtext' is either invalid syntax, a non-existent utility, or performs a different operation.",
+      "Incorrect. 'search' is either invalid syntax, a non-existent utility, or performs a different operation.",
+      "Incorrect. 'locate' is either invalid syntax, a non-existent utility, or performs a different operation."
+    ]
+  },
+  {
+    "id": "mcq_015",
+    "question": "Which command sorts lines of text?",
+    "options": [
+      "order",
+      "sort",
+      "arrange",
+      "line-sort"
+    ],
+    "correct_index": 1,
+    "explanations": [
+      "Incorrect. 'order' is either invalid syntax, a non-existent utility, or performs a different operation.",
+      "Correct. 'sort' is the standard Linux command/syntax for this operation.",
+      "Incorrect. 'arrange' is either invalid syntax, a non-existent utility, or performs a different operation.",
+      "Incorrect. 'line-sort' is either invalid syntax, a non-existent utility, or performs a different operation."
+    ]
+  },
+  {
+    "id": "mcq_016",
+    "question": "Which command compares two files line by line?",
+    "options": [
+      "cmpfile",
+      "diff",
+      "compare",
+      "check"
+    ],
+    "correct_index": 1,
+    "explanations": [
+      "Incorrect. 'cmpfile' is either invalid syntax, a non-existent utility, or performs a different operation.",
+      "Correct. 'diff' is the standard Linux command/syntax for this operation.",
+      "Incorrect. 'compare' is either invalid syntax, a non-existent utility, or performs a different operation.",
+      "Incorrect. 'check' is either invalid syntax, a non-existent utility, or performs a different operation."
+    ]
+  },
+  {
+    "id": "mcq_017",
+    "question": "Which command identifies the type of a file?",
+    "options": [
+      "file",
+      "typeof",
+      "identify",
+      "ftype"
+    ],
+    "correct_index": 0,
+    "explanations": [
+      "Correct. 'file' is the standard Linux command/syntax for this operation.",
+      "Incorrect. 'typeof' is either invalid syntax, a non-existent utility, or performs a different operation.",
+      "Incorrect. 'identify' is either invalid syntax, a non-existent utility, or performs a different operation.",
+      "Incorrect. 'ftype' is either invalid syntax, a non-existent utility, or performs a different operation."
+    ]
+  },
+  {
+    "id": "mcq_018",
+    "question": "Which command displays the manual page for another command?",
+    "options": [
+      "help",
+      "infox",
+      "man",
+      "manual"
+    ],
+    "correct_index": 2,
+    "explanations": [
+      "Incorrect. 'help' is either invalid syntax, a non-existent utility, or performs a different operation.",
+      "Incorrect. 'infox' is either invalid syntax, a non-existent utility, or performs a different operation.",
+      "Correct. 'man' is the standard Linux command/syntax for this operation.",
+      "Incorrect. 'manual' is either invalid syntax, a non-existent utility, or performs a different operation."
+    ]
+  },
+  {
+    "id": "mcq_019",
+    "question": "Which command searches for files by name using a database?",
+    "options": [
+      "find",
+      "locate",
+      "searchdb",
+      "where"
+    ],
+    "correct_index": 1,
+    "explanations": [
+      "Incorrect. 'find' is either invalid syntax, a non-existent utility, or performs a different operation.",
+      "Correct. 'locate' is the standard Linux command/syntax for this operation.",
+      "Incorrect. 'searchdb' is either invalid syntax, a non-existent utility, or performs a different operation.",
+      "Incorrect. 'where' is either invalid syntax, a non-existent utility, or performs a different operation."
+    ]
+  },
+  {
+    "id": "mcq_020",
+    "question": "Which command searches for files and directories in a directory hierarchy?",
+    "options": [
+      "find",
+      "locate",
+      "seek",
+      "scan"
+    ],
+    "correct_index": 0,
+    "explanations": [
+      "Correct. 'find' is the standard Linux command/syntax for this operation.",
+      "Incorrect. 'locate' is either invalid syntax, a non-existent utility, or performs a different operation.",
+      "Incorrect. 'seek' is either invalid syntax, a non-existent utility, or performs a different operation.",
+      "Incorrect. 'scan' is either invalid syntax, a non-existent utility, or performs a different operation."
+    ]
+  },
+  {
+    "id": "mcq_021",
+    "question": "Which command creates a hard link by default?",
+    "options": [
+      "ln",
+      "linkfile",
+      "cp",
+      "mklink"
+    ],
+    "correct_index": 0,
+    "explanations": [
+      "Correct. 'ln' is the standard Linux command/syntax for this operation.",
+      "Incorrect. 'linkfile' is either invalid syntax, a non-existent utility, or performs a different operation.",
+      "Incorrect. 'cp' is either invalid syntax, a non-existent utility, or performs a different operation.",
+      "Incorrect. 'mklink' is either invalid syntax, a non-existent utility, or performs a different operation."
+    ]
+  },
+  {
+    "id": "mcq_022",
+    "question": "Which command creates a symbolic link when used with -s?",
+    "options": [
+      "ln -s",
+      "link -symbolic",
+      "symlink",
+      "cp -s"
+    ],
+    "correct_index": 0,
+    "explanations": [
+      "Correct. 'ln -s' is the standard Linux command/syntax for this operation.",
+      "Incorrect. 'link -symbolic' is either invalid syntax, a non-existent utility, or performs a different operation.",
+      "Incorrect. 'symlink' is either invalid syntax, a non-existent utility, or performs a different operation.",
+      "Incorrect. 'cp -s' is either invalid syntax, a non-existent utility, or performs a different operation."
+    ]
+  },
+  {
+    "id": "mcq_023",
+    "question": "What does ln -s create?",
+    "options": [
+      "Hard link",
+      "Symbolic link",
+      "Directory copy",
+      "Archive"
+    ],
+    "correct_index": 1,
+    "explanations": [
+      "Incorrect. 'Hard link' is either invalid syntax, a non-existent utility, or performs a different operation.",
+      "Correct. 'Symbolic link' is the standard Linux command/syntax for this operation.",
+      "Incorrect. 'Directory copy' is either invalid syntax, a non-existent utility, or performs a different operation.",
+      "Incorrect. 'Archive' is either invalid syntax, a non-existent utility, or performs a different operation."
+    ]
+  },
+  {
+    "id": "mcq_024",
+    "question": "Which command compresses data using the gzip format?",
+    "options": [
+      "gzip",
+      "zip",
+      "tar",
+      "compresszip"
+    ],
+    "correct_index": 0,
+    "explanations": [
+      "Correct. 'gzip' is the standard Linux command/syntax for this operation.",
+      "Incorrect. 'zip' is either invalid syntax, a non-existent utility, or performs a different operation.",
+      "Incorrect. 'tar' is either invalid syntax, a non-existent utility, or performs a different operation.",
+      "Incorrect. 'compresszip' is either invalid syntax, a non-existent utility, or performs a different operation."
+    ]
+  },
+  {
+    "id": "mcq_025",
+    "question": "Which command decompresses a .gz file?",
+    "options": [
+      "unzip",
+      "gunzip",
+      "gzip -d only",
+      "uncompresszip"
+    ],
+    "correct_index": 1,
+    "explanations": [
+      "Incorrect. 'unzip' is either invalid syntax, a non-existent utility, or performs a different operation.",
+      "Correct. 'gunzip' is the standard Linux command/syntax for this operation.",
+      "Incorrect. 'gzip -d only' is either invalid syntax, a non-existent utility, or performs a different operation.",
+      "Incorrect. 'uncompresszip' is either invalid syntax, a non-existent utility, or performs a different operation."
+    ]
+  },
+  {
+    "id": "mcq_026",
+    "question": "Which command creates ZIP archives?",
+    "options": [
+      "zip",
+      "gzip",
+      "tarzip",
+      "pack"
+    ],
+    "correct_index": 0,
+    "explanations": [
+      "Correct. 'zip' is the standard Linux command/syntax for this operation.",
+      "Incorrect. 'gzip' is either invalid syntax, a non-existent utility, or performs a different operation.",
+      "Incorrect. 'tarzip' is either invalid syntax, a non-existent utility, or performs a different operation.",
+      "Incorrect. 'pack' is either invalid syntax, a non-existent utility, or performs a different operation."
+    ]
+  },
+  {
+    "id": "mcq_027",
+    "question": "Which command extracts ZIP archives?",
+    "options": [
+      "unzip",
+      "gunzip",
+      "extractzip",
+      "zip -x"
+    ],
+    "correct_index": 0,
+    "explanations": [
+      "Correct. 'unzip' is the standard Linux command/syntax for this operation.",
+      "Incorrect. 'gunzip' is either invalid syntax, a non-existent utility, or performs a different operation.",
+      "Incorrect. 'extractzip' is either invalid syntax, a non-existent utility, or performs a different operation.",
+      "Incorrect. 'zip -x' is either invalid syntax, a non-existent utility, or performs a different operation."
+    ]
+  },
+  {
+    "id": "mcq_028",
+    "question": "Which command is commonly used to create and extract tar archives?",
+    "options": [
+      "archive",
+      "tar",
+      "pack",
+      "bundle"
+    ],
+    "correct_index": 1,
+    "explanations": [
+      "Incorrect. 'archive' is either invalid syntax, a non-existent utility, or performs a different operation.",
+      "Correct. 'tar' is the standard Linux command/syntax for this operation.",
+      "Incorrect. 'pack' is either invalid syntax, a non-existent utility, or performs a different operation.",
+      "Incorrect. 'bundle' is either invalid syntax, a non-existent utility, or performs a different operation."
+    ]
+  },
+  {
+    "id": "mcq_029",
+    "question": "What does tar -c generally mean?",
+    "options": [
+      "Create an archive",
+      "Copy a file",
+      "Compress with gzip only",
+      "Count files"
+    ],
+    "correct_index": 0,
+    "explanations": [
+      "Correct. 'Create an archive' is the standard Linux command/syntax for this operation.",
+      "Incorrect. 'Copy a file' is either invalid syntax, a non-existent utility, or performs a different operation.",
+      "Incorrect. 'Compress with gzip only' is either invalid syntax, a non-existent utility, or performs a different operation.",
+      "Incorrect. 'Count files' is either invalid syntax, a non-existent utility, or performs a different operation."
+    ]
+  },
+  {
+    "id": "mcq_030",
+    "question": "What does tar -x generally mean?",
+    "options": [
+      "Execute",
+      "Extract an archive",
+      "Exclude",
+      "Expand directory permissions"
+    ],
+    "correct_index": 1,
+    "explanations": [
+      "Incorrect. 'Execute' is either invalid syntax, a non-existent utility, or performs a different operation.",
+      "Correct. 'Extract an archive' is the standard Linux command/syntax for this operation.",
+      "Incorrect. 'Exclude' is either invalid syntax, a non-existent utility, or performs a different operation.",
+      "Incorrect. 'Expand directory permissions' is either invalid syntax, a non-existent utility, or performs a different operation."
+    ]
+  },
+  {
+    "id": "mcq_031",
+    "question": "What does tar -f specify?",
+    "options": [
+      "File/archive name",
+      "Format only",
+      "Find mode",
+      "Force deletion"
+    ],
+    "correct_index": 0,
+    "explanations": [
+      "Correct. 'File/archive name' is the standard Linux command/syntax for this operation.",
+      "Incorrect. 'Format only' is either invalid syntax, a non-existent utility, or performs a different operation.",
+      "Incorrect. 'Find mode' is either invalid syntax, a non-existent utility, or performs a different operation.",
+      "Incorrect. 'Force deletion' is either invalid syntax, a non-existent utility, or performs a different operation."
+    ]
+  },
+  {
+    "id": "mcq_032",
+    "question": "Which tar option is commonly used with gzip compression?",
+    "options": [
+      "-z",
+      "-g",
+      "-p",
+      "-q"
+    ],
+    "correct_index": 0,
+    "explanations": [
+      "Correct. '-z' is the standard Linux command/syntax for this operation.",
+      "Incorrect. '-g' is either invalid syntax, a non-existent utility, or performs a different operation.",
+      "Incorrect. '-p' is either invalid syntax, a non-existent utility, or performs a different operation.",
+      "Incorrect. '-q' is either invalid syntax, a non-existent utility, or performs a different operation."
+    ]
+  },
+  {
+    "id": "mcq_033",
+    "question": "Which tar option is commonly used with bzip2 compression?",
+    "options": [
+      "-j",
+      "-b",
+      "-2",
+      "-bz"
+    ],
+    "correct_index": 0,
+    "explanations": [
+      "Correct. '-j' is the standard Linux command/syntax for this operation.",
+      "Incorrect. '-b' is either invalid syntax, a non-existent utility, or performs a different operation.",
+      "Incorrect. '-2' is either invalid syntax, a non-existent utility, or performs a different operation.",
+      "Incorrect. '-bz' is either invalid syntax, a non-existent utility, or performs a different operation."
+    ]
+  },
+  {
+    "id": "mcq_034",
+    "question": "Which tar option is commonly used with xz compression?",
+    "options": [
+      "-x",
+      "-J",
+      "-z",
+      "-X"
+    ],
+    "correct_index": 1,
+    "explanations": [
+      "Incorrect. '-x' is either invalid syntax, a non-existent utility, or performs a different operation.",
+      "Correct. '-J' is the standard Linux command/syntax for this operation.",
+      "Incorrect. '-z' is either invalid syntax, a non-existent utility, or performs a different operation.",
+      "Incorrect. '-X' is either invalid syntax, a non-existent utility, or performs a different operation."
+    ]
+  },
+  {
+    "id": "mcq_035",
+    "question": "Which command prints a message or text to standard output?",
+    "options": [
+      "echo",
+      "printmsg",
+      "say",
+      "output"
+    ],
+    "correct_index": 0,
+    "explanations": [
+      "Correct. 'echo' is the standard Linux command/syntax for this operation.",
+      "Incorrect. 'printmsg' is either invalid syntax, a non-existent utility, or performs a different operation.",
+      "Incorrect. 'say' is either invalid syntax, a non-existent utility, or performs a different operation.",
+      "Incorrect. 'output' is either invalid syntax, a non-existent utility, or performs a different operation."
+    ]
+  },
+  {
+    "id": "mcq_036",
+    "question": "Which command shows who is currently logged in?",
+    "options": [
+      "who",
+      "usershow",
+      "login",
+      "logged"
+    ],
+    "correct_index": 0,
+    "explanations": [
+      "Correct. 'who' is the standard Linux command/syntax for this operation.",
+      "Incorrect. 'usershow' is either invalid syntax, a non-existent utility, or performs a different operation.",
+      "Incorrect. 'login' is either invalid syntax, a non-existent utility, or performs a different operation.",
+      "Incorrect. 'logged' is either invalid syntax, a non-existent utility, or performs a different operation."
+    ]
+  },
+  {
+    "id": "mcq_037",
+    "question": "Which command displays the current username?",
+    "options": [
+      "who",
+      "whoami",
+      "username",
+      "iduser"
+    ],
+    "correct_index": 1,
+    "explanations": [
+      "Incorrect. 'who' is either invalid syntax, a non-existent utility, or performs a different operation.",
+      "Correct. 'whoami' is the standard Linux command/syntax for this operation.",
+      "Incorrect. 'username' is either invalid syntax, a non-existent utility, or performs a different operation.",
+      "Incorrect. 'iduser' is either invalid syntax, a non-existent utility, or performs a different operation."
+    ]
+  },
+  {
+    "id": "mcq_038",
+    "question": "Which command displays running processes?",
+    "options": [
+      "ps",
+      "proc",
+      "process",
+      "jobsall"
+    ],
+    "correct_index": 0,
+    "explanations": [
+      "Correct. 'ps' is the standard Linux command/syntax for this operation.",
+      "Incorrect. 'proc' is either invalid syntax, a non-existent utility, or performs a different operation.",
+      "Incorrect. 'process' is either invalid syntax, a non-existent utility, or performs a different operation.",
+      "Incorrect. 'jobsall' is either invalid syntax, a non-existent utility, or performs a different operation."
+    ]
+  },
+  {
+    "id": "mcq_039",
+    "question": "Which command can terminate a process using its PID?",
+    "options": [
+      "stop",
+      "kill",
+      "terminate",
+      "endproc"
+    ],
+    "correct_index": 1,
+    "explanations": [
+      "Incorrect. 'stop' is either invalid syntax, a non-existent utility, or performs a different operation.",
+      "Correct. 'kill' is the standard Linux command/syntax for this operation.",
+      "Incorrect. 'terminate' is either invalid syntax, a non-existent utility, or performs a different operation.",
+      "Incorrect. 'endproc' is either invalid syntax, a non-existent utility, or performs a different operation."
+    ]
+  },
+  {
+    "id": "mcq_040",
+    "question": "What does PID stand for?",
+    "options": [
+      "Process Identification",
+      "Process Identifier",
+      "Program Input Data",
+      "Process Internal Directory"
+    ],
+    "correct_index": 1,
+    "explanations": [
+      "Incorrect. 'Process Identification' is either invalid syntax, a non-existent utility, or performs a different operation.",
+      "Correct. 'Process Identifier' is the standard Linux command/syntax for this operation.",
+      "Incorrect. 'Program Input Data' is either invalid syntax, a non-existent utility, or performs a different operation.",
+      "Incorrect. 'Process Internal Directory' is either invalid syntax, a non-existent utility, or performs a different operation."
+    ]
+  },
+  {
+    "id": "mcq_041",
+    "question": "Which command can send a termination signal to a process?",
+    "options": [
+      "kill",
+      "rm",
+      "stopall",
+      "exitproc"
+    ],
+    "correct_index": 0,
+    "explanations": [
+      "Correct. 'kill' is the standard Linux command/syntax for this operation.",
+      "Incorrect. 'rm' is either invalid syntax, a non-existent utility, or performs a different operation.",
+      "Incorrect. 'stopall' is either invalid syntax, a non-existent utility, or performs a different operation.",
+      "Incorrect. 'exitproc' is either invalid syntax, a non-existent utility, or performs a different operation."
+    ]
+  },
+  {
+    "id": "mcq_042",
+    "question": "Which command is used to create build rules for software projects?",
+    "options": [
+      "make",
+      "build",
+      "makefile-run",
+      "compile"
+    ],
+    "correct_index": 0,
+    "explanations": [
+      "Correct. 'make' is the standard Linux command/syntax for this operation.",
+      "Incorrect. 'build' is either invalid syntax, a non-existent utility, or performs a different operation.",
+      "Incorrect. 'makefile-run' is either invalid syntax, a non-existent utility, or performs a different operation.",
+      "Incorrect. 'compile' is either invalid syntax, a non-existent utility, or performs a different operation."
+    ]
+  },
+  {
+    "id": "mcq_043",
+    "question": "What file commonly contains rules used by the make command?",
+    "options": [
+      "Buildfile",
+      "Makefile",
+      "Compilefile",
+      "Rules.txt"
+    ],
+    "correct_index": 1,
+    "explanations": [
+      "Incorrect. 'Buildfile' is either invalid syntax, a non-existent utility, or performs a different operation.",
+      "Correct. 'Makefile' is the standard Linux command/syntax for this operation.",
+      "Incorrect. 'Compilefile' is either invalid syntax, a non-existent utility, or performs a different operation.",
+      "Incorrect. 'Rules.txt' is either invalid syntax, a non-existent utility, or performs a different operation."
+    ]
+  },
+  {
+    "id": "mcq_044",
+    "question": "Which command is useful for displaying a long text file one screen at a time, although not listed in the image?",
+    "options": [
+      "less",
+      "ps",
+      "who",
+      "touch"
+    ],
+    "correct_index": 0,
+    "explanations": [
+      "Correct. 'less' is the standard Linux command/syntax for this operation.",
+      "Incorrect. 'ps' is either invalid syntax, a non-existent utility, or performs a different operation.",
+      "Incorrect. 'who' is either invalid syntax, a non-existent utility, or performs a different operation.",
+      "Incorrect. 'touch' is either invalid syntax, a non-existent utility, or performs a different operation."
+    ]
+  },
+  {
+    "id": "mcq_045",
+    "question": "Which command is used to copy a directory recursively?",
+    "options": [
+      "cp -r",
+      "cp -d",
+      "mv -r",
+      "copy -r"
+    ],
+    "correct_index": 0,
+    "explanations": [
+      "Correct. 'cp -r' is the standard Linux command/syntax for this operation.",
+      "Incorrect. 'cp -d' is either invalid syntax, a non-existent utility, or performs a different operation.",
+      "Incorrect. 'mv -r' is either invalid syntax, a non-existent utility, or performs a different operation.",
+      "Incorrect. 'copy -r' is either invalid syntax, a non-existent utility, or performs a different operation."
+    ]
+  },
+  {
+    "id": "mcq_046",
+    "question": "Which rm option is commonly used to remove a directory and its contents recursively?",
+    "options": [
+      "rm -r",
+      "rm -a",
+      "rm -d",
+      "rm -l"
+    ],
+    "correct_index": 0,
+    "explanations": [
+      "Correct. 'rm -r' is the standard Linux command/syntax for this operation.",
+      "Incorrect. 'rm -a' is either invalid syntax, a non-existent utility, or performs a different operation.",
+      "Incorrect. 'rm -d' is either invalid syntax, a non-existent utility, or performs a different operation.",
+      "Incorrect. 'rm -l' is either invalid syntax, a non-existent utility, or performs a different operation."
+    ]
+  },
+  {
+    "id": "mcq_047",
+    "question": "Which command can create nested directories when used with -p?",
+    "options": [
+      "mkdir -p",
+      "mk -p",
+      "rmdir -p",
+      "touch -p"
+    ],
+    "correct_index": 0,
+    "explanations": [
+      "Correct. 'mkdir -p' is the standard Linux command/syntax for this operation.",
+      "Incorrect. 'mk -p' is either invalid syntax, a non-existent utility, or performs a different operation.",
+      "Incorrect. 'rmdir -p' is either invalid syntax, a non-existent utility, or performs a different operation.",
+      "Incorrect. 'touch -p' is either invalid syntax, a non-existent utility, or performs a different operation."
+    ]
+  },
+  {
+    "id": "mcq_048",
+    "question": "What does cd .. normally do?",
+    "options": [
+      "Goes to root",
+      "Goes to the parent directory",
+      "Deletes the directory",
+      "Lists the parent"
+    ],
+    "correct_index": 1,
+    "explanations": [
+      "Incorrect. 'Goes to root' is either invalid syntax, a non-existent utility, or performs a different operation.",
+      "Correct. 'Goes to the parent directory' is the standard Linux command/syntax for this operation.",
+      "Incorrect. 'Deletes the directory' is either invalid syntax, a non-existent utility, or performs a different operation.",
+      "Incorrect. 'Lists the parent' is either invalid syntax, a non-existent utility, or performs a different operation."
+    ]
+  },
+  {
+    "id": "mcq_049",
+    "question": "What does cd ~ normally do?",
+    "options": [
+      "Goes to the user's home directory",
+      "Goes to /tmp",
+      "Goes to root",
+      "Logs out"
+    ],
+    "correct_index": 0,
+    "explanations": [
+      "Correct. 'Goes to the user's home directory' is the standard Linux command/syntax for this operation.",
+      "Incorrect. 'Goes to /tmp' is either invalid syntax, a non-existent utility, or performs a different operation.",
+      "Incorrect. 'Goes to root' is either invalid syntax, a non-existent utility, or performs a different operation.",
+      "Incorrect. 'Logs out' is either invalid syntax, a non-existent utility, or performs a different operation."
+    ]
+  },
+  {
+    "id": "mcq_050",
+    "question": "What does cd / do?",
+    "options": [
+      "Goes to the current user's home",
+      "Goes to the filesystem root",
+      "Goes to /home",
+      "Creates /"
+    ],
+    "correct_index": 1,
+    "explanations": [
+      "Incorrect. 'Goes to the current user's home' is either invalid syntax, a non-existent utility, or performs a different operation.",
+      "Correct. 'Goes to the filesystem root' is the standard Linux command/syntax for this operation.",
+      "Incorrect. 'Goes to /home' is either invalid syntax, a non-existent utility, or performs a different operation.",
+      "Incorrect. 'Creates /' is either invalid syntax, a non-existent utility, or performs a different operation."
+    ]
+  },
+  {
+    "id": "mcq_051",
+    "question": "Which command can be used to display a command's manual?",
+    "options": [
+      "man ls",
+      "manual ls",
+      "ls manpage",
+      "help-man ls"
+    ],
+    "correct_index": 0,
+    "explanations": [
+      "Correct. 'man ls' is the standard Linux command/syntax for this operation.",
+      "Incorrect. 'manual ls' is either invalid syntax, a non-existent utility, or performs a different operation.",
+      "Incorrect. 'ls manpage' is either invalid syntax, a non-existent utility, or performs a different operation.",
+      "Incorrect. 'help-man ls' is either invalid syntax, a non-existent utility, or performs a different operation."
+    ]
+  },
+  {
+    "id": "mcq_052",
+    "question": "Which command can search for a pattern such as 'error' inside a file?",
+    "options": [
+      "grep error file.txt",
+      "find error file.txt",
+      "locate error file.txt",
+      "search error file.txt"
+    ],
+    "correct_index": 0,
+    "explanations": [
+      "Correct. 'grep error file.txt' is the standard Linux command/syntax for this operation.",
+      "Incorrect. 'find error file.txt' is either invalid syntax, a non-existent utility, or performs a different operation.",
+      "Incorrect. 'locate error file.txt' is either invalid syntax, a non-existent utility, or performs a different operation.",
+      "Incorrect. 'search error file.txt' is either invalid syntax, a non-existent utility, or performs a different operation."
+    ]
+  },
+  {
+    "id": "mcq_053",
+    "question": "Which grep option commonly performs a case-insensitive search?",
+    "options": [
+      "-i",
+      "-c",
+      "-r",
+      "-n"
+    ],
+    "correct_index": 0,
+    "explanations": [
+      "Correct. '-i' is the standard Linux command/syntax for this operation.",
+      "Incorrect. '-c' is either invalid syntax, a non-existent utility, or performs a different operation.",
+      "Incorrect. '-r' is either invalid syntax, a non-existent utility, or performs a different operation.",
+      "Incorrect. '-n' is either invalid syntax, a non-existent utility, or performs a different operation."
+    ]
+  },
+  {
+    "id": "mcq_054",
+    "question": "Which grep option commonly shows line numbers with matching lines?",
+    "options": [
+      "-n",
+      "-l",
+      "-p",
+      "-m"
+    ],
+    "correct_index": 0,
+    "explanations": [
+      "Correct. '-n' is the standard Linux command/syntax for this operation.",
+      "Incorrect. '-l' is either invalid syntax, a non-existent utility, or performs a different operation.",
+      "Incorrect. '-p' is either invalid syntax, a non-existent utility, or performs a different operation.",
+      "Incorrect. '-m' is either invalid syntax, a non-existent utility, or performs a different operation."
+    ]
+  },
+  {
+    "id": "mcq_055",
+    "question": "Which grep option commonly searches recursively through directories?",
+    "options": [
+      "-r",
+      "-x",
+      "-q",
+      "-z"
+    ],
+    "correct_index": 0,
+    "explanations": [
+      "Correct. '-r' is the standard Linux command/syntax for this operation.",
+      "Incorrect. '-x' is either invalid syntax, a non-existent utility, or performs a different operation.",
+      "Incorrect. '-q' is either invalid syntax, a non-existent utility, or performs a different operation.",
+      "Incorrect. '-z' is either invalid syntax, a non-existent utility, or performs a different operation."
+    ]
+  },
+  {
+    "id": "mcq_056",
+    "question": "Which sort option commonly sorts in reverse order?",
+    "options": [
+      "-r",
+      "-v",
+      "-b",
+      "-x"
+    ],
+    "correct_index": 0,
+    "explanations": [
+      "Correct. '-r' is the standard Linux command/syntax for this operation.",
+      "Incorrect. '-v' is either invalid syntax, a non-existent utility, or performs a different operation.",
+      "Incorrect. '-b' is either invalid syntax, a non-existent utility, or performs a different operation.",
+      "Incorrect. '-x' is either invalid syntax, a non-existent utility, or performs a different operation."
+    ]
+  },
+  {
+    "id": "mcq_057",
+    "question": "Which sort option commonly performs numeric sorting?",
+    "options": [
+      "-n",
+      "-d",
+      "-N",
+      "-numonly"
+    ],
+    "correct_index": 0,
+    "explanations": [
+      "Correct. '-n' is the standard Linux command/syntax for this operation.",
+      "Incorrect. '-d' is either invalid syntax, a non-existent utility, or performs a different operation.",
+      "Incorrect. '-N' is either invalid syntax, a non-existent utility, or performs a different operation.",
+      "Incorrect. '-numonly' is either invalid syntax, a non-existent utility, or performs a different operation."
+    ]
+  },
+  {
+    "id": "mcq_058",
+    "question": "What is the default purpose of cat file.txt?",
+    "options": [
+      "Deletes the file",
+      "Displays the file contents",
+      "Compresses the file",
+      "Renames the file"
+    ],
+    "correct_index": 1,
+    "explanations": [
+      "Incorrect. 'Deletes the file' is either invalid syntax, a non-existent utility, or performs a different operation.",
+      "Correct. 'Displays the file contents' is the standard Linux command/syntax for this operation.",
+      "Incorrect. 'Compresses the file' is either invalid syntax, a non-existent utility, or performs a different operation.",
+      "Incorrect. 'Renames the file' is either invalid syntax, a non-existent utility, or performs a different operation."
+    ]
+  },
+  {
+    "id": "mcq_059",
+    "question": "What is the default number of lines shown by head?",
+    "options": [
+      "5",
+      "10",
+      "20",
+      "100"
+    ],
+    "correct_index": 1,
+    "explanations": [
+      "Incorrect. '5' is either invalid syntax, a non-existent utility, or performs a different operation.",
+      "Correct. '10' is the standard Linux command/syntax for this operation.",
+      "Incorrect. '20' is either invalid syntax, a non-existent utility, or performs a different operation.",
+      "Incorrect. '100' is either invalid syntax, a non-existent utility, or performs a different operation."
+    ]
+  },
+  {
+    "id": "mcq_060",
+    "question": "What is the default number of lines shown by tail?",
+    "options": [
+      "5",
+      "10",
+      "20",
+      "50"
+    ],
+    "correct_index": 1,
+    "explanations": [
+      "Incorrect. '5' is either invalid syntax, a non-existent utility, or performs a different operation.",
+      "Correct. '10' is the standard Linux command/syntax for this operation.",
+      "Incorrect. '20' is either invalid syntax, a non-existent utility, or performs a different operation.",
+      "Incorrect. '50' is either invalid syntax, a non-existent utility, or performs a different operation."
+    ]
+  },
+  {
+    "id": "mcq_061",
+    "question": "Which command can show the last lines of a log file continuously as it grows?",
+    "options": [
+      "tail -f",
+      "head -f",
+      "cat -f",
+      "grep -f only"
+    ],
+    "correct_index": 0,
+    "explanations": [
+      "Correct. 'tail -f' is the standard Linux command/syntax for this operation.",
+      "Incorrect. 'head -f' is either invalid syntax, a non-existent utility, or performs a different operation.",
+      "Incorrect. 'cat -f' is either invalid syntax, a non-existent utility, or performs a different operation.",
+      "Incorrect. 'grep -f only' is either invalid syntax, a non-existent utility, or performs a different operation."
+    ]
+  },
+  {
+    "id": "mcq_062",
+    "question": "Which command can identify whether a file is text, binary, image, etc.?",
+    "options": [
+      "file",
+      "type",
+      "identifyfile",
+      "kind"
+    ],
+    "correct_index": 0,
+    "explanations": [
+      "Correct. 'file' is the standard Linux command/syntax for this operation.",
+      "Incorrect. 'type' is either invalid syntax, a non-existent utility, or performs a different operation.",
+      "Incorrect. 'identifyfile' is either invalid syntax, a non-existent utility, or performs a different operation.",
+      "Incorrect. 'kind' is either invalid syntax, a non-existent utility, or performs a different operation."
+    ]
+  },
+  {
+    "id": "mcq_063",
+    "question": "Which statement about locate is correct?",
+    "options": [
+      "It always scans the entire filesystem live",
+      "It typically uses an indexed database",
+      "It only searches inside the current directory",
+      "It searches file contents"
+    ],
+    "correct_index": 1,
+    "explanations": [
+      "Incorrect. 'It always scans the entire filesystem live' is either invalid syntax, a non-existent utility, or performs a different operation.",
+      "Correct. 'It typically uses an indexed database' is the standard Linux command/syntax for this operation.",
+      "Incorrect. 'It only searches inside the current directory' is either invalid syntax, a non-existent utility, or performs a different operation.",
+      "Incorrect. 'It searches file contents' is either invalid syntax, a non-existent utility, or performs a different operation."
+    ]
+  },
+  {
+    "id": "mcq_064",
+    "question": "Which statement about find is correct?",
+    "options": [
+      "It can search directory trees using conditions",
+      "It only searches a database",
+      "It only searches file contents",
+      "It cannot search by name"
+    ],
+    "correct_index": 0,
+    "explanations": [
+      "Correct. 'It can search directory trees using conditions' is the standard Linux command/syntax for this operation.",
+      "Incorrect. 'It only searches a database' is either invalid syntax, a non-existent utility, or performs a different operation.",
+      "Incorrect. 'It only searches file contents' is either invalid syntax, a non-existent utility, or performs a different operation.",
+      "Incorrect. 'It cannot search by name' is either invalid syntax, a non-existent utility, or performs a different operation."
+    ]
+  },
+  {
+    "id": "mcq_065",
+    "question": "Which find expression searches for a file named notes.txt?",
+    "options": [
+      "find / -name notes.txt",
+      "find notes.txt /",
+      "locate / -file notes.txt",
+      "search / notes.txt"
+    ],
+    "correct_index": 0,
+    "explanations": [
+      "Correct. 'find / -name notes.txt' is the standard Linux command/syntax for this operation.",
+      "Incorrect. 'find notes.txt /' is either invalid syntax, a non-existent utility, or performs a different operation.",
+      "Incorrect. 'locate / -file notes.txt' is either invalid syntax, a non-existent utility, or performs a different operation.",
+      "Incorrect. 'search / notes.txt' is either invalid syntax, a non-existent utility, or performs a different operation."
+    ]
+  },
+  {
+    "id": "mcq_066",
+    "question": "Which command removes a file named old.txt?",
+    "options": [
+      "rm old.txt",
+      "rmdir old.txt",
+      "delete old.txt",
+      "erasefile old.txt"
+    ],
+    "correct_index": 0,
+    "explanations": [
+      "Correct. 'rm old.txt' is the standard Linux command/syntax for this operation.",
+      "Incorrect. 'rmdir old.txt' is either invalid syntax, a non-existent utility, or performs a different operation.",
+      "Incorrect. 'delete old.txt' is either invalid syntax, a non-existent utility, or performs a different operation.",
+      "Incorrect. 'erasefile old.txt' is either invalid syntax, a non-existent utility, or performs a different operation."
+    ]
+  },
+  {
+    "id": "mcq_067",
+    "question": "Which command renames report.txt to final.txt?",
+    "options": [
+      "cp report.txt final.txt",
+      "mv report.txt final.txt",
+      "rn report.txt final.txt",
+      "renamefile report.txt final.txt"
+    ],
+    "correct_index": 1,
+    "explanations": [
+      "Incorrect. 'cp report.txt final.txt' is either invalid syntax, a non-existent utility, or performs a different operation.",
+      "Correct. 'mv report.txt final.txt' is the standard Linux command/syntax for this operation.",
+      "Incorrect. 'rn report.txt final.txt' is either invalid syntax, a non-existent utility, or performs a different operation.",
+      "Incorrect. 'renamefile report.txt final.txt' is either invalid syntax, a non-existent utility, or performs a different operation."
+    ]
+  },
+  {
+    "id": "mcq_068",
+    "question": "Which command copies a.txt to b.txt?",
+    "options": [
+      "mv a.txt b.txt",
+      "cp a.txt b.txt",
+      "ln a.txt b.txt",
+      "touch a.txt b.txt"
+    ],
+    "correct_index": 1,
+    "explanations": [
+      "Incorrect. 'mv a.txt b.txt' is either invalid syntax, a non-existent utility, or performs a different operation.",
+      "Correct. 'cp a.txt b.txt' is the standard Linux command/syntax for this operation.",
+      "Incorrect. 'ln a.txt b.txt' is either invalid syntax, a non-existent utility, or performs a different operation.",
+      "Incorrect. 'touch a.txt b.txt' is either invalid syntax, a non-existent utility, or performs a different operation."
+    ]
+  },
+  {
+    "id": "mcq_069",
+    "question": "Which command creates a directory named test?",
+    "options": [
+      "mkdir test",
+      "touch test",
+      "make test",
+      "newdir test"
+    ],
+    "correct_index": 0,
+    "explanations": [
+      "Correct. 'mkdir test' is the standard Linux command/syntax for this operation.",
+      "Incorrect. 'touch test' is either invalid syntax, a non-existent utility, or performs a different operation.",
+      "Incorrect. 'make test' is either invalid syntax, a non-existent utility, or performs a different operation.",
+      "Incorrect. 'newdir test' is either invalid syntax, a non-existent utility, or performs a different operation."
+    ]
+  },
+  {
+    "id": "mcq_070",
+    "question": "Which command creates 100 empty files named file1 through file100 using brace expansion?",
+    "options": [
+      "touch file{1..100}",
+      "touch file[1-100]",
+      "make file1-file100",
+      "touch file(1..100)"
+    ],
+    "correct_index": 0,
+    "explanations": [
+      "Correct. 'touch file{1..100}' is the standard Linux command/syntax for this operation.",
+      "Incorrect. 'touch file[1-100]' is either invalid syntax, a non-existent utility, or performs a different operation.",
+      "Incorrect. 'make file1-file100' is either invalid syntax, a non-existent utility, or performs a different operation.",
+      "Incorrect. 'touch file(1..100)' is either invalid syntax, a non-existent utility, or performs a different operation."
+    ]
+  },
+  {
+    "id": "mcq_071",
+    "question": "In touch file{1..100}, what does {1..100} represent?",
+    "options": [
+      "A regular expression only",
+      "Brace expansion generating values 1 through 100",
+      "A compressed range",
+      "A directory wildcard"
+    ],
+    "correct_index": 1,
+    "explanations": [
+      "Incorrect. 'A regular expression only' is either invalid syntax, a non-existent utility, or performs a different operation.",
+      "Correct. 'Brace expansion generating values 1 through 100' is the standard Linux command/syntax for this operation.",
+      "Incorrect. 'A compressed range' is either invalid syntax, a non-existent utility, or performs a different operation.",
+      "Incorrect. 'A directory wildcard' is either invalid syntax, a non-existent utility, or performs a different operation."
+    ]
+  },
+  {
+    "id": "mcq_072",
+    "question": "Which single command creates directory dbda, creates test under it, and creates file1 through file100 inside test?",
+    "options": [
+      "mkdir -p dbda/test && touch dbda/test/file{1..100}",
+      "mkdir dbda test file1-100",
+      "make dbda/test/file1..100",
+      "touch dbda/test/file{1..100}"
+    ],
+    "correct_index": 0,
+    "explanations": [
+      "Correct. 'mkdir -p dbda/test && touch dbda/test/file{1..100}' is the standard Linux command/syntax for this operation.",
+      "Incorrect. 'mkdir dbda test file1-100' is either invalid syntax, a non-existent utility, or performs a different operation.",
+      "Incorrect. 'make dbda/test/file1..100' is either invalid syntax, a non-existent utility, or performs a different operation.",
+      "Incorrect. 'touch dbda/test/file{1..100}' is either invalid syntax, a non-existent utility, or performs a different operation."
+    ]
+  },
+  {
+    "id": "mcq_073",
+    "question": "Which symbol is commonly used to separate two commands so the second runs only if the first succeeds?",
+    "options": [
+      ";",
+      "&&",
+      "|||",
+      ">>"
+    ],
+    "correct_index": 1,
+    "explanations": [
+      "Incorrect. ';' is either invalid syntax, a non-existent utility, or performs a different operation.",
+      "Correct. '&&' is the standard Linux command/syntax for this operation.",
+      "Incorrect. '|||' is either invalid syntax, a non-existent utility, or performs a different operation.",
+      "Incorrect. '>>' is either invalid syntax, a non-existent utility, or performs a different operation."
+    ]
+  },
+  {
+    "id": "mcq_074",
+    "question": "Which command would create the lab structure under /tmp?",
+    "options": [
+      "mkdir -p /tmp/dbda/test && touch /tmp/dbda/test/file{1..100}",
+      "cd /tmp && rm dbda",
+      "touch /tmp/dbda/test/file1",
+      "rmdir /tmp/dbda/test"
+    ],
+    "correct_index": 0,
+    "explanations": [
+      "Correct. 'mkdir -p /tmp/dbda/test && touch /tmp/dbda/test/file{1..100}' is the standard Linux command/syntax for this operation.",
+      "Incorrect. 'cd /tmp && rm dbda' is either invalid syntax, a non-existent utility, or performs a different operation.",
+      "Incorrect. 'touch /tmp/dbda/test/file1' is either invalid syntax, a non-existent utility, or performs a different operation.",
+      "Incorrect. 'rmdir /tmp/dbda/test' is either invalid syntax, a non-existent utility, or performs a different operation."
+    ]
+  },
+  {
+    "id": "mcq_075",
+    "question": "Which command displays the absolute path of the current directory?",
+    "options": [
+      "pwd",
+      "path",
+      "where",
+      "cwd"
+    ],
+    "correct_index": 0,
+    "explanations": [
+      "Correct. 'pwd' is the standard Linux command/syntax for this operation.",
+      "Incorrect. 'path' is either invalid syntax, a non-existent utility, or performs a different operation.",
+      "Incorrect. 'where' is either invalid syntax, a non-existent utility, or performs a different operation.",
+      "Incorrect. 'cwd' is either invalid syntax, a non-existent utility, or performs a different operation."
+    ]
+  },
+  {
+    "id": "mcq_076",
+    "question": "Which command can show a detailed listing including permissions and ownership?",
+    "options": [
+      "ls -l",
+      "ls -d",
+      "ls -p",
+      "ls -x"
+    ],
+    "correct_index": 0,
+    "explanations": [
+      "Correct. 'ls -l' is the standard Linux command/syntax for this operation.",
+      "Incorrect. 'ls -d' is either invalid syntax, a non-existent utility, or performs a different operation.",
+      "Incorrect. 'ls -p' is either invalid syntax, a non-existent utility, or performs a different operation.",
+      "Incorrect. 'ls -x' is either invalid syntax, a non-existent utility, or performs a different operation."
+    ]
+  },
+  {
+    "id": "mcq_077",
+    "question": "Which command can show hidden files in a detailed listing?",
+    "options": [
+      "ls -la",
+      "ls -dl",
+      "ls -ha only",
+      "ls -hl only"
+    ],
+    "correct_index": 0,
+    "explanations": [
+      "Correct. 'ls -la' is the standard Linux command/syntax for this operation.",
+      "Incorrect. 'ls -dl' is either invalid syntax, a non-existent utility, or performs a different operation.",
+      "Incorrect. 'ls -ha only' is either invalid syntax, a non-existent utility, or performs a different operation.",
+      "Incorrect. 'ls -hl only' is either invalid syntax, a non-existent utility, or performs a different operation."
+    ]
+  },
+  {
+    "id": "mcq_078",
+    "question": "Which command can force removal of files without prompting when combined with -f?",
+    "options": [
+      "rm -f",
+      "rmdir -f only",
+      "delete -f",
+      "erase -f"
+    ],
+    "correct_index": 0,
+    "explanations": [
+      "Correct. 'rm -f' is the standard Linux command/syntax for this operation.",
+      "Incorrect. 'rmdir -f only' is either invalid syntax, a non-existent utility, or performs a different operation.",
+      "Incorrect. 'delete -f' is either invalid syntax, a non-existent utility, or performs a different operation.",
+      "Incorrect. 'erase -f' is either invalid syntax, a non-existent utility, or performs a different operation."
+    ]
+  },
+  {
+    "id": "mcq_079",
+    "question": "Which command displays the current logged-in username, not all logged-in users?",
+    "options": [
+      "who",
+      "whoami",
+      "users",
+      "w"
+    ],
+    "correct_index": 1,
+    "explanations": [
+      "Incorrect. 'who' is either invalid syntax, a non-existent utility, or performs a different operation.",
+      "Correct. 'whoami' is the standard Linux command/syntax for this operation.",
+      "Incorrect. 'users' is either invalid syntax, a non-existent utility, or performs a different operation.",
+      "Incorrect. 'w' is either invalid syntax, a non-existent utility, or performs a different operation."
+    ]
+  },
+  {
+    "id": "mcq_080",
+    "question": "Which command is most directly useful for finding the PID of a running process when combined with suitable options/filters?",
+    "options": [
+      "ps",
+      "touch",
+      "sort",
+      "mkdir"
+    ],
+    "correct_index": 0,
+    "explanations": [
+      "Correct. 'ps' is the standard Linux command/syntax for this operation.",
+      "Incorrect. 'touch' is either invalid syntax, a non-existent utility, or performs a different operation.",
+      "Incorrect. 'sort' is either invalid syntax, a non-existent utility, or performs a different operation.",
+      "Incorrect. 'mkdir' is either invalid syntax, a non-existent utility, or performs a different operation."
+    ]
+  },
+  {
+    "id": "mcq_081",
+    "question": "Which command is commonly used to terminate a process by PID 1234?",
+    "options": [
+      "kill 1234",
+      "rm 1234",
+      "ps 1234",
+      "stop 1234"
+    ],
+    "correct_index": 0,
+    "explanations": [
+      "Correct. 'kill 1234' is the standard Linux command/syntax for this operation.",
+      "Incorrect. 'rm 1234' is either invalid syntax, a non-existent utility, or performs a different operation.",
+      "Incorrect. 'ps 1234' is either invalid syntax, a non-existent utility, or performs a different operation.",
+      "Incorrect. 'stop 1234' is either invalid syntax, a non-existent utility, or performs a different operation."
+    ]
+  },
+  {
+    "id": "mcq_082",
+    "question": "Which signal is commonly sent by kill -9?",
+    "options": [
+      "SIGTERM",
+      "SIGKILL",
+      "SIGHUP",
+      "SIGSTOP"
+    ],
+    "correct_index": 1,
+    "explanations": [
+      "Incorrect. 'SIGTERM' is either invalid syntax, a non-existent utility, or performs a different operation.",
+      "Correct. 'SIGKILL' is the standard Linux command/syntax for this operation.",
+      "Incorrect. 'SIGHUP' is either invalid syntax, a non-existent utility, or performs a different operation.",
+      "Incorrect. 'SIGSTOP' is either invalid syntax, a non-existent utility, or performs a different operation."
+    ]
+  },
+  {
+    "id": "mcq_083",
+    "question": "Which command extracts a gzip-compressed file named data.gz?",
+    "options": [
+      "gunzip data.gz",
+      "unzip data.gz",
+      "tar -x data.gz",
+      "ungzip data.gz"
+    ],
+    "correct_index": 0,
+    "explanations": [
+      "Correct. 'gunzip data.gz' is the standard Linux command/syntax for this operation.",
+      "Incorrect. 'unzip data.gz' is either invalid syntax, a non-existent utility, or performs a different operation.",
+      "Incorrect. 'tar -x data.gz' is either invalid syntax, a non-existent utility, or performs a different operation.",
+      "Incorrect. 'ungzip data.gz' is either invalid syntax, a non-existent utility, or performs a different operation."
+    ]
+  },
+  {
+    "id": "mcq_084",
+    "question": "Which command creates data.zip containing file1.txt?",
+    "options": [
+      "zip data.zip file1.txt",
+      "gzip data.zip file1.txt",
+      "tar data.zip file1.txt",
+      "zip -x data.zip file1.txt"
+    ],
+    "correct_index": 0,
+    "explanations": [
+      "Correct. 'zip data.zip file1.txt' is the standard Linux command/syntax for this operation.",
+      "Incorrect. 'gzip data.zip file1.txt' is either invalid syntax, a non-existent utility, or performs a different operation.",
+      "Incorrect. 'tar data.zip file1.txt' is either invalid syntax, a non-existent utility, or performs a different operation.",
+      "Incorrect. 'zip -x data.zip file1.txt' is either invalid syntax, a non-existent utility, or performs a different operation."
+    ]
+  },
+  {
+    "id": "mcq_085",
+    "question": "Which command extracts data.zip?",
+    "options": [
+      "unzip data.zip",
+      "gunzip data.zip",
+      "tar -xzf data.zip",
+      "extract data.zip"
+    ],
+    "correct_index": 0,
+    "explanations": [
+      "Correct. 'unzip data.zip' is the standard Linux command/syntax for this operation.",
+      "Incorrect. 'gunzip data.zip' is either invalid syntax, a non-existent utility, or performs a different operation.",
+      "Incorrect. 'tar -xzf data.zip' is either invalid syntax, a non-existent utility, or performs a different operation.",
+      "Incorrect. 'extract data.zip' is either invalid syntax, a non-existent utility, or performs a different operation."
+    ]
+  },
+  {
+    "id": "mcq_086",
+    "question": "Which command creates a gzip-compressed tar archive named backup.tar.gz?",
+    "options": [
+      "tar -czf backup.tar.gz files/",
+      "tar -xzf backup.tar.gz files/",
+      "gzip backup.tar.gz files/",
+      "zip backup.tar.gz files/"
+    ],
+    "correct_index": 0,
+    "explanations": [
+      "Correct. 'tar -czf backup.tar.gz files/' is the standard Linux command/syntax for this operation.",
+      "Incorrect. 'tar -xzf backup.tar.gz files/' is either invalid syntax, a non-existent utility, or performs a different operation.",
+      "Incorrect. 'gzip backup.tar.gz files/' is either invalid syntax, a non-existent utility, or performs a different operation.",
+      "Incorrect. 'zip backup.tar.gz files/' is either invalid syntax, a non-existent utility, or performs a different operation."
+    ]
+  },
+  {
+    "id": "mcq_087",
+    "question": "Which command extracts backup.tar.gz?",
+    "options": [
+      "tar -xzf backup.tar.gz",
+      "tar -czf backup.tar.gz",
+      "unzip backup.tar.gz",
+      "gunzip -x backup.tar.gz"
+    ],
+    "correct_index": 0,
+    "explanations": [
+      "Correct. 'tar -xzf backup.tar.gz' is the standard Linux command/syntax for this operation.",
+      "Incorrect. 'tar -czf backup.tar.gz' is either invalid syntax, a non-existent utility, or performs a different operation.",
+      "Incorrect. 'unzip backup.tar.gz' is either invalid syntax, a non-existent utility, or performs a different operation.",
+      "Incorrect. 'gunzip -x backup.tar.gz' is either invalid syntax, a non-existent utility, or performs a different operation."
+    ]
+  },
+  {
+    "id": "mcq_088",
+    "question": "Which command creates a bzip2-compressed tar archive?",
+    "options": [
+      "tar -cjf backup.tar.bz2 files/",
+      "tar -czf backup.tar.bz2 files/",
+      "tar -cJf backup.tar.bz2 files/",
+      "zip backup.tar.bz2 files/"
+    ],
+    "correct_index": 0,
+    "explanations": [
+      "Correct. 'tar -cjf backup.tar.bz2 files/' is the standard Linux command/syntax for this operation.",
+      "Incorrect. 'tar -czf backup.tar.bz2 files/' is either invalid syntax, a non-existent utility, or performs a different operation.",
+      "Incorrect. 'tar -cJf backup.tar.bz2 files/' is either invalid syntax, a non-existent utility, or performs a different operation.",
+      "Incorrect. 'zip backup.tar.bz2 files/' is either invalid syntax, a non-existent utility, or performs a different operation."
+    ]
+  },
+  {
+    "id": "mcq_089",
+    "question": "Which command creates an xz-compressed tar archive?",
+    "options": [
+      "tar -cJf backup.tar.xz files/",
+      "tar -cjf backup.tar.xz files/",
+      "tar -czf backup.tar.xz files/",
+      "gzip -J backup.tar.xz"
+    ],
+    "correct_index": 0,
+    "explanations": [
+      "Correct. 'tar -cJf backup.tar.xz files/' is the standard Linux command/syntax for this operation.",
+      "Incorrect. 'tar -cjf backup.tar.xz files/' is either invalid syntax, a non-existent utility, or performs a different operation.",
+      "Incorrect. 'tar -czf backup.tar.xz files/' is either invalid syntax, a non-existent utility, or performs a different operation.",
+      "Incorrect. 'gzip -J backup.tar.xz' is either invalid syntax, a non-existent utility, or performs a different operation."
+    ]
+  },
+  {
+    "id": "mcq_090",
+    "question": "What does echo 'Hello' > hello.txt generally do?",
+    "options": [
+      "Appends Hello to the file",
+      "Writes Hello to the file, replacing existing content",
+      "Displays Hello only",
+      "Deletes hello.txt"
+    ],
+    "correct_index": 1,
+    "explanations": [
+      "Incorrect. 'Appends Hello to the file' is either invalid syntax, a non-existent utility, or performs a different operation.",
+      "Correct. 'Writes Hello to the file, replacing existing content' is the standard Linux command/syntax for this operation.",
+      "Incorrect. 'Displays Hello only' is either invalid syntax, a non-existent utility, or performs a different operation.",
+      "Incorrect. 'Deletes hello.txt' is either invalid syntax, a non-existent utility, or performs a different operation."
+    ]
+  },
+  {
+    "id": "mcq_091",
+    "question": "What does echo 'Hello' >> hello.txt generally do?",
+    "options": [
+      "Appends Hello to the file",
+      "Replaces the file",
+      "Creates a directory",
+      "Compresses the file"
+    ],
+    "correct_index": 0,
+    "explanations": [
+      "Correct. 'Appends Hello to the file' is the standard Linux command/syntax for this operation.",
+      "Incorrect. 'Replaces the file' is either invalid syntax, a non-existent utility, or performs a different operation.",
+      "Incorrect. 'Creates a directory' is either invalid syntax, a non-existent utility, or performs a different operation.",
+      "Incorrect. 'Compresses the file' is either invalid syntax, a non-existent utility, or performs a different operation."
+    ]
+  },
+  {
+    "id": "mcq_092",
+    "question": "Which command can show the manual for the mkdir command?",
+    "options": [
+      "man mkdir",
+      "help mkdir only",
+      "mkdir man",
+      "manual-mkdir"
+    ],
+    "correct_index": 0,
+    "explanations": [
+      "Correct. 'man mkdir' is the standard Linux command/syntax for this operation.",
+      "Incorrect. 'help mkdir only' is either invalid syntax, a non-existent utility, or performs a different operation.",
+      "Incorrect. 'mkdir man' is either invalid syntax, a non-existent utility, or performs a different operation.",
+      "Incorrect. 'manual-mkdir' is either invalid syntax, a non-existent utility, or performs a different operation."
+    ]
+  },
+  {
+    "id": "mcq_093",
+    "question": "Which command compares old.txt and new.txt and reports line differences?",
+    "options": [
+      "diff old.txt new.txt",
+      "compare old.txt new.txt",
+      "sort old.txt new.txt",
+      "grep old.txt new.txt"
+    ],
+    "correct_index": 0,
+    "explanations": [
+      "Correct. 'diff old.txt new.txt' is the standard Linux command/syntax for this operation.",
+      "Incorrect. 'compare old.txt new.txt' is either invalid syntax, a non-existent utility, or performs a different operation.",
+      "Incorrect. 'sort old.txt new.txt' is either invalid syntax, a non-existent utility, or performs a different operation.",
+      "Incorrect. 'grep old.txt new.txt' is either invalid syntax, a non-existent utility, or performs a different operation."
+    ]
+  },
+  {
+    "id": "mcq_094",
+    "question": "Which command sorts names.txt alphabetically and displays the result?",
+    "options": [
+      "sort names.txt",
+      "grep names.txt",
+      "order names.txt",
+      "arrange names.txt"
+    ],
+    "correct_index": 0,
+    "explanations": [
+      "Correct. 'sort names.txt' is the standard Linux command/syntax for this operation.",
+      "Incorrect. 'grep names.txt' is either invalid syntax, a non-existent utility, or performs a different operation.",
+      "Incorrect. 'order names.txt' is either invalid syntax, a non-existent utility, or performs a different operation.",
+      "Incorrect. 'arrange names.txt' is either invalid syntax, a non-existent utility, or performs a different operation."
+    ]
+  },
+  {
+    "id": "mcq_095",
+    "question": "Which command displays the first 5 lines of file.txt?",
+    "options": [
+      "head -n 5 file.txt",
+      "head -5-lines file.txt",
+      "first -5 file.txt",
+      "top 5 file.txt"
+    ],
+    "correct_index": 0,
+    "explanations": [
+      "Correct. 'head -n 5 file.txt' is the standard Linux command/syntax for this operation.",
+      "Incorrect. 'head -5-lines file.txt' is either invalid syntax, a non-existent utility, or performs a different operation.",
+      "Incorrect. 'first -5 file.txt' is either invalid syntax, a non-existent utility, or performs a different operation.",
+      "Incorrect. 'top 5 file.txt' is either invalid syntax, a non-existent utility, or performs a different operation."
+    ]
+  },
+  {
+    "id": "mcq_096",
+    "question": "Which command displays the last 20 lines of file.txt?",
+    "options": [
+      "tail -n 20 file.txt",
+      "tail -20-lines file.txt",
+      "last -20 file.txt",
+      "bottom 20 file.txt"
+    ],
+    "correct_index": 0,
+    "explanations": [
+      "Correct. 'tail -n 20 file.txt' is the standard Linux command/syntax for this operation.",
+      "Incorrect. 'tail -20-lines file.txt' is either invalid syntax, a non-existent utility, or performs a different operation.",
+      "Incorrect. 'last -20 file.txt' is either invalid syntax, a non-existent utility, or performs a different operation.",
+      "Incorrect. 'bottom 20 file.txt' is either invalid syntax, a non-existent utility, or performs a different operation."
+    ]
+  },
+  {
+    "id": "mcq_097",
+    "question": "Which command creates a symbolic link named latest pointing to report.txt?",
+    "options": [
+      "ln -s report.txt latest",
+      "ln report.txt latest",
+      "cp -s report.txt latest",
+      "symlink report.txt latest"
+    ],
+    "correct_index": 0,
+    "explanations": [
+      "Correct. 'ln -s report.txt latest' is the standard Linux command/syntax for this operation.",
+      "Incorrect. 'ln report.txt latest' is either invalid syntax, a non-existent utility, or performs a different operation.",
+      "Incorrect. 'cp -s report.txt latest' is either invalid syntax, a non-existent utility, or performs a different operation.",
+      "Incorrect. 'symlink report.txt latest' is either invalid syntax, a non-existent utility, or performs a different operation."
+    ]
+  },
+  {
+    "id": "mcq_098",
+    "question": "Which command would you use to see whether a command exists in the manual and learn its usage?",
+    "options": [
+      "man command",
+      "touch command",
+      "rm command",
+      "mkdir command"
+    ],
+    "correct_index": 0,
+    "explanations": [
+      "Correct. 'man command' is the standard Linux command/syntax for this operation.",
+      "Incorrect. 'touch command' is either invalid syntax, a non-existent utility, or performs a different operation.",
+      "Incorrect. 'rm command' is either invalid syntax, a non-existent utility, or performs a different operation.",
+      "Incorrect. 'mkdir command' is either invalid syntax, a non-existent utility, or performs a different operation."
+    ]
+  },
+  {
+    "id": "mcq_099",
+    "question": "A Linux command followed by && will execute the next command when:",
+    "options": [
+      "The first command succeeds",
+      "The first command fails",
+      "The system shuts down",
+      "The user logs out"
+    ],
+    "correct_index": 0,
+    "explanations": [
+      "Correct. 'The first command succeeds' is the standard Linux command/syntax for this operation.",
+      "Incorrect. 'The first command fails' is either invalid syntax, a non-existent utility, or performs a different operation.",
+      "Incorrect. 'The system shuts down' is either invalid syntax, a non-existent utility, or performs a different operation.",
+      "Incorrect. 'The user logs out' is either invalid syntax, a non-existent utility, or performs a different operation."
+    ]
+  },
+  {
+    "id": "mcq_100",
+    "question": "Which command is appropriate for creating the required dbda/test structure as root?",
+    "options": [
+      "sudo mkdir -p dbda/test",
+      "sudo touch dbda/test",
+      "sudo rmdir dbda/test",
+      "sudo cat dbda/test"
+    ],
+    "correct_index": 0,
+    "explanations": [
+      "Correct. 'sudo mkdir -p dbda/test' is the standard Linux command/syntax for this operation.",
+      "Incorrect. 'sudo touch dbda/test' is either invalid syntax, a non-existent utility, or performs a different operation.",
+      "Incorrect. 'sudo rmdir dbda/test' is either invalid syntax, a non-existent utility, or performs a different operation.",
+      "Incorrect. 'sudo cat dbda/test' is either invalid syntax, a non-existent utility, or performs a different operation."
+    ]
+  }
+]

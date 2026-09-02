@@ -1,0 +1,113 @@
+site_name: VLSI & Embedded Systems Notes
+site_description: Comprehensive, structured technical notes, lab manuals, assignments, and interview preparation for PGCP-VLSI.
+site_author: Sai Chand
+site_url: https://saichand.github.io/vlsi-notes/
+
+repo_name: saichand/vlsi-notes
+repo_url: https://github.com/saichand/vlsi-notes
+edit_uri: ""
+
+theme:
+  name: material
+  language: en
+  palette:
+    # Light mode
+    - scheme: default
+      primary: indigo
+      accent: cyan
+      toggle:
+        icon: material/brightness-7
+        name: Switch to dark mode
+    # Dark mode
+    - scheme: slate
+      primary: indigo
+      accent: cyan
+      toggle:
+        icon: material/brightness-4
+        name: Switch to light mode
+  features:
+    - navigation.tabs
+    - navigation.sections
+    - navigation.expand
+    - navigation.top
+    - navigation.tracking
+    - search.suggest
+    - search.highlight
+    - search.share
+    - content.code.copy
+    - content.code.annotate
+    - content.tabs.link
+  icon:
+    repo: fontawesome/brands/github
+
+markdown_extensions:
+  - admonition
+  - pymdownx.details
+  - pymdownx.superfences:
+      custom_fences:
+        - name: mermaid
+          class: mermaid
+          format: !!python/name:pymdownx.superfences.fence_code_format
+  - pymdownx.tabbed:
+      alternate_style: true
+  - pymdownx.highlight:
+      anchor_linenums: true
+      line_spans: __span
+      pygments_lang_class: true
+  - pymdownx.inlinehilite
+  - pymdownx.snippets
+  - pymdownx.keys
+  - pymdownx.mark
+  - pymdownx.tilde
+  - pymdownx.caret
+  - pymdownx.emoji:
+      emoji_index: !!python/name:material.extensions.emoji.twemoji
+      emoji_generator: !!python/name:material.extensions.emoji.to_svg
+  - tables
+  - attr_list
+  - md_in_html
+  - toc:
+      permalink: true
+
+extra:
+  social:
+    - icon: fontawesome/brands/github
+      link: https://github.com/saichand
+  generator: false
+
+extra_javascript:
+  - assets/js/progress_tracker.js
+  - https://plausible.io/js/plausible.js
+extra_css:
+  - assets/css/custom.css
+
+nav:
+  - Home: index.md
+  - Linux & Shell Scripting:
+      - Overview: modules/linux-shell-scripting/index.md
+      - 01. Ubuntu Installation & VirtualBox: modules/linux-shell-scripting/01-ubuntu-installation-virtualbox.md
+      - 02. Architecture & Boot Sequence: modules/linux-shell-scripting/02-architecture-startup-shutdown.md
+      - 03. Filesystem Hierarchy & Inodes: modules/linux-shell-scripting/03-filesystem-hierarchy-inodes.md
+      - 04. Core Commands & File Management: modules/linux-shell-scripting/04-core-commands.md
+      - 05. Permissions, Ownership & ACLs: modules/linux-shell-scripting/05-permissions-acls.md
+      - 06. Text Processing & RegEx: modules/linux-shell-scripting/06-text-processing.md
+      - 07. Processes, Signals & Crontab: modules/linux-shell-scripting/07-processes-scheduling.md
+      - 08. Networking & Remote Access: modules/linux-shell-scripting/08-networking-diagnostics.md
+      - 09. Bash Shell Scripting: modules/linux-shell-scripting/09-shell-scripting.md
+  - Assignments & Self-Testing:
+      - Hub Overview: assignments/index.md
+      - Assignment 01 - Basics & Permissions: assignments/assignment-01.md
+      - Assignment 02 - Text Filters & Search: assignments/assignment-02.md
+      - Assignment 03 - Users, ACLs & Crontab: assignments/assignment-03.md
+      - Assignment 04 - Networking & Env: assignments/assignment-04.md
+      - Assignment 05 - Shell Scripting Labs: assignments/assignment-05.md
+      - Assignment 06 - 100 Linux MCQs: assignments/assignment-06.md
+  - Curriculum Modules:
+      - Digital Design: modules/digital-design/index.md
+      - C & C++ Programming: modules/programming-c-cpp/index.md
+      - Verilog HDL: modules/verilog-hdl/index.md
+      - HDL Simulation & Synthesis: modules/hdl-simulation-synthesis/index.md
+      - CMOS VLSI Devices: modules/cmos-vlsi-devices/index.md
+      - ASIC Physical Design: modules/asic-backend-physical-design/index.md
+      - SystemVerilog: modules/systemverilog/index.md
+      - UVM Verification: modules/uvm-verification/index.md

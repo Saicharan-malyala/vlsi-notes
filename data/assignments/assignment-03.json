@@ -1,0 +1,87 @@
+[
+  {
+    "id": "a3_q1",
+    "question": "Which command creates a new group named 'vlsidevs' and then adds existing user 'student1' to it without removing them from their other supplementary groups?",
+    "options": [
+      "groupadd vlsidevs && usermod -g vlsidevs student1",
+      "groupadd vlsidevs && usermod -aG vlsidevs student1",
+      "groupcreate vlsidevs && useradd -G vlsidevs student1",
+      "addgroup vlsidevs && passwd -g vlsidevs student1"
+    ],
+    "correct_index": 1,
+    "explanations": [
+      "'-g' replaces the user's PRIMARY group rather than appending to supplementary groups.",
+      "Correct. 'groupadd' creates the group, and 'usermod -aG' appends (-a) the user to the supplementary group (-G).",
+      "'groupcreate' is not a valid Linux command, and 'useradd' is used to create new users, not modify existing ones.",
+      "'passwd -g' is invalid syntax for group membership."
+    ]
+  },
+  {
+    "id": "a3_q2",
+    "question": "Where are encrypted user passwords and password expiration metadata securely stored in a standard Linux system?",
+    "options": [
+      "/etc/passwd",
+      "/etc/shadow",
+      "/etc/security",
+      "/var/log/auth.log"
+    ],
+    "correct_index": 1,
+    "explanations": [
+      "'/etc/passwd' is world-readable and stores account metadata with an 'x' placeholder for passwords.",
+      "Correct. '/etc/shadow' is readable strictly by root (mode 640 or 600) and contains salted password hashes and aging policies.",
+      "'/etc/security' contains PAM configuration files, not user password hashes.",
+      "'/var/log/auth.log' contains authentication audit logs."
+    ]
+  },
+  {
+    "id": "a3_q3",
+    "question": "Which command grants user 'alice' read and write access on 'shared_netlist.v' using POSIX Access Control Lists (ACLs)?",
+    "options": [
+      "chmod u:alice:rw shared_netlist.v",
+      "setfacl -m u:alice:rw shared_netlist.v",
+      "getfacl -set alice=rw shared_netlist.v",
+      "chown alice:rw shared_netlist.v"
+    ],
+    "correct_index": 1,
+    "explanations": [
+      "'chmod' only accepts standard UGO categories (u/g/o), not named individual usernames.",
+      "Correct. 'setfacl -m u:username:perms file' modifies the ACL to grant specific permissions to named users.",
+      "'getfacl' is used to view ACLs, not set or modify them.",
+      "'chown' modifies file ownership, not permission masks."
+    ]
+  },
+  {
+    "id": "a3_q4",
+    "question": "What is the signal number and characteristic of SIGKILL?",
+    "options": [
+      "Signal 15; allows the process to catch the signal and perform clean termination.",
+      "Signal 2; sent when the user presses Ctrl+C in the terminal.",
+      "Signal 9; cannot be caught, blocked, or ignored, resulting in immediate kernel-level termination.",
+      "Signal 1; reloads daemon configuration files without stopping the process."
+    ],
+    "correct_index": 2,
+    "explanations": [
+      "Signal 15 is SIGTERM (graceful termination).",
+      "Signal 2 is SIGINT (interrupt from keyboard).",
+      "Correct. SIGKILL is Signal 9 and is handled directly by the kernel scheduler; processes cannot intercept or ignore it.",
+      "Signal 1 is SIGHUP (hangup/reload)."
+    ]
+  },
+  {
+    "id": "a3_q5",
+    "question": "Which crontab entry runs a script '/opt/scripts/backup.sh' every Monday through Friday at exactly 6:30 PM (18:30)?",
+    "options": [
+      "30 18 * * 1-5 /opt/scripts/backup.sh",
+      "18 30 * * 1-5 /opt/scripts/backup.sh",
+      "* 18 30 * 1,5 /opt/scripts/backup.sh",
+      "30 6 * * Mon-Fri /opt/scripts/backup.sh"
+    ],
+    "correct_index": 0,
+    "explanations": [
+      "Correct. Fields: Minute=30, Hour=18, DayOfMonth=*, Month=*, DayOfWeek=1-5 (Monday-Friday).",
+      "Reverses minute and hour (would run at 18 minutes past 6:00 PM).",
+      "Runs every minute during hour 18 on day 30 of the month.",
+      "Hour 6 is 6:00 AM (06:00), not 6:30 PM (18:30)."
+    ]
+  }
+]

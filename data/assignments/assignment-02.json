@@ -1,0 +1,172 @@
+[
+  {
+    "id": "a2_q1",
+    "question": "Which pipeline counts the number of unique user login shells listed in '/etc/passwd'?",
+    "options": [
+      "cut -d ':' -f 7 /etc/passwd | sort | uniq | wc -l",
+      "cut -d ':' -f 1 /etc/passwd | uniq -c",
+      "grep 'bin' /etc/passwd | wc -w",
+      "sort /etc/passwd | cut -f 7 | count"
+    ],
+    "correct_index": 0,
+    "explanations": [
+      "Correct. 'cut -d : -f 7' extracts the shell field, 'sort' groups identical shells, 'uniq' deduplicates them, and 'wc -l' counts total unique entries.",
+      "Field 1 extracts usernames, not shells; and uniq without sort fails to deduplicate non-adjacent duplicates.",
+      "Filters for lines containing 'bin' and counts total words, not unique shells.",
+      "'cut -f 7' defaults to tab delimiter (failing on colon-separated /etc/passwd), and 'count' is not a standard Unix command."
+    ]
+  },
+  {
+    "id": "a2_q2",
+    "question": "Which command searches for the pattern 'CRITICAL_TIMING' in all '.rpt' files under the current directory tree, ignoring case and showing line numbers?",
+    "options": [
+      "find . -name '*.rpt' | grep -i 'CRITICAL_TIMING'",
+      "grep -rni --include='*.rpt' 'CRITICAL_TIMING' .",
+      "locate -i 'CRITICAL_TIMING' *.rpt",
+      "sed -n '/CRITICAL_TIMING/p' *.rpt"
+    ],
+    "correct_index": 1,
+    "explanations": [
+      "Grep would match against the filename paths emitted by find, rather than searching inside the contents of the report files.",
+      "Correct. '-r' (recursive), '-n' (line numbers), '-i' (case-insensitive), and '--include=*.rpt' searches inside all matching reports efficiently.",
+      "'locate' searches filenames in a database index, not file contents.",
+      "'sed' does not perform recursive directory traversal and would not print line numbers by default."
+    ]
+  },
+  {
+    "id": "a2_q3",
+    "question": "What is the key functional difference between output redirection operators '>' and '>>'?",
+    "options": [
+      "'>' appends to an existing file, while '>>' truncates/overwrites the file.",
+      "'>' redirects standard output, while '>>' redirects standard error.",
+      "'>' overwrites the target file, while '>>' appends data to the end of the file.",
+      "'>' creates a temporary file, while '>>' creates a permanent file."
+    ],
+    "correct_index": 2,
+    "explanations": [
+      "This reverses the true meanings: '>' overwrites, '>>' appends.",
+      "Both operate on standard output (FD 1) by default; stderr is redirected via '2>' or '2>>'.",
+      "Correct. Single chevron '>' truncates/creates the file, whereas double chevron '>>' appends new lines to existing content.",
+      "Both operators operate directly on standard filesystem targets."
+    ]
+  },
+  {
+    "id": "a2_q4",
+    "question": "Which command finds all regular files in '/home/student' larger than 50 Megabytes modified within the last 7 days?",
+    "options": [
+      "find /home/student -type f -size +50M -mtime -7",
+      "find /home/student -type d -size 50M -mtime +7",
+      "search /home/student -files -size >50MB -days <7",
+      "find /home/student -name '*.v' -size 50M -ctime 7"
+    ],
+    "correct_index": 0,
+    "explanations": [
+      "Correct. '-type f' matches regular files, '-size +50M' matches greater than 50MB, and '-mtime -7' matches modified less than 7 days ago.",
+      "'-type d' searches for directories, and '-mtime +7' searches for files older than 7 days.",
+      "'search' is not a standard Linux command.",
+      "Constrains search to '*.v' and exact 50M/7 days rather than greater/less than thresholds."
+    ]
+  },
+  {
+    "id": "a2_q5",
+    "question": "Which 'sed' command substitutes all occurrences of 'wire [31:0]' with 'logic [31:0]' globally in 'design.v' and writes changes directly to the file?",
+    "options": [
+      "sed 's/wire \\[31:0\\]/logic \\[31:0\\]/' design.v",
+      "sed -i 's/wire \\[31:0\\]/logic \\[31:0\\]/g' design.v",
+      "sed -e 'replace wire logic' design.v",
+      "grep -v 'wire' design.v > design.v"
+    ],
+    "correct_index": 1,
+    "explanations": [
+      "Missing '-i' (prints to stdout without saving to disk) and missing 'g' flag (replaces only the first occurrence per line).",
+      "Correct. '-i' enables in-place file modification, and 'g' flag replaces all occurrences on each line.",
+      "'replace' is not valid sed command syntax.",
+      "Redirecting to the same input file 'design.v' truncates the file to 0 bytes before grep reads it."
+    ]
+  },
+  {
+    "id": "a2_q6",
+    "question": "Which command creates a compressed archive named 'vlsi_backup.tar.gz' containing the 'rtl/' directory?",
+    "options": [
+      "tar -cvf vlsi_backup.tar.gz rtl/",
+      "tar -czvf vlsi_backup.tar.gz rtl/",
+      "gzip -tar vlsi_backup.tar.gz rtl/",
+      "zip -tar vlsi_backup.tar.gz rtl/"
+    ],
+    "correct_index": 1,
+    "explanations": [
+      "'-cvf' creates an uncompressed tar archive despite the '.tar.gz' extension name.",
+      "Correct. '-c' (create), '-z' (gzip compression), '-v' (verbose), and '-f' (archive filename) creates a compressed gzip tarball.",
+      "'gzip' does not accept a directory or '-tar' flag directly.",
+      "'zip' creates '.zip' format files, not tar.gz archives."
+    ]
+  },
+  {
+    "id": "a2_q7",
+    "question": "How do you extract lines 20 through 35 from a 1000-line simulation log file 'run.log'?",
+    "options": [
+      "head -n 35 run.log | tail -n 16",
+      "head -n 20 run.log | tail -n 35",
+      "tail -n +20 run.log | head -n 35",
+      "cat run.log | cut -l 20-35"
+    ],
+    "correct_index": 0,
+    "explanations": [
+      "Correct. 'head -n 35' takes the first 35 lines, and piping to 'tail -n 16' extracts the last 16 lines (lines 20 to 35 inclusive).",
+      "This takes the first 20 lines and then the last 35 of those, producing only lines 1 to 20.",
+      "'head -n 35' on 'tail -n +20' extracts 35 lines (lines 20 through 54), not 16 lines.",
+      "'cut -l' is invalid flag syntax for cut."
+    ]
+  },
+  {
+    "id": "a2_q8",
+    "question": "Which tool and argument deletes all carriage-return characters ('\\r') from a DOS-formatted text file?",
+    "options": [
+      "tr -d '\\r' < dos_file.txt > unix_file.txt",
+      "cut -d '\\r' dos_file.txt",
+      "sed 'delete \\r' dos_file.txt",
+      "wc -d '\\r' dos_file.txt"
+    ],
+    "correct_index": 0,
+    "explanations": [
+      "Correct. 'tr -d \\r' deletes all carriage return characters from the standard input stream.",
+      "'cut -d' specifies field delimiter for column extraction, not character deletion.",
+      "Sed delete command requires '/\\r/d' address notation.",
+      "'wc' is a word/line counting utility and does not support deletion."
+    ]
+  },
+  {
+    "id": "a2_q9",
+    "question": "Which command displays only lines in 'file1.txt' and 'file2.txt' that are unique to 'file1.txt' (suppressing common lines and lines unique to file2), assuming both files are sorted?",
+    "options": [
+      "diff -u file1.txt file2.txt",
+      "comm -23 file1.txt file2.txt",
+      "cmp file1.txt file2.txt",
+      "uniq -u file1.txt file2.txt"
+    ],
+    "correct_index": 1,
+    "explanations": [
+      "'diff -u' outputs unified difference format showing added and removed lines together.",
+      "Correct. 'comm' outputs 3 columns: (1) unique to file1, (2) unique to file2, (3) common. '-23' suppresses columns 2 and 3, outputting column 1 only.",
+      "'cmp' performs byte-by-byte comparison and stops at the first differing byte.",
+      "'uniq -u' operates on a single file stream, not two distinct files."
+    ]
+  },
+  {
+    "id": "a2_q10",
+    "question": "What is the function of the 'tee' utility in a Linux pipeline?",
+    "options": [
+      "It terminates execution if an error occurs in the pipeline.",
+      "It duplicates standard input to standard output and simultaneously writes it to one or more files.",
+      "It tests the network bandwidth between two remote servers.",
+      "It converts text files from ASCII to UTF-8 encoding."
+    ],
+    "correct_index": 1,
+    "explanations": [
+      "Error termination in bash is configured via 'set -e', not 'tee'.",
+      "Correct. 'tee' acts as a T-splitter, sending stream output to both stdout (terminal) and specified log files.",
+      "Network bandwidth testing is performed with 'iperf', not 'tee'.",
+      "Character encoding conversion is handled by 'iconv'."
+    ]
+  }
+]

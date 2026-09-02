@@ -1,0 +1,257 @@
+[
+  {
+    "id": "a1_q1",
+    "question": "Which command is used to display both the numeric User ID (UID), primary Group ID (GID), and all supplementary groups of the currently logged-in user?",
+    "options": [
+      "whoami",
+      "id",
+      "groups",
+      "uname -u"
+    ],
+    "correct_index": 1,
+    "explanations": [
+      "Displays only the effective username string (e.g., 'saichand'), without numeric UID, GID, or group lists.",
+      "Correct. 'id' outputs the complete identity string including numeric UID, GID, and all associated supplementary groups.",
+      "Displays only group names associated with the user, omitting the numeric UID, GID, and username.",
+      "'uname' reports kernel and OS architecture information; the '-u' flag is invalid."
+    ]
+  },
+  {
+    "id": "a1_q2",
+    "question": "Which command and option creates a 3-level nested directory structure 'mydir/Subdir1/Subdir2' in a single command without failing if parent directories do not exist?",
+    "options": [
+      "mkdir -r mydir/Subdir1/Subdir2",
+      "mkdir -p mydir/Subdir1/Subdir2",
+      "mkdir -f mydir/Subdir1/Subdir2",
+      "md -all mydir/Subdir1/Subdir2"
+    ],
+    "correct_index": 1,
+    "explanations": [
+      "'-r' is used for recursive operations in commands like 'rm' and 'cp', but is not a valid parent-creation option in 'mkdir'.",
+      "Correct. The '-p' (parents) flag creates intermediate parent directories as needed and does not return an error if directories already exist.",
+      "'-f' (force) is not a valid flag for 'mkdir'.",
+      "'md' is a DOS/Windows command; Linux uses 'mkdir'."
+    ]
+  },
+  {
+    "id": "a1_q3",
+    "question": "To modify the permissions of a file 'ctest' such that the User has Read, Write, and Execute (rwx), the Group has Read and Execute (r-x), and Others have No permissions (---), which command is correct?",
+    "options": [
+      "chmod 750 ctest",
+      "chmod 755 ctest",
+      "chmod 640 ctest",
+      "chmod 700 ctest"
+    ],
+    "correct_index": 0,
+    "explanations": [
+      "Correct. In octal: User rwx (4+2+1=7), Group r-x (4+0+1=5), Others --- (0+0+0=0) gives 750.",
+      "755 gives Others read and execute (r-x) permissions instead of no permissions (---).",
+      "640 sets User to rw- (no execute) and Group to r-- (no execute).",
+      "700 sets Group to --- (no permissions), whereas Group requires r-x."
+    ]
+  },
+  {
+    "id": "a1_q4",
+    "question": "Which command changes both the owner user to 'saichand' and the owning group to 'vlsidevs' for the file 'top.v' in a single command?",
+    "options": [
+      "chgrp saichand:vlsidevs top.v",
+      "chown saichand.vlsidevs top.v",
+      "chown saichand:vlsidevs top.v",
+      "chmod saichand:vlsidevs top.v"
+    ],
+    "correct_index": 2,
+    "explanations": [
+      "'chgrp' modifies group ownership only and does not accept user:group syntax.",
+      "While dot syntax was historically supported, colon syntax 'user:group' is the POSIX standard across modern Linux.",
+      "Correct. 'chown user:group filename' updates both the user owner and group owner atomically.",
+      "'chmod' alters permission mode bits (read/write/execute), not file ownership."
+    ]
+  },
+  {
+    "id": "a1_q5",
+    "question": "What is the difference between running 'cd ~' and 'cd -' in a Bash terminal?",
+    "options": [
+      "'cd ~' goes to root directory '/', while 'cd -' goes to home directory.",
+      "'cd ~' goes to user home directory ($HOME), while 'cd -' switches to the previous working directory ($OLDPWD).",
+      "'cd ~' creates a temporary directory, while 'cd -' deletes the current directory.",
+      "'cd ~' and 'cd -' are identical aliases for navigating up one directory level."
+    ],
+    "correct_index": 1,
+    "explanations": [
+      "Root directory is reached via 'cd /', not 'cd ~'.",
+      "Correct. The tilde '~' expands to $HOME, while the hyphen '-' expands to the previous working directory stored in $OLDPWD.",
+      "Neither command creates or deletes directories.",
+      "Navigating up one level is performed using 'cd ..'."
+    ]
+  },
+  {
+    "id": "a1_q6",
+    "question": "Which command lists all files including hidden files, sorted with the most recently modified files at the bottom of the terminal output?",
+    "options": [
+      "ls -la",
+      "ls -latr",
+      "ls -lR",
+      "ls -lhS"
+    ],
+    "correct_index": 1,
+    "explanations": [
+      "'ls -la' lists all files including hidden files, but sorts them alphabetically.",
+      "Correct. '-l' (long format), '-a' (all/hidden), '-t' (sort by modification time), and '-r' (reverse order) puts newest files at the bottom.",
+      "'ls -lR' lists directories recursively.",
+      "'ls -lhS' sorts files by file size in descending order."
+    ]
+  },
+  {
+    "id": "a1_q7",
+    "question": "How do you view section 1 of the man page for the 'passwd' user command rather than section 5 for the '/etc/passwd' file format?",
+    "options": [
+      "man passwd",
+      "man 1 passwd",
+      "man 5 passwd",
+      "man -a passwd"
+    ],
+    "correct_index": 1,
+    "explanations": [
+      "Running 'man passwd' without a section number defaults to the first matching section, which may be ambiguous.",
+      "Correct. 'man 1 passwd' explicitly requests Section 1 (User executable commands).",
+      "'man 5 passwd' opens Section 5 (File formats and conventions, specifically /etc/passwd).",
+      "'man -a passwd' displays all matching man sections in sequential order."
+    ]
+  },
+  {
+    "id": "a1_q8",
+    "question": "Which command creates an empty file named 'simulation.log' if it does not exist, or updates its access/modification timestamps if it already exists?",
+    "options": [
+      "make simulation.log",
+      "create simulation.log",
+      "touch simulation.log",
+      "new simulation.log"
+    ],
+    "correct_index": 2,
+    "explanations": [
+      "'make' is a build automation tool that reads Makefiles, not a file creation utility.",
+      "'create' is not a standard Linux command.",
+      "Correct. 'touch' creates a 0-byte file if non-existent or updates inode timestamps if existing.",
+      "'new' is not a valid Linux file utility."
+    ]
+  },
+  {
+    "id": "a1_q9",
+    "question": "When moving a directory 'mydir' into a new directory 'mydir1' using 'mv mydir mydir1', what happens if 'mydir1' already exists as a directory?",
+    "options": [
+      "The command fails with a directory overwrite error.",
+      "'mydir' is moved inside 'mydir1' as a subdirectory ('mydir1/mydir').",
+      "'mydir1' is deleted and replaced with 'mydir'.",
+      "The contents of 'mydir' are merged with 'mydir1' and 'mydir' is deleted."
+    ],
+    "correct_index": 1,
+    "explanations": [
+      "'mv' does not error when moving into an existing target directory.",
+      "Correct. If the destination is an existing directory, 'mv' places the source directory inside it.",
+      "'mv' will not overwrite an existing non-empty directory with another directory.",
+      "Directory merging is performed using 'rsync' or 'cp -r', not standard 'mv'."
+    ]
+  },
+  {
+    "id": "a1_q10",
+    "question": "Which symbolic command grants execute permission to the User, removes write permission from Group, and assigns read-only permission to Others for file 'script.sh'?",
+    "options": [
+      "chmod u+x,g-w,o=r script.sh",
+      "chmod u+x;g-w;o=r script.sh",
+      "chmod u=x,g=w,o=r script.sh",
+      "chmod +x -w =r script.sh"
+    ],
+    "correct_index": 0,
+    "explanations": [
+      "Correct. Comma-separated symbolic clauses 'u+x,g-w,o=r' apply the exact requested modifications.",
+      "Semicolons separate distinct shell commands rather than clauses within 'chmod'.",
+      "'u=x' sets execute ONLY for user (revoking existing read/write), rather than adding execute (+x).",
+      "Missing category qualifiers (u/g/o) causes ambiguous application across umask."
+    ]
+  },
+  {
+    "id": "a1_q11",
+    "question": "Which command removes a non-empty directory 'old_build' and all of its contents without prompting for confirmation?",
+    "options": [
+      "rmdir old_build",
+      "rm -r -f old_build",
+      "del /s old_build",
+      "erase -rf old_build"
+    ],
+    "correct_index": 1,
+    "explanations": [
+      "'rmdir' strictly removes empty directories; it fails with 'Directory not empty' on populated folders.",
+      "Correct. 'rm -rf' recursively (-r) and forcefully (-f) removes files and subdirectories without interactive prompts.",
+      "'del /s' is Windows cmd syntax.",
+      "'erase' is not a standard Linux command."
+    ]
+  },
+  {
+    "id": "a1_q12",
+    "question": "What is the result of executing 'chmod 644 design.v' on an RTL source file?",
+    "options": [
+      "Owner: Read/Write, Group: Read-Only, Others: Read-Only",
+      "Owner: Read/Write/Execute, Group: Read-Only, Others: None",
+      "Owner: Read-Only, Group: Read-Only, Others: Read/Write",
+      "Owner: Read/Write, Group: Read/Write, Others: Read/Write"
+    ],
+    "correct_index": 0,
+    "explanations": [
+      "Correct. 6 = 4+2 (rw-), 4 = 4+0 (r--), 4 = 4+0 (r--).",
+      "Read/Write/Execute is octal 7, not 6.",
+      "Read-Only across owner is octal 446, not 644.",
+      "Read/Write across all categories is octal 666."
+    ]
+  },
+  {
+    "id": "a1_q13",
+    "question": "Which command displays the manual page summary description for a keyword, equivalent to 'man -k'?",
+    "options": [
+      "whatis",
+      "apropos",
+      "whereis",
+      "which"
+    ],
+    "correct_index": 1,
+    "explanations": [
+      "'whatis' searches for complete exact command names in the whatis database, equivalent to 'man -f'.",
+      "Correct. 'apropos keyword' searches description strings across all man pages, identical to 'man -k keyword'.",
+      "'whereis' locates binary, source, and man page file paths on disk.",
+      "'which' locates executable binaries in the user's $PATH."
+    ]
+  },
+  {
+    "id": "a1_q14",
+    "question": "If a user attempts to execute a shell script 'test.sh' with permissions '-rw-r--r--', what error is returned by the shell?",
+    "options": [
+      "Segmentation fault",
+      "Permission denied",
+      "Command not found",
+      "Bad interpreter error"
+    ],
+    "correct_index": 1,
+    "explanations": [
+      "Segmentation fault indicates invalid memory access by a compiled binary.",
+      "Correct. The file lacks the execute bit ('x') for the executing user, triggering a 'Permission denied' error.",
+      "'Command not found' occurs when an executable is not in $PATH or the specified relative path is wrong.",
+      "'Bad interpreter error' occurs when the shebang line points to a non-existent binary."
+    ]
+  },
+  {
+    "id": "a1_q15",
+    "question": "Which command creates a hard link named 'link_top.v' pointing to 'top.v'?",
+    "options": [
+      "ln -s top.v link_top.v",
+      "ln top.v link_top.v",
+      "link -h top.v link_top.v",
+      "cp -l top.v link_top.v"
+    ],
+    "correct_index": 1,
+    "explanations": [
+      "'-s' creates a symbolic (soft) link, not a hard link.",
+      "Correct. 'ln source target' creates a hard link by default sharing the exact same inode number.",
+      "'link' takes exactly two arguments without flags.",
+      "While 'cp -l' can link instead of copying, standard 'ln' is the POSIX utility."
+    ]
+  }
+]

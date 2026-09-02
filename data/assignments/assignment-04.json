@@ -1,0 +1,70 @@
+[
+  {
+    "id": "a4_q1",
+    "question": "How many usable host IP addresses are available in a subnet configured with CIDR prefix /28 (subnet mask 255.255.255.240)?",
+    "options": [
+      "16",
+      "14",
+      "30",
+      "6"
+    ],
+    "correct_index": 1,
+    "explanations": [
+      "16 is the total number of IP addresses (2^(32-28) = 16), including Network ID and Broadcast ID.",
+      "Correct. Usable hosts = 2^(32-28) - 2 = 16 - 2 = 14.",
+      "30 hosts corresponds to a /27 subnet mask (255.255.255.224).",
+      "6 hosts corresponds to a /29 subnet mask (255.255.255.248)."
+    ]
+  },
+  {
+    "id": "a4_q2",
+    "question": "Which modern command displays all listening TCP and UDP sockets along with their process names and PIDs?",
+    "options": [
+      "ss -tulnp",
+      "ip route show",
+      "ping -tulnp",
+      "ifconfig -listening"
+    ],
+    "correct_index": 0,
+    "explanations": [
+      "Correct. 'ss' (socket statistics) with '-t' (TCP), '-u' (UDP), '-l' (listening), '-n' (numeric ports), and '-p' (process ID) inspects listening sockets.",
+      "'ip route' displays routing tables, not socket connections.",
+      "'ping' sends ICMP echo requests and does not take socket flags.",
+      "'ifconfig' does not have a '-listening' option."
+    ]
+  },
+  {
+    "id": "a4_q3",
+    "question": "Which startup configuration file is executed for interactive, non-login Bash shell sessions for a specific user?",
+    "options": [
+      "~/.bashrc",
+      "/etc/profile",
+      "~/.bash_profile",
+      "/etc/environment"
+    ],
+    "correct_index": 0,
+    "explanations": [
+      "Correct. '~/.bashrc' is executed whenever a new interactive subshell or terminal tab is opened.",
+      "'/etc/profile' is the system-wide login shell initialization script.",
+      "'~/.bash_profile' is executed only during initial user login (e.g. SSH login or console login).",
+      "'/etc/environment' defines system-wide environment key-value pairs, not shell scripts."
+    ]
+  },
+  {
+    "id": "a4_q4",
+    "question": "Which command copies a directory 'rtl_src/' recursively from a local machine to a remote server at IP 192.168.1.50 under '/home/user/' via SSH?",
+    "options": [
+      "scp -r rtl_src/ user@192.168.1.50:/home/user/",
+      "cp -remote rtl_src/ user@192.168.1.50:/home/user/",
+      "ssh cp -r rtl_src/ user@192.168.1.50:/home/user/",
+      "ftp -r rtl_src/ user@192.168.1.50:/home/user/"
+    ],
+    "correct_index": 0,
+    "explanations": [
+      "Correct. 'scp -r' uses the SSH protocol to recursively copy files securely between hosts.",
+      "'cp' only operates on locally mounted filesystems.",
+      "'ssh' executes commands remotely on the destination server rather than transferring local source files.",
+      "'ftp' is an unencrypted legacy protocol that requires interactive commands or separate batch scripting."
+    ]
+  }
+]
